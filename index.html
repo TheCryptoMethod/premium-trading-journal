@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Edge – Find Your Trading Edge with Data-Driven Insights</title>
+    <meta name="description" content="Quantum Edge is a premium trading journal for Futures and Crypto daytraders. Analyze your performance, pinpoint profit killers, and refine your trading edge with objective data.">
+    <meta name="keywords" content="trading journal, day trading, futures trading, crypto trading, trading analytics, trading edge, performance analysis, trade tracking">
+    <meta name="author" content="Quantum Edge">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.quantumedge.com/">
+    <meta property="og:title" content="Quantum Edge – Find Your Trading Edge with Data-Driven Insights">
+    <meta property="og:description" content="Quantum Edge is a premium trading journal for Futures and Crypto daytraders. Analyze your performance, pinpoint profit killers, and refine your trading edge with objective data.">
+    <meta property="og:image" content="https://www.quantumedge.com/social-share.jpg"> <!-- Replace with actual image -->
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.quantumedge.com/">
+    <meta property="twitter:title" content="Quantum Edge – Find Your Trading Edge with Data-Driven Insights">
+    <meta property="twitter:description" content="Quantum Edge is a premium trading journal for Futures and Crypto daytraders. Analyze your performance, pinpoint profit killers, and refine your trading edge with objective data.">
+    <meta property="twitter:image" content="https://www.quantumedge.com/social-share.jpg"> <!-- Replace with actual image -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Design Tokens */
+        :root {
+            /* Colors */
+            --background-primary: #0A0A0C;
+            --background-secondary: #1A1A1E;
+            --text-primary: #E0E0E0;
+            --text-secondary: #A0A0A0;
+            --primary-accent: #6A5ACD; /* Slate Blue/Purple */
+            --secondary-accent: #00C896; /* Vibrant Teal */
+            --danger-error: #FF6B6B;
+            --border-divider: #3A3A4A;
+
+            /* Typography */
+            --font-family-inter: 'Inter', sans-serif;
+            --font-weight-regular: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            --line-height-headings: 1.2;
+            --line-height-body: 1.6;
+
+            /* Spacing Scale */
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            --spacing-xxl: 64px;
+            --spacing-xxxl: 96px;
+
+            /* Border Radius */
+            --radius-none: 0px;
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-full: 9999px;
+
+            /* Shadow Styles */
+            --shadow-sm: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            --shadow-md: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0px 8px 16px rgba(0, 0, 0, 0.4);
+            --shadow-xl: 0px 12px 24px rgba(0, 0, 0, 0.5);
+
+            /* Animation Durations */
+            --animation-duration-fast: 150ms;
+            --animation-duration-normal: 300ms;
+            --animation-duration-slow: 500ms;
+        }
+
+        /* Base Styles */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family-inter);
+            background-color: var(--background-primary);
+            color: var(--text-primary);
+            line-height: var(--line-height-body);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Responsive Typography */
+        h1 { font-size: 36px; font-weight: var(--font-weight-bold); line-height: var(--line-height-headings); }
+        h2 { font-size: 28px; font-weight: var(--font-weight-bold); line-height: var(--line-height-headings); }
+        h3 { font-size: 24px; font-weight: var(--font-weight-semibold); line-height: var(--line-height-headings); }
+        h4 { font-size: 18px; font-weight: var(--font-weight-semibold); line-height: var(--line-height-headings); }
+        .body-large { font-size: 16px; font-weight: var(--font-weight-regular); }
+        .body-regular { font-size: 14px; font-weight: var(--font-weight-regular); }
+        .body-small { font-size: 12px; font-weight: var(--font-weight-regular); }
+        .caption { font-size: 11px; font-weight: var(--font-weight-regular); }
+
+        @media (min-width: 768px) { /* Tablet */
+            h1 { font-size: 48px; }
+            h2 { font-size: 36px; }
+            h3 { font-size: 28px; }
+            h4 { font-size: 20px; }
+            .body-large { font-size: 16px; }
+            .body-regular { font-size: 15px; }
+            .body-small { font-size: 13px; }
+            .caption { font-size: 12px; }
+        }
+
+        @media (min-width: 1024px) { /* Desktop */
+            h1 { font-size: 64px; }
+            h2 { font-size: 48px; }
+            h3 { font-size: 32px; }
+            h4 { font-size: 24px; }
+            .body-large { font-size: 18px; }
+            .body-regular { font-size: 16px; }
+            .body-small { font-size: 14px; }
+            .caption { font-size: 12px; }
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: var(--spacing-sm);
+            padding-right: var(--spacing-sm);
+        }
+
+        .section-padding {
+            padding-top: var(--spacing-xxl);
+            padding-bottom: var(--spacing-xxl);
+        }
+        @media (min-width: 768px) {
+            .section-padding {
+                padding-top: var(--spacing-xxxl);
+                padding-bottom: var(--spacing-xxxl);
+            }
+        }
+
+        .text-center { text-align: center; }
+        .text-primary { color: var(--text-primary); }
+        .text-secondary { color: var(--text-secondary); }
+        .text-accent { color: var(--secondary-accent); }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--radius-md);
+            font-weight: var(--font-weight-semibold);
+            text-decoration: none;
+            cursor: pointer;
+            transition: all var(--animation-duration-fast) ease-in-out;
+            border: none;
+            font-size: var(--body-regular);
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-accent);
+            color: var(--background-primary); /* Dark text on vibrant button */
+            box-shadow: var(--shadow-md);
+        }
+        .btn-primary:hover {
+            background-color: color-mix(in srgb, var(--secondary-accent) 90%, black);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--primary-accent);
+        }
+        .btn-secondary:hover {
+            background-color: color-mix(in srgb, var(--primary-accent) 15%, transparent);
+            border-color: var(--primary-accent);
+            transform: translateY(-2px);
+        }
+
+        /* Section Specific Styles */
+
+        /* Scroll Progress Bar */
+        #scroll-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background-color: var(--secondary-accent);
+            width: 0%;
+            z-index: 9999;
+            transition: width var(--animation-duration-fast) linear;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: var(--spacing-xxl) var(--spacing-sm);
+            text-align: center;
+            background-color: var(--background-primary);
+            overflow: hidden; /* For cursor gradient */
+            transition: background var(--animation-duration-normal) ease-out; /* For cursor gradient */
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('hero-bg.png') center/cover no-repeat;
+            opacity: 0.2; /* Low opacity as requested */
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .hero h1 {
+            margin-bottom: var(--spacing-md);
+        }
+        .hero .body-large {
+            margin-bottom: var(--spacing-lg);
+            color: var(--text-secondary);
+        }
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-xl);
+        }
+        @media (min-width: 768px) {
+            .hero-actions {
+                flex-direction: row;
+                justify-content: center;
+                gap: var(--spacing-md);
+            }
+        }
+        .hero .mockup {
+            width: 90%;
+            max-width: 800px;
+            border-radius: var(--radius-lg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+            margin-top: var(--spacing-xl);
+            display: block;
+            height: auto;
+            transition: transform var(--animation-duration-normal) ease-in-out;
+        }
+
+        /* Problem Agitation Section */
+        .problem-agitation {
+            background-color: var(--background-primary);
+            text-align: center;
+        }
+        .problem-agitation h2 {
+            margin-bottom: var(--spacing-xxl);
+        }
+        .problem-grid {
+            display: grid;
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-xl);
+        }
+        @media (min-width: 768px) {
+            .problem-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: var(--spacing-lg);
+            }
+        }
+        .problem-card {
+            background-color: var(--background-secondary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            text-align: left;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-divider);
+        }
+        .problem-card .icon {
+            color: var(--primary-accent);
+            margin-bottom: var(--spacing-md);
+            width: 48px;
+            height: 48px;
+        }
+        .problem-card h3 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+        .problem-card p {
+            color: var(--text-secondary);
+            font-size: var(--body-regular);
+        }
+
+        /* The AHA Moment Section */
+        .aha-moment {
+            background-color: var(--background-primary);
+        }
+        .aha-moment h2 {
+            margin-bottom: var(--spacing-xxl);
+            text-align: center;
+        }
+        .comparison-grid {
+            display: grid;
+            gap: var(--spacing-xl);
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .comparison-item {
+            background-color: var(--background-secondary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-divider);
+            text-align: center;
+        }
+        .comparison-item h3 {
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-accent);
+        }
+        .comparison-item.before h3 {
+            color: var(--danger-error);
+        }
+        .comparison-item p {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+            font-size: var(--body-regular);
+        }
+        .comparison-item .mockup {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            margin-top: var(--spacing-md);
+        }
+
+        /* Features as Solutions Section */
+        .features-solutions {
+            background-color: var(--background-primary);
+        }
+        .features-solutions h2 {
+            margin-bottom: var(--spacing-xxl);
+            text-align: center;
+        }
+        .features-grid {
+            display: grid;
+            gap: var(--spacing-xl);
+        }
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: var(--spacing-lg);
+            }
+        }
+        .feature-card {
+            background-color: var(--background-secondary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-divider);
+            transition: transform var(--animation-duration-fast) ease-in-out, box-shadow var(--animation-duration-fast) ease-in-out;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+        .feature-card .icon {
+            color: var(--secondary-accent);
+            margin-bottom: var(--spacing-md);
+            width: 48px;
+            height: 48px;
+        }
+        .feature-card h3 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: var(--body-regular);
+        }
+
+        /* Social Proof Section */
+        .social-proof {
+            background-color: var(--background-primary);
+            text-align: center;
+        }
+        .social-proof h2 {
+            margin-bottom: var(--spacing-xxl);
+        }
+        .stats-grid {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xxl);
+        }
+        @media (min-width: 768px) {
+            .stats-grid {
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+        .stat-item h3 {
+            color: var(--secondary-accent);
+            font-size: 48px; /* Larger for impact */
+            margin-bottom: var(--spacing-xs);
+        }
+        .stat-item p {
+            color: var(--text-secondary);
+            font-size: var(--body-large);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            gap: var(--spacing-xl);
+        }
+        @media (min-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: var(--spacing-lg);
+            }
+        }
+        .testimonial-card {
+            background-color: var(--background-secondary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-divider);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            font-size: var(--body-regular);
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        .testimonial-author img {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-full);
+            object-fit: cover;
+            border: 2px solid var(--primary-accent);
+        }
+        .testimonial-author-info strong {
+            display: block;
+            color: var(--text-primary);
+            font-weight: var(--font-weight-semibold);
+        }
+        .testimonial-author-info span {
+            color: var(--text-secondary);
+            font-size: var(--body-small);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            background-color: var(--background-primary);
+            text-align: center;
+        }
+        .pricing h2 {
+            margin-bottom: var(--spacing-xxl);
+        }
+        .pricing-grid {
+            display: grid;
+            gap: var(--spacing-xl);
+        }
+        @media (min-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: var(--spacing-lg);
+            }
+        }
+        .pricing-card {
+            background-color: var(--background-secondary);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-divider);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform var(--animation-duration-fast) ease-in-out, box-shadow var(--animation-duration-fast) ease-in-out;
+        }
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        .pricing-card.popular {
+            background-color: var(--primary-accent);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-accent);
+            transform: scale(1.03);
+        }
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        .pricing-card.popular h3,
+        .pricing-card.popular .price,
+        .pricing-card.popular .billing-cycle,
+        .pricing-card.popular .feature-list li,
+        .pricing-card.popular .feature-list li svg,
+        .pricing-card.popular .trial-info {
+            color: var(--background-primary); /* Dark text on accent background */
+        }
+        .pricing-card h3 {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+        .pricing-card .price {
+            font-size: 48px;
+            font-weight: var(--font-weight-bold);
+            color: var(--secondary-accent);
+            margin-bottom: var(--spacing-xs);
+            display: block;
+        }
+        .pricing-card .billing-cycle {
+            color: var(--text-secondary);
+            font-size: var(--body-small);
+            margin-bottom: var(--spacing-lg);
+            display: block;
+        }
+        .pricing-card .feature-list {
+            list-style: none;
+            margin-bottom: var(--spacing-lg);
+            flex-grow: 1;
+        }
+        .pricing-card .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+            font-size: var(--body-regular);
+        }
+        .pricing-card .feature-list li svg {
+            color: var(--secondary-accent);
+            flex-shrink: 0;
+        }
+        .pricing-card.popular .feature-list li svg {
+            color: var(--background-primary);
+        }
+        .pricing-card .btn {
+            width: 100%;
+            margin-top: var(--spacing-md);
+        }
+        .pricing-card .trial-info {
+            font-size: var(--body-small);
+            color: var(--text-secondary);
+            margin-top: var(--spacing-md);
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            background-color: var(--background-primary);
+            text-align: center;
+        }
+        .final-cta h2 {
+            margin-bottom: var(--spacing-xl);
+        }
+        .final-cta .btn-primary {
+            padding: var(--spacing-md) var(--spacing-xxl);
+            font-size: var(--body-large);
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: var(--background-primary);
+            padding-top: var(--spacing-xxl);
+            padding-bottom: var(--spacing-lg);
+            border-top: 1px solid var(--border-divider);
+            text-align: center;
+        }
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+        .footer-logo {
+            font-size: var(--body-large);
+            font-weight: var(--font-weight-bold);
+            color: var(--text-primary);
+            text-decoration: none;
+            margin-bottom: var(--spacing-md);
+        }
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-md);
+        }
+        @media (min-width: 768px) {
+            .footer-links {
+                flex-direction: row;
+                gap: var(--spacing-lg);
+            }
+        }
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: var(--body-regular);
+            transition: color var(--animation-duration-fast) ease-in-out;
+        }
+        .footer-links a:hover {
+            color: var(--primary-accent);
+        }
+        .footer-social {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        .footer-social a {
+            color: var(--text-secondary);
+            transition: color var(--animation-duration-fast) ease-in-out;
+        }
+        .footer-social a:hover {
+            color: var(--secondary-accent);
+        }
+        .footer-social svg {
+            width: 24px;
+            height: 24px;
+        }
+        .footer-copyright {
+            color: var(--text-secondary);
+            font-size: var(--caption);
+            margin-top: var(--spacing-md);
+        }
+        @media (min-width: 768px) {
+            .footer-copyright {
+                margin-top: 0;
+            }
+        }
+
+        /* prefers-reduced-motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .hero {
+                transition: none !important; /* Disable gradient transition */
+            }
+            .btn:hover, .feature-card:hover, .pricing-card:hover, .pricing-card.popular:hover {
+                transform: none !important;
+                box-shadow: var(--shadow-md) !important;
+            }
+            .hero .mockup {
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="scroll-progress-bar"></div>
+
+    <!-- SECTION 1 — HERO (Problem + Product Shot) -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="text-primary">Still Guessing Which Trades Are Costing You Money?</h1>
+            <p class="body-large">Quantum Edge reveals your true performance, turning hunches into a data-driven trading edge you can trust.</p>
+            <div class="hero-actions">
+                <a href="#pricing" class="btn btn-primary">Start Free Trial</a>
+                <a href="#how-it-works" class="btn btn-secondary">See How It Works</a>
+            </div>
+            <img src="product-mockup.png" alt="Quantum Edge Trading Journal Dashboard Mockup" class="mockup">
+        </div>
+    </section>
+
+    <!-- SECTION 2 — PROBLEM AGITATION (Why they should care) -->
+    <section class="problem-agitation section-padding">
+        <div class="container text-center">
+            <h2 class="text-primary">The Market Doesn't Care About Your Feelings. Your P&L Proves It.</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <svg class="icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    <h3>Hidden Losses Are Draining Your Account</h3>
+                    <p class="body-regular">Last Tuesday, you took 7 trades. 4 were winners. But you ended the day down $340. Why? Because your 3 losers averaged 2.1x your winners. You didn't know that until now.</p>
+                </div>
+                <div class="problem-card">
+                    <svg class="icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    <h3>Scaling Your Edge Feels Like Guesswork</h3>
+                    <p class="body-regular">You've got a 'feeling' about your best setup, but every time you try to scale it, the profits vanish. Without hard data, scaling is just gambling. You need proof, not hunches.</p>
+                </div>
+                <div class="problem-card">
+                    <svg class="icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    <h3>Your Journal is Always "Tomorrow's Job"</h3>
+                    <p class="body-regular">Your trading plan says 'exit at R:R 1.5', but in the heat of the moment, you're bailing early or holding too long. The journal you *should* be keeping is always 'tomorrow's job' – costing you real money.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3 — THE AHA MOMENT (What changes) -->
+    <section class="aha-moment section-padding" id="how-it-works">
+        <div class="container">
+            <h2 class="text-primary">Stop Trading Blind. Start Trading with Clarity.</h2>
+            <div class="comparison-grid">
+                <div class="comparison-item before">
+                    <h3>Without Quantum Edge: Blind Spots & Missed Opportunities</h3>
+                    <p class="body-regular">Your trading decisions are based on memory and emotion. You know you're making mistakes, but you can't pinpoint them. Growth is slow, inconsistent, and frustrating.</p>
+                    <img src="product-mockup.png" alt="Generic Trading Chart" class="mockup">
+                </div>
+                <div class="comparison-item">
+                    <h3>With Quantum Edge: Precision Insights & Actionable Data</h3>
+                    <p class="body-regular">Every trade becomes a data point. You see clear trends, identify your true edge, and make objective adjustments. Your growth accelerates, consistently.</p>
+                    <img src="product-mockup.png" alt="Quantum Edge Dashboard with Specific Data" class="mockup">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4 — FEATURES AS SOLUTIONS (How it works) -->
+    <section class="features-solutions section-padding">
+        <div class="container">
+            <h2 class="text-primary">Turn Every Trade Into a Strategic Advantage</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <svg class="icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                    <h3>Pinpoint Your Profit Killers</h3>
+                    <p class="body-regular">Instantly see which setups, times, or markets are draining your account, so you can stop trading them tomorrow. No more guessing where your money went.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
+                    <h3>Validate Your Edge with Hard Numbers</h3>
+                    <p class="body-regular">Get objective statistics on every strategy, allowing you to confidently scale what works and discard what doesn't. Build a trading plan based on facts, not hope.</p>
+                </div>
+                <div class="feature-card">
+                    <svg class="icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h.01"></path><path d="M12 16h.01"></path><path d="M12 12h.01"></path><path d="M12 8h.01"></path><path d="M12 4h.01"></path><path d="M12 2v20"></path><path d="M17 5H7"></path><path d="M17 19H7"></path></svg>
+                    <h3>Automate Your Learning, Not Just Your Entries</h3>
+                    <p class="body-regular">Effortlessly log trades and generate deep performance reports, turning every session into a learning opportunity without the manual grind. Focus on trading, not data entry.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5 — SOCIAL PROOF (Numbers + Testimonials) -->
+    <section class="social-proof section-padding">
+        <div class="container">
+            <h2 class="text-primary">Don't Just Take Our Word For It. See the Results.</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3 class="text-accent">17,342</h3>
+                    <p class="body-large">Traders Using Quantum Edge</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="text-accent">$9.1M+</h3>
+                    <p class="body-large">Tracked Profit Improvements</p>
+                </div>
+                <div class="stat-item">
+                    <h3 class="text-accent">96%</h3>
+                    <p class="body-large">Traders Recommend Us</p>
+                </div>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="body-regular">"Before Quantum Edge, I thought my scalping strategy was solid. Turns out, my average loss was 1.8x my average win. After adjusting, my net profit jumped <span class="text-accent">280%</span> in a month."</p>
+                    <div class="testimonial-author">
+                        <img src="https://api.dicebear.com/7.x/personas/svg?seed=Alex" alt="Alex Chen Avatar">
+                        <div class="testimonial-author-info">
+                            <strong>Alex Chen</strong>
+                            <span class="body-small">Futures Trader</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="body-regular">"I was consistently profitable, but couldn't explain why. Quantum Edge showed me my best trades happen between 9:30-10:30 AM EST on ES. My win rate in that window is <span class="text-accent">78%</span>. Now I focus my energy there and my daily P&L is up <span class="text-accent">150%</span>."</p>
+                    <div class="testimonial-author">
+                        <img src="https://api.dicebear.com/7.x/personas/svg?seed=Sarah" alt="Sarah Miller Avatar">
+                        <div class="testimonial-author-info">
+                            <strong>Sarah Miller</strong>
+                            <span class="body-small">Day Trader</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="body-regular">"The biggest eye-opener was seeing my R:R ratio for crypto swings. I was leaving so much on the table. After optimizing based on the journal's insights, I've added an extra <span class="text-accent">$12,000</span> to my account this quarter."</p>
+                    <div class="testimonial-author">
+                        <img src="https://api.dicebear.com/7.x/personas/svg?seed=David" alt="David Kim Avatar">
+                        <div class="testimonial-author-info">
+                            <strong>David Kim</strong>
+                            <span class="body-small">Crypto Pro</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6 — PRICING -->
+    <section class="pricing section-padding" id="pricing">
+        <div class="container">
+            <h2 class="text-primary">Choose Your Edge. Start Profiting.</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div>
+                        <h3>Basic</h3>
+                        <span class="price">$19<span class="body-large">/mo</span></span>
+                        <span class="billing-cycle">Billed Annually</span>
+                        <ul class="feature-list">
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Track up to 50 trades/month</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Basic analytics dashboard</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 1 strategy slot</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Standard email support</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                    <p class="trial-info">14-day free trial, no credit card required.</p>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div>
+                        <h3>Pro <span class="caption">(Most Popular)</span></h3>
+                        <span class="price">$39<span class="body-large">/mo</span></span>
+                        <span class="billing-cycle">Billed Annually</span>
+                        <ul class="feature-list">
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Unlimited trades</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Advanced analytics & reports</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> 5 strategy slots</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom tags & filters</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Priority email support</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Start Pro Trial</a>
+                    <p class="trial-info">14-day free trial, no credit card required.</p>
+                </div>
+
+                <div class="pricing-card">
+                    <div>
+                        <h3>Elite</h3>
+                        <span class="price">$79<span class="body-large">/mo</span></span>
+                        <span class="billing-cycle">Billed Annually</span>
+                        <ul class="feature-list">
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> All Pro features</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> AI-powered insights & alerts</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Unlimited strategy slots</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Dedicated account manager</li>
+                            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> API access</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary">Contact Sales</a>
+                    <p class="trial-info">14-day free trial, no credit card required.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 7 — FINAL CTA (Close the loop) -->
+    <section class="final-cta section-padding">
+        <div class="container">
+            <h2 class="text-primary">Still guessing which trades are costing you money? Stop leaving profit on the table.</h2>
+            <a href="#pricing" class="btn btn-primary">Start Your Free Trial Today</a>
+        </div>
+    </section>
+
+    <!-- SECTION 8 — FOOTER (Minimal) -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <a href="#" class="footer-logo">Quantum Edge</a>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Support</a>
+            </div>
+            <div class="footer-social">
+                <a href="#" aria-label="Twitter">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17-18 11.6 2.2.1 4.4-.6 6-2 1.1 1.2 3 2.1 5.1 2.1 6 0 10-5.4 10-12.4v-.2c.7-.5 1.3-1.1 1.9-1.7z"></path></svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+            </div>
+            <p class="footer-copyright body-small">&copy; 2023 Quantum Edge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            // 1. CURSOR-FOLLOWING GRADIENT on hero section
+            const heroSection = document.querySelector('.hero');
+            if (heroSection && !prefersReducedMotion) {
+                heroSection.addEventListener('mousemove', (e) => {
+                    const rect = heroSection.getBoundingClientRect();
+                    const x = (e.clientX - rect.left) / rect.width * 100;
+                    const y = (e.clientY - rect.top) / rect.height * 100;
+                    // Using CSS variable for accent color
+                    const accentColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-accent').trim();
+                    heroSection.style.background = `radial-gradient(circle at ${x}% ${y}%, ${accentColor}33, transparent 50%), url('hero-bg.png') center/cover no-repeat`;
+                    heroSection.style.backgroundBlendMode = `overlay`; // Blend with the image
+                });
+                heroSection.addEventListener('mouseleave', () => {
+                    // Reset to original background on mouse leave
+                    heroSection.style.background = `url('hero-bg.png') center/cover no-repeat`;
+                    heroSection.style.backgroundBlendMode = `normal`;
+                });
+            }
+
+            // 2. MAGNETIC BUTTONS — CTA buttons pull slightly toward cursor on hover
+            const primaryButtons = document.querySelectorAll('.btn-primary');
+            if (!prefersReducedMotion) {
+                primaryButtons.forEach(btn => {
+                    btn.addEventListener('mousemove', (e) => {
+                        const rect = btn.getBoundingClientRect();
+                        const x = e.clientX - rect.left - rect.width / 2;
+                        const y = e.clientY - rect.top - rect.height / 2;
+                        btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+                    });
+                    btn.addEventListener('mouseleave', () => {
+                        btn.style.transform = '';
+                    });
+                });
+            }
+
+            // 3. SCROLL PROGRESS BAR at top of page
+            const progressBar = document.getElementById('scroll-progress-bar');
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollY / docHeight) * 100;
+                progressBar.style.width = `${parseFloat(scrollPercent)}%`;
+            });
+        });
+    </script>
+</body>
+</html>

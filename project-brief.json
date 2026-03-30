@@ -1,0 +1,34 @@
+{
+  "project_name": "premium-trading-journal",
+  "description": "A premium trading journal designed for Futures and Crypto daytraders to analyze their performance and find their trading edge.",
+  "type": "saas",
+  "style": "modern|dark",
+  "color_scheme": "dark",
+  "sections": [
+    "hero",
+    "features",
+    "pricing",
+    "footer"
+  ],
+  "features": [
+    "P&L Analytics per Strategy",
+    "Win-Rate Breakdown per Setup and Timeframe",
+    "Entry/Exit Timing Heatmap",
+    "Backtesting with historical data",
+    "Equity Curve Tracking",
+    "user-authentication",
+    "subscription-management",
+    "free-trial",
+    "responsive",
+    "seo"
+  ],
+  "target_audience": "Daytraders who make 10-30 trades per day and are looking to find and refine their trading edge.",
+  "reference_urls": [
+    "https://tradezella.com",
+    "https://linear.app"
+  ],
+  "framework": "nextjs",
+  "original_prompt": "Premium Trading Journal fuer Futures und Crypto Daytrader. Dark theme mit Electric Blue (#0066FF) und Magenta Akzent. Inspiriert von Tradezella und Linear.app Design. Features: P&L Analytics per Strategy, Win-Rate Breakdown per Setup und Timeframe, Entry/Exit Timing Heatmap, Backtesting mit historischen Daten, Equity Curve Tracking. Zielgruppe: Trader die 10-30 Trades am Tag machen und ihre Edge finden wollen. Pricing: Starter Free, Pro 39/mo, Elite 89/mo mit 14-Tage Trial.",
+  "hero_image": "hero-bg.png",
+  "product_mockup": "product-mockup.png"
+}
