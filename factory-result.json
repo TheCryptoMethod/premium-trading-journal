@@ -1,0 +1,65 @@
+{
+  "prompt": "Premium Trading Journal fuer Futures und Crypto Daytrader. Dark theme mit Electric Blue (#0066FF) und Magenta Akzent. Inspiriert von Tradezella und Linear.app Design. Features: P&L Analytics per Strategy, Win-Rate Breakdown per Setup und Timeframe, Entry/Exit Timing Heatmap, Backtesting mit historischen Daten, Equity Curve Tracking. Zielgruppe: Trader die 10-30 Trades am Tag machen und ihre Edge finden wollen. Pricing: Starter Free, Pro 39/mo, Elite 89/mo mit 14-Tage Trial.",
+  "brief": {
+    "project_name": "premium-trading-journal",
+    "description": "A premium trading journal designed for Futures and Crypto daytraders to analyze their performance and find their trading edge.",
+    "type": "saas",
+    "style": "modern|dark",
+    "color_scheme": "dark",
+    "sections": [
+      "hero",
+      "features",
+      "pricing",
+      "footer"
+    ],
+    "features": [
+      "P&L Analytics per Strategy",
+      "Win-Rate Breakdown per Setup and Timeframe",
+      "Entry/Exit Timing Heatmap",
+      "Backtesting with historical data",
+      "Equity Curve Tracking",
+      "user-authentication",
+      "subscription-management",
+      "free-trial",
+      "responsive",
+      "seo"
+    ],
+    "target_audience": "Daytraders who make 10-30 trades per day and are looking to find and refine their trading edge.",
+    "reference_urls": [
+      "https://tradezella.com",
+      "https://linear.app"
+    ],
+    "framework": "nextjs",
+    "original_prompt": "Premium Trading Journal fuer Futures und Crypto Daytrader. Dark theme mit Electric Blue (#0066FF) und Magenta Akzent. Inspiriert von Tradezella und Linear.app Design. Features: P&L Analytics per Strategy, Win-Rate Breakdown per Setup und Timeframe, Entry/Exit Timing Heatmap, Backtesting mit historischen Daten, Equity Curve Tracking. Zielgruppe: Trader die 10-30 Trades am Tag machen und ihre Edge finden wollen. Pricing: Starter Free, Pro 39/mo, Elite 89/mo mit 14-Tage Trial.",
+    "hero_image": "hero-bg.png",
+    "product_mockup": "product-mockup.png"
+  },
+  "project_dir": "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal",
+  "qa": {
+    "passed": true,
+    "score": 16,
+    "max_score": 15,
+    "issues": [
+      "Missing navigation",
+      "No CSS animations \u2014 site feels static"
+    ],
+    "html_size": 44520,
+    "screenshots": {
+      "desktop": "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\screenshot-desktop.png",
+      "scroll_shots": [
+        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-00.png",
+        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-01.png",
+        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-02.png",
+        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-03.png",
+        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-04.png",
+        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-05.png",
+        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-06.png"
+      ],
+      "video": "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\videos\\bb4cce87dbdb375a94181e085195160c.webm",
+      "mobile": "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\screenshot-mobile.png"
+    }
+  },
+  "url": "https://thecryptomethod.github.io/premium-trading-journal/",
+  "duration": 128.4,
+  "timestamp": "2026-03-31T01:07:38.636202"
+}

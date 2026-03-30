@@ -1,34 +1,32 @@
 {
   "project_name": "premium-trading-journal",
-  "description": "A premium trading journal designed for Futures and Crypto daytraders to analyze their performance and find their trading edge.",
+  "description": "A premium trading journal for Futures and Crypto Daytraders, offering advanced analytics like P&L, win-rate, entry/exit timing, backtesting, and equity curve tracking.",
   "type": "saas",
-  "style": "modern|dark",
+  "style": "dark",
   "color_scheme": "dark",
   "sections": [
     "hero",
     "features",
     "pricing",
+    "faq",
     "footer"
   ],
   "features": [
     "P&L Analytics per Strategy",
-    "Win-Rate Breakdown per Setup and Timeframe",
+    "Win-Rate per Setup/Timeframe",
     "Entry/Exit Timing Heatmap",
-    "Backtesting with historical data",
-    "Equity Curve Tracking",
-    "user-authentication",
-    "subscription-management",
-    "free-trial",
-    "responsive",
-    "seo"
+    "Backtesting",
+    "Equity Curve",
+    "14-Day Trial",
+    "responsive"
   ],
-  "target_audience": "Daytraders who make 10-30 trades per day and are looking to find and refine their trading edge.",
+  "target_audience": "Daytraders (Futures and Crypto) making 10-30 trades per day.",
   "reference_urls": [
-    "https://tradezella.com",
-    "https://linear.app"
+    "Tradezella",
+    "Linear.app"
   ],
-  "framework": "nextjs",
-  "original_prompt": "Premium Trading Journal fuer Futures und Crypto Daytrader. Dark theme mit Electric Blue (#0066FF) und Magenta Akzent. Inspiriert von Tradezella und Linear.app Design. Features: P&L Analytics per Strategy, Win-Rate Breakdown per Setup und Timeframe, Entry/Exit Timing Heatmap, Backtesting mit historischen Daten, Equity Curve Tracking. Zielgruppe: Trader die 10-30 Trades am Tag machen und ihre Edge finden wollen. Pricing: Starter Free, Pro 39/mo, Elite 89/mo mit 14-Tage Trial.",
+  "framework": null,
+  "original_prompt": "Premium Trading Journal fuer Futures und Crypto Daytrader. Dark theme mit Electric Blue und Magenta Akzent. Inspiriert von Tradezella + Linear.app. Features: P&L Analytics per Strategy, Win-Rate per Setup/Timeframe, Entry/Exit Timing Heatmap, Backtesting, Equity Curve. Zielgruppe: Trader mit 10-30 Trades/Tag. Pricing: Starter Free, Pro 39/mo, Elite 89/mo, 14-Tage Trial.",
   "hero_image": "hero-bg.png",
   "product_mockup": "product-mockup.png"
 }
