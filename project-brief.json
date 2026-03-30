@@ -1,6 +1,6 @@
 {
   "project_name": "premium-trading-journal",
-  "description": "A premium trading journal for Futures and Crypto Daytraders, offering advanced analytics like P&L, win-rate, entry/exit timing, backtesting, and equity curve tracking.",
+  "description": "A premium trading journal for active daytraders, offering advanced analytics, backtesting, and performance tracking.",
   "type": "saas",
   "style": "dark",
   "color_scheme": "dark",
@@ -8,25 +8,24 @@
     "hero",
     "features",
     "pricing",
-    "faq",
     "footer"
   ],
   "features": [
-    "P&L Analytics per Strategy",
-    "Win-Rate per Setup/Timeframe",
-    "Entry/Exit Timing Heatmap",
-    "Backtesting",
-    "Equity Curve",
-    "14-Day Trial",
-    "responsive"
+    "pnl-analytics-per-strategy",
+    "win-rate-per-setup",
+    "entry-exit-timing-heatmap",
+    "backtesting",
+    "equity-curve",
+    "responsive",
+    "seo"
   ],
-  "target_audience": "Daytraders (Futures and Crypto) making 10-30 trades per day.",
+  "target_audience": "Futures and Crypto traders making 10-30 trades per day.",
   "reference_urls": [
-    "Tradezella",
-    "Linear.app"
+    "https://tradezella.com",
+    "https://linear.app"
   ],
-  "framework": null,
-  "original_prompt": "Premium Trading Journal fuer Futures und Crypto Daytrader. Dark theme mit Electric Blue und Magenta Akzent. Inspiriert von Tradezella + Linear.app. Features: P&L Analytics per Strategy, Win-Rate per Setup/Timeframe, Entry/Exit Timing Heatmap, Backtesting, Equity Curve. Zielgruppe: Trader mit 10-30 Trades/Tag. Pricing: Starter Free, Pro 39/mo, Elite 89/mo, 14-Tage Trial.",
+  "framework": "nextjs",
+  "original_prompt": "Premium Trading Journal fuer aktive Daytrader. Dark theme, Electric Blue und Magenta Akzente. Inspiriert von Tradezella und Linear.app. Features: P&L Analytics per Strategy, Win-Rate per Setup, Entry/Exit Timing Heatmap, Backtesting, Equity Curve. Zielgruppe: Futures und Crypto Trader mit 10-30 Trades/Tag. Pricing: Free, Pro 39/mo, Elite 89/mo.",
   "hero_image": "hero-bg.png",
   "product_mockup": "product-mockup.png"
 }

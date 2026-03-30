@@ -3,333 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Trade Journal Pro: Advanced analytics for Futures and Crypto Daytraders. Track P&L, win-rate, entry/exit timing, and backtest strategies to optimize your trading performance.">
-    <meta name="keywords" content="trading journal, day trading, futures, crypto, cryptocurrency, trading analytics, P&L, win rate, equity curve, backtesting, trade tracking, trading software">
-    <meta name="author" content="Trade Journal Pro">
+    <title>The Edge Journal – Master Your Trades, Maximize Your Profits</title>
+    <meta name="description" content="A premium trading journal for active Futures and Crypto daytraders. Advanced analytics, backtesting, and performance tracking to refine your edge.">
+    <meta name="keywords" content="trading journal, futures trading, crypto trading, day trading, trade analytics, backtesting, performance tracking, trading strategy, trading edge">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.tradejournalpro.com/">
-    <meta property="og:title" content="Trade Journal Pro - Advanced Analytics for Futures & Crypto Daytraders">
-    <meta property="og:description" content="Stop guessing. Start profiting. Trade Journal Pro decodes every entry, exit, and P&L swing to show you exactly why you're winning and where you're bleeding capital.">
-    <meta property="og:image" content="https://www.tradejournalpro.com/og-image.jpg"> <!-- Placeholder, replace with actual image -->
+    <meta property="og:url" content="https://www.yourjournal.com/"> <!-- Replace with your actual URL -->
+    <meta property="og:title" content="The Edge Journal – Master Your Trades, Maximize Your Profits">
+    <meta property="og:description" content="A premium trading journal for active Futures and Crypto daytraders. Advanced analytics, backtesting, and performance tracking to refine your edge.">
+    <meta property="og:image" content="https://www.yourjournal.com/social-share.jpg"> <!-- Replace with actual social share image -->
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.tradejournalpro.com/">
-    <meta property="twitter:title" content="Trade Journal Pro - Advanced Analytics for Futures & Crypto Daytraders">
-    <meta property="twitter:description" content="Stop guessing. Start profiting. Trade Journal Pro decodes every entry, exit, and P&L swing to show you exactly why you're winning and where you're bleeding capital.">
-    <meta property="twitter:image" content="https://www.tradejournalpro.com/og-image.jpg"> <!-- Placeholder, replace with actual image -->
-
-    <title>Trade Journal Pro - Advanced Analytics for Futures & Crypto Daytraders</title>
+    <meta property="twitter:url" content="https://www.yourjournal.com/"> <!-- Replace with your actual URL -->
+    <meta property="twitter:title" content="The Edge Journal – Master Your Trades, Maximize Your Profits">
+    <meta property="twitter:description" content="A premium trading journal for active Futures and Crypto daytraders. Advanced analytics, backtesting, and performance tracking to refine your edge.">
+    <meta property="twitter:image" content="https://www.yourjournal.com/social-share.jpg"> <!-- Replace with actual social share image -->
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
-
-    <script>
-        // Add 'js' class to html element for JS-dependent CSS
-        document.documentElement.classList.add('js');
-    </script>
+    <!-- Add 'js' class to html element for JS-dependent CSS -->
+    <script>document.documentElement.classList.add('js')</script>
 
     <style>
-        /* Design Tokens */
+        /* 1. Design Tokens (CSS Custom Properties) */
         :root {
             /* Colors */
-            --color-background-primary: #0A0A0C;
-            --color-background-secondary: #1A1A1D;
-            --color-background-tertiary: #2C2C30;
-            --color-primary: #6C63FF;
-            --color-primary-light: #8E88FF;
-            --color-accent: #00C896;
-            --color-text-primary: #E0E0E0;
-            --color-text-secondary: #A0A0A0;
-            --color-text-tertiary: #6B6B6B;
-            --color-success: #00C896;
-            --color-error: #FF4D4D;
-            --color-warning: #FFC107;
-            --color-info: #5BC0DE;
-            --color-border-light: #3A3A3F;
-            --color-border-dark: #252528;
+            --bg-primary: #0A0A0C;
+            --bg-secondary: #1A1A1E;
+            --text-primary: #E0E0E0;
+            --text-secondary: #A0A0A0;
+            --primary-accent: #2A64F6;
+            --primary-accent-dark: #1e4ac7; /* Darkened for hover */
+            --secondary-accent: #00C4B4;
+            --success: #00E676;
+            --warning: #FFC107;
+            --danger: #DC3545;
+            --white: #FFFFFF;
 
             /* Typography */
-            --font-family-headings: 'Outfit', sans-serif; /* Using Outfit for headings as per prompt suggestion */
-            --font-family-body: 'Inter', sans-serif;
-            --font-weight-light: 300;
-            --font-weight-regular: 400;
-            --font-weight-medium: 500;
-            --font-weight-semibold: 600;
-            --font-weight-bold: 700;
-
-            /* Font Sizes - Mobile First */
-            --font-size-h1: 36px;
-            --font-size-h2: 28px;
-            --font-size-h3: 24px;
-            --font-size-h4: 18px;
-            --font-size-body-lg: 18px;
-            --font-size-body: 16px;
-            --font-size-body-sm: 14px;
-            --font-size-caption: 12px;
+            --font-family-inter: 'Inter', sans-serif;
+            --h1-size: 48px; --h1-weight: 800; --h1-line-height: 1.2;
+            --h2-size: 36px; --h2-weight: 700; --h2-line-height: 1.3;
+            --h3-size: 28px; --h3-weight: 600; --h3-line-height: 1.4;
+            --h4-size: 22px; --h4-weight: 600; --h4-line-height: 1.5;
+            --body-lg-size: 18px; --body-lg-weight: 400; --body-lg-line-height: 1.6;
+            --body-md-size: 16px; --body-md-weight: 400; --body-md-line-height: 1.6;
+            --body-sm-size: 14px; --body-sm-weight: 400; --body-sm-line-height: 1.7;
+            --caption-size: 12px; --caption-weight: 300; --caption-line-height: 1.8;
 
             /* Spacing */
-            --spacing-xs: 4px;
-            --spacing-sm: 8px;
-            --spacing-md: 16px;
-            --spacing-lg: 24px;
-            --spacing-xl: 32px;
-            --spacing-2xl: 48px;
-            --spacing-3xl: 64px;
-            --spacing-4xl: 96px;
-            --spacing-5xl: 128px;
+            --space-xs: 4px;
+            --space-sm: 8px;
+            --space-md: 16px;
+            --space-lg: 24px;
+            --space-xl: 32px;
+            --space-xxl: 48px;
+            --space-xxxl: 64px;
 
             /* Border Radius */
-            --border-radius-none: 0px;
-            --border-radius-sm: 4px;
-            --border-radius-md: 8px;
-            --border-radius-lg: 12px;
-            --border-radius-full: 9999px;
+            --radius-base: 8px;
+            --radius-sm: 4px;
+            --radius-pill: 9999px;
 
             /* Shadows */
-            --shadow-sm: 0px 1px 3px rgba(0, 0, 0, 0.2), 0px 1px 2px rgba(0, 0, 0, 0.12);
-            --shadow-md: 0px 4px 6px rgba(0, 0, 0, 0.3), 0px 2px 4px rgba(0, 0, 0, 0.18);
-            --shadow-lg: 0px 10px 15px rgba(0, 0, 0, 0.4), 0px 4px 6px rgba(0, 0, 0, 0.24);
-            --shadow-card-hover: 0px 0px 0px 2px var(--color-primary) inset;
-            --shadow-button-focus: 0px 0px 0px 3px rgba(108, 99, 255, 0.5);
+            --shadow-sm: 0px 1px 3px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0px 4px 8px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0px 10px 20px rgba(0, 0, 0, 0.5);
+            --shadow-inner: inset 0px 1px 2px rgba(0, 0, 0, 0.6);
 
-            /* Animations */
-            --animation-duration-fast: 150ms;
-            --animation-duration-normal: 250ms;
-            --animation-duration-slow: 350ms;
-            --animation-easing-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-            --animation-easing-ease-out: cubic-bezier(0, 0, 0.2, 1);
-
-            /* Breakpoints */
-            --breakpoint-mobile-max: 767px;
-            --breakpoint-tablet-min: 768px;
-            --breakpoint-tablet-max: 1023px;
-            --breakpoint-desktop-min: 1024px;
-            --breakpoint-desktop-max: 1439px;
-            --breakpoint-large-desktop-min: 1440px;
+            /* Transitions */
+            --transition-short: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-medium: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-long: 350ms cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Base Styles */
+        /* Base Styles & Reset */
         *, *::before, *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
-            font-family: var(--font-family-body);
-            color: var(--color-text-primary);
-            background-color: var(--color-background-primary);
-            line-height: 1.6;
+            font-family: var(--font-family-inter);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: var(--body-md-line-height);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-        }
-
-        a {
-            color: var(--color-primary);
-            text-decoration: none;
-            transition: color var(--animation-duration-fast) var(--animation-easing-ease-in-out);
-        }
-
-        a:hover {
-            color: var(--color-primary-light);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
+            overflow-x: hidden; /* Prevent horizontal scroll from magnetic buttons */
         }
 
         /* Typography */
         h1, h2, h3, h4 {
-            font-family: var(--font-family-headings);
-            color: var(--color-text-primary);
-            line-height: 1.2;
-            margin-bottom: var(--spacing-md);
+            color: var(--white);
+            font-weight: var(--h1-weight); /* Default to H1 weight, overridden below */
+            margin-bottom: var(--space-md);
         }
+        h1 { font-size: var(--h1-size); font-weight: var(--h1-weight); line-height: var(--h1-line-height); }
+        h2 { font-size: var(--h2-size); font-weight: var(--h2-weight); line-height: var(--h2-line-height); }
+        h3 { font-size: var(--h3-size); font-weight: var(--h3-weight); line-height: var(--h3-line-height); }
+        h4 { font-size: var(--h4-size); font-weight: var(--h4-weight); line-height: var(--h4-line-height); }
 
-        h1 { font-size: var(--font-size-h1); font-weight: var(--font-weight-bold); }
-        h2 { font-size: var(--font-size-h2); font-weight: var(--font-weight-semibold); }
-        h3 { font-size: var(--font-size-h3); font-weight: var(--font-weight-semibold); }
-        h4 { font-size: var(--font-size-h4); font-weight: var(--font-weight-medium); }
-
-        .text-body-lg { font-size: var(--font-size-body-lg); line-height: 1.6; font-weight: var(--font-weight-regular); }
-        .text-body { font-size: var(--font-size-body); line-height: 1.6; font-weight: var(--font-weight-regular); }
-        .text-body-sm { font-size: var(--font-size-body-sm); line-height: 1.6; font-weight: var(--font-weight-regular); }
-        .text-caption { font-size: var(--font-size-caption); line-height: 1.5; font-weight: var(--font-weight-regular); }
-
-        /* Responsive Typography */
-        @media (min-width: var(--breakpoint-tablet-min)) {
-            h1 { font-size: 48px; }
-            h2 { font-size: 36px; }
-            h3 { font-size: 28px; }
-            h4 { font-size: 20px; }
+        p {
+            font-size: var(--body-md-size);
+            line-height: var(--body-md-line-height);
+            color: var(--text-primary);
+            margin-bottom: var(--space-md);
         }
+        .body-lg { font-size: var(--body-lg-size); font-weight: var(--body-lg-weight); line-height: var(--body-lg-line-height); }
+        .body-md { font-size: var(--body-md-size); font-weight: var(--body-md-weight); line-height: var(--body-md-line-height); }
+        .body-sm { font-size: var(--body-sm-size); font-weight: var(--body-sm-weight); line-height: var(--body-sm-line-height); color: var(--text-secondary); }
+        .caption { font-size: var(--caption-size); font-weight: var(--caption-weight); line-height: var(--caption-line-height); color: var(--text-secondary); }
+        .strong { font-weight: var(--h3-weight); } /* Using H3 weight for strong */
 
-        @media (min-width: var(--breakpoint-desktop-min)) {
-            h1 { font-size: 64px; }
-            h2 { font-size: 48px; }
-            h3 { font-size: 32px; }
-            h4 { font-size: 24px; }
+        a {
+            color: var(--primary-accent);
+            text-decoration: none;
+            transition: color var(--transition-short);
+        }
+        a:hover {
+            text-decoration: underline;
+            color: var(--primary-accent-dark);
         }
 
         /* Utility Classes */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--spacing-md);
+            padding: 0 var(--space-md);
         }
-
         .text-center { text-align: center; }
-        .text-primary { color: var(--color-text-primary); }
-        .text-secondary { color: var(--color-text-secondary); }
-        .text-accent { color: var(--color-accent); }
-        .text-primary-brand { color: var(--color-primary); }
-
-        .mb-sm { margin-bottom: var(--spacing-sm); }
-        .mb-md { margin-bottom: var(--spacing-md); }
-        .mb-lg { margin-bottom: var(--spacing-lg); }
-        .mb-xl { margin-bottom: var(--spacing-xl); }
-        .mt-xl { margin-top: var(--spacing-xl); }
+        .mb-xxl { margin-bottom: var(--space-xxl); }
+        .mb-xl { margin-bottom: var(--space-xl); }
+        .mb-lg { margin-bottom: var(--space-lg); }
+        .mb-md { margin-bottom: var(--space-md); }
+        .mt-xxl { margin-top: var(--space-xxl); }
+        .mt-xl { margin-top: var(--space-xl); }
+        .mt-lg { margin-top: var(--space-lg); }
+        .mt-md { margin-top: var(--space-md); }
 
         /* Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: var(--spacing-md) var(--spacing-xl);
-            border-radius: var(--border-radius-md);
-            font-family: var(--font-family-body);
-            font-weight: var(--font-weight-semibold);
-            font-size: var(--font-size-body);
+            padding: var(--space-md) var(--space-xl);
+            border-radius: var(--radius-base);
+            font-weight: var(--h3-weight);
+            font-size: var(--body-lg-size);
             cursor: pointer;
             border: none;
-            transition: background-color var(--animation-duration-fast) var(--animation-easing-ease-in-out),
-                        transform var(--animation-duration-fast) var(--animation-easing-ease-in-out),
-                        box-shadow var(--animation-duration-fast) var(--animation-easing-ease-in-out);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
+            transition: background-color var(--transition-short), transform var(--transition-short), box-shadow var(--transition-short);
+            text-decoration: none;
+            position: relative; /* For magnetic effect */
+            overflow: hidden; /* For magnetic effect */
         }
-
-        .btn:focus-visible {
-            outline: none;
-            box-shadow: var(--shadow-button-focus);
-        }
-
         .btn-primary {
-            background-color: var(--color-accent);
-            color: var(--color-background-primary);
+            background-color: var(--primary-accent);
+            color: var(--white);
+            box-shadow: var(--shadow-sm);
         }
-
         .btn-primary:hover {
-            background-color: color-mix(in srgb, var(--color-accent) 85%, black); /* Darken by 15% */
+            background-color: var(--primary-accent-dark);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
         }
-
         .btn-secondary {
             background-color: transparent;
-            color: var(--color-primary);
-            border: 1px solid var(--color-primary);
+            border: 1px solid var(--primary-accent);
+            color: var(--primary-accent);
         }
-
         .btn-secondary:hover {
-            background-color: rgba(108, 99, 255, 0.1);
+            background-color: rgba(42, 100, 246, 0.1);
+            color: var(--primary-accent-dark);
+            border-color: var(--primary-accent-dark);
+            transform: translateY(-2px);
         }
-
-        /* Magnetic Button Specifics */
-        .magnetic-btn {
-            will-change: transform;
+        .btn-group {
+            display: flex;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn-magnetic-content {
+            transition: transform var(--transition-short);
         }
 
         /* Scroll Progress Bar */
-        #scroll-progress-bar {
+        #scroll-progress {
             position: fixed;
             top: 0;
             left: 0;
             height: 3px;
-            background-color: var(--color-accent);
+            background-color: var(--primary-accent);
             width: 0%;
             z-index: 1000;
-            transition: width 0.1s linear;
         }
 
-        /* Header */
-        header {
-            background-color: var(--color-background-primary);
-            padding: var(--spacing-md) 0;
-            border-bottom: 1px solid var(--color-border-dark);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-family-headings);
-            font-weight: var(--font-weight-bold);
-            font-size: var(--font-size-h4);
-            color: var(--color-text-primary);
-            display: flex;
-            align-items: center;
-        }
-
-        .logo svg {
-            margin-right: var(--spacing-sm);
-            width: 28px;
-            height: 28px;
-            fill: var(--color-primary);
-        }
-
-        .nav-links a {
-            color: var(--color-text-secondary);
-            margin-left: var(--spacing-lg);
-            font-weight: var(--font-weight-medium);
-        }
-
-        .nav-links a:hover {
-            color: var(--color-primary);
-        }
-
-        .header-actions .btn {
-            margin-left: var(--spacing-md);
-        }
-
-        /* Sections */
+        /* Section Styling */
         section {
-            padding: var(--spacing-4xl) 0;
+            padding: var(--space-xxxl) 0;
             position: relative;
-            overflow: hidden;
         }
 
         /* Scroll Reveal Animation */
         .js section {
             opacity: 0;
             transform: translateY(40px);
-            transition: opacity 0.8s var(--animation-easing-ease-out), transform 0.8s var(--animation-easing-ease-out);
+            transition: opacity 0.8s ease, transform 0.8s ease;
         }
-
         .js section.visible {
             opacity: 1;
             transform: none;
         }
-
         /* Disable animations for users who prefer reduced motion */
         @media (prefers-reduced-motion: reduce) {
             .js section {
@@ -337,36 +229,39 @@
                 transform: none;
                 transition: none;
             }
-            .magnetic-btn {
-                transform: none !important;
+            .btn, .card, .feature-card, .pricing-card {
                 transition: none !important;
             }
-            .btn:hover {
-                transform: none !important;
-            }
-            .card:hover {
+            .btn:hover, .card:hover, .feature-card:hover, .pricing-card:hover {
                 transform: none !important;
                 box-shadow: var(--shadow-sm) !important;
             }
+            #hero::before {
+                animation: none !important;
+            }
+            #hero {
+                background-image: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%), url('hero-bg.png');
+                background-size: cover;
+                background-position: center;
+            }
+            .hero-gradient-overlay {
+                display: none; /* Hide the JS-driven gradient */
+            }
         }
+
 
         /* Hero Section */
         #hero {
-            background: url('hero-bg.png') center/cover, var(--color-background-primary);
-            background-blend-mode: overlay;
             position: relative;
-            padding-top: var(--spacing-5xl);
-            padding-bottom: var(--spacing-5xl);
-            min-height: 80vh;
+            padding: var(--space-xxxl) 0;
             display: flex;
             align-items: center;
             justify-content: center;
+            min-height: 80vh;
             text-align: center;
-            /* Initial state for cursor gradient */
-            background-image: radial-gradient(circle at 50% 50%, rgba(108, 99, 255, 0.1) 0%, rgba(10, 10, 12, 0.8) 70%), url('hero-bg.png');
-            background-size: cover;
-            background-position: center;
-            background-blend-mode: overlay;
+            overflow: hidden; /* For cursor gradient */
+            background-image: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%); /* Base gradient */
+            background-color: var(--bg-primary); /* Fallback */
         }
 
         #hero::before {
@@ -374,734 +269,631 @@
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: var(--color-background-primary);
-            opacity: 0.8; /* Adjust for desired background image visibility */
+            width: 100%;
+            height: 100%;
+            background: url('hero-bg.png') center/cover no-repeat;
+            opacity: 0.3; /* Specific opacity for the image */
             z-index: 0;
         }
 
+        .hero-gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(42, 100, 246, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: 1;
+            transition: background 0.1s ease-out; /* Smooth gradient movement */
+        }
+
         #hero .container {
+            position: relative;
+            z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: var(--spacing-3xl);
-            position: relative;
-            z-index: 1;
-        }
-
-        #hero-content {
-            max-width: 900px;
-            text-align: center;
+            gap: var(--space-xl);
         }
 
         #hero h1 {
-            margin-bottom: var(--spacing-lg);
-            line-height: 1.1;
+            font-size: var(--h1-size);
+            font-weight: var(--h1-weight);
+            line-height: var(--h1-line-height);
+            color: var(--white);
+            max-width: 900px;
+            margin-bottom: var(--space-md);
         }
-
-        #hero p {
-            color: var(--color-text-secondary);
-            margin-bottom: var(--spacing-2xl);
+        #hero .body-lg {
             max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xl);
         }
-
-        .hero-actions {
-            display: flex;
-            gap: var(--spacing-md);
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
         .mockup {
             width: 70%;
             max-width: 800px;
-            border-radius: var(--border-radius-lg);
+            border-radius: 12px;
             box-shadow: 0 25px 50px rgba(0,0,0,0.5);
             transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
-            margin-top: var(--spacing-4xl);
-            filter: brightness(0.9) saturate(1.1);
-            transition: transform 0.6s var(--animation-easing-ease-out), box-shadow 0.6s var(--animation-easing-ease-out);
-        }
-
-        @media (max-width: var(--breakpoint-tablet-max)) {
-            .mockup {
-                transform: perspective(1000px) rotateY(-2deg) rotateX(1deg); /* Less dramatic on smaller screens */
-                width: 90%;
-            }
-            #hero .container {
-                flex-direction: column;
-                text-align: center;
-            }
-            #hero-content {
-                order: 1;
-            }
-            .mockup {
-                order: 2;
-                margin-top: var(--spacing-2xl);
-            }
+            margin-top: var(--space-xxl);
+            transition: transform var(--transition-medium); /* Smooth transition on hover/focus if needed */
         }
 
         /* Problem Section */
-        #problem {
-            background-color: var(--color-background-secondary);
-            text-align: center;
-        }
-
         #problem h2 {
-            margin-bottom: var(--spacing-4xl);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: var(--space-xxl);
         }
-
-        .pain-points {
+        .problem-story {
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius-base);
+            padding: var(--space-xl);
+            margin-bottom: var(--space-lg);
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--danger);
+        }
+        .problem-story:last-child {
+            margin-bottom: 0;
+        }
+        .problem-story p {
+            color: var(--text-primary);
+            margin-bottom: 0;
+        }
+        .problem-grid {
             display: grid;
+            gap: var(--space-xl);
             grid-template-columns: 1fr;
-            gap: var(--spacing-3xl);
-            max-width: 900px;
-            margin: 0 auto;
         }
-
-        .pain-point {
-            background-color: var(--color-background-tertiary);
-            padding: var(--spacing-xl);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-sm);
-            text-align: left;
-            border: 1px solid var(--color-border-dark);
-        }
-
-        .pain-point p {
-            color: var(--color-text-secondary);
-            font-size: var(--font-size-body-lg);
-        }
-
-        @media (min-width: var(--breakpoint-tablet-min)) {
-            .pain-points {
+        @media (min-width: 768px) {
+            .problem-grid {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
         }
 
+
         /* Before/After Section */
         #before-after {
-            background-color: var(--color-background-primary);
+            background-color: var(--bg-secondary);
         }
-
-        #before-after h2 {
-            text-align: center;
-            margin-bottom: var(--spacing-4xl);
-        }
-
         .comparison-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: var(--spacing-3xl);
-            max-width: 1000px;
-            margin: 0 auto;
+            gap: var(--space-xl);
         }
-
-        .comparison-card {
-            background-color: var(--color-background-secondary);
-            padding: var(--spacing-2xl);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--color-border-dark);
-        }
-
-        .comparison-card h3 {
-            text-align: center;
-            margin-bottom: var(--spacing-xl);
-            position: relative;
-            padding-bottom: var(--spacing-md);
-        }
-
-        .comparison-card h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background-color: var(--color-primary);
-            border-radius: var(--border-radius-full);
-        }
-
-        .comparison-card.before h3::after { background-color: var(--color-error); }
-        .comparison-card.after h3::after { background-color: var(--color-success); }
-
-
-        .comparison-card ul {
-            list-style: none;
-        }
-
-        .comparison-card li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: var(--spacing-md);
-            color: var(--color-text-secondary);
-            font-size: var(--font-size-body);
-        }
-
-        .comparison-card li:last-child {
-            margin-bottom: 0;
-        }
-
-        .comparison-card li svg {
-            flex-shrink: 0;
-            margin-right: var(--spacing-md);
-            width: 20px;
-            height: 20px;
-        }
-
-        .comparison-card.before li svg { fill: var(--color-error); }
-        .comparison-card.after li svg { fill: var(--color-success); }
-
-        @media (min-width: var(--breakpoint-tablet-min)) {
+        @media (min-width: 768px) {
             .comparison-grid {
                 grid-template-columns: 1fr 1fr;
             }
         }
+        .comparison-card {
+            background-color: var(--bg-primary);
+            border-radius: var(--radius-base);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-md);
+        }
+        .comparison-card.without { border-left: 4px solid var(--danger); }
+        .comparison-card.with { border-left: 4px solid var(--success); }
+        .comparison-card h3 {
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+        }
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .comparison-card ul li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: var(--space-sm);
+            font-size: var(--body-md-size);
+            color: var(--text-primary);
+        }
+        .comparison-card ul li svg {
+            margin-right: var(--space-sm);
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+        }
+        .comparison-card ul li.negative svg { color: var(--danger); }
+        .comparison-card ul li.positive svg { color: var(--success); }
 
         /* Features Section */
-        #features {
-            background-color: var(--color-background-secondary);
-            text-align: center;
+        #features .section-description {
+            max-width: 768px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: var(--space-xxl);
+            color: var(--text-secondary);
         }
-
-        #features h2 {
-            margin-bottom: var(--spacing-4xl);
-        }
-
         .features-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: var(--spacing-2xl);
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: var(--space-xl);
         }
-
-        .feature-card {
-            background-color: var(--color-background-tertiary);
-            border-radius: var(--border-radius-lg);
-            padding: var(--spacing-xl);
-            box-shadow: var(--shadow-sm);
-            text-align: left;
-            border: 1px solid var(--color-border-dark);
-            transition: transform var(--animation-duration-normal) var(--animation-easing-ease-in-out),
-                        box-shadow var(--animation-duration-normal) var(--animation-easing-ease-in-out);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-md), var(--shadow-card-hover);
-        }
-
-        .feature-card .icon-wrapper {
-            width: 48px;
-            height: 48px;
-            background-color: rgba(108, 99, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: var(--spacing-md);
-        }
-
-        .feature-card .icon-wrapper svg {
-            width: 28px;
-            height: 28px;
-            fill: var(--color-primary);
-        }
-
-        .feature-card h4 {
-            margin-top: var(--spacing-md);
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .feature-card p {
-            color: var(--color-text-secondary);
-            font-size: var(--font-size-body);
-        }
-
-        @media (min-width: var(--breakpoint-tablet-min)) {
+        @media (min-width: 768px) {
             .features-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-
-        @media (min-width: var(--breakpoint-desktop-min)) {
+        @media (min-width: 1024px) {
             .features-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+        }
+        .feature-card {
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius-base);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-short), box-shadow var(--transition-short);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .feature-card svg {
+            width: 48px;
+            height: 48px;
+            color: var(--secondary-accent);
+            margin-bottom: var(--space-md);
+        }
+        .feature-card h4 {
+            margin-top: 0;
+            margin-bottom: var(--space-sm);
+            color: var(--white);
+        }
+        .feature-card p {
+            font-size: var(--body-md-size);
+            color: var(--text-primary);
+            margin-bottom: 0;
         }
 
         /* Social Proof Section */
         #social-proof {
-            background-color: var(--color-background-primary);
-            text-align: center;
+            background-color: var(--bg-secondary);
         }
-
-        #social-proof h2 {
-            margin-bottom: var(--spacing-4xl);
-        }
-
-        .stats-bar {
+        .stats-grid {
             display: flex;
-            justify-content: space-around;
             flex-wrap: wrap;
-            gap: var(--spacing-xl);
-            margin-bottom: var(--spacing-4xl);
+            justify-content: center;
+            gap: var(--space-xxl);
+            margin-bottom: var(--space-xxxl);
         }
-
         .stat-item {
             text-align: center;
         }
-
         .stat-item .number {
-            font-family: var(--font-family-headings);
-            font-size: var(--font-size-h2);
-            font-weight: var(--font-weight-bold);
-            color: var(--color-accent);
+            font-size: var(--h1-size);
+            font-weight: var(--h1-weight);
+            color: var(--primary-accent);
             line-height: 1;
         }
-
         .stat-item .label {
-            font-size: var(--font-size-body-lg);
-            color: var(--color-text-secondary);
-            margin-top: var(--spacing-sm);
+            font-size: var(--body-lg-size);
+            color: var(--text-secondary);
+            margin-top: var(--space-sm);
         }
-
         .testimonials-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: var(--spacing-2xl);
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: var(--space-xl);
         }
-
-        .testimonial-card {
-            background-color: var(--color-background-secondary);
-            padding: var(--spacing-xl);
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--shadow-md);
-            text-align: left;
-            border: 1px solid var(--color-border-dark);
-        }
-
-        .testimonial-card .quote {
-            font-size: var(--font-size-body-lg);
-            color: var(--color-text-primary);
-            margin-bottom: var(--spacing-lg);
-            font-style: italic;
-        }
-
-        .testimonial-card .author-info {
-            display: flex;
-            align-items: center;
-            margin-top: var(--spacing-lg);
-        }
-
-        .testimonial-card .author-avatar {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            margin-right: var(--spacing-md);
-            object-fit: cover;
-            border: 2px solid var(--color-primary);
-        }
-
-        .testimonial-card .author-name {
-            font-weight: var(--font-weight-semibold);
-            color: var(--color-text-primary);
-            font-size: var(--font-size-body);
-        }
-
-        .testimonial-card .author-title {
-            font-size: var(--font-size-body-sm);
-            color: var(--color-text-secondary);
-        }
-
-        @media (min-width: var(--breakpoint-tablet-min)) {
+        @media (min-width: 768px) {
             .testimonials-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-
-        @media (min-width: var(--breakpoint-desktop-min)) {
+        @media (min-width: 1024px) {
             .testimonials-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+        }
+        .testimonial-card {
+            background-color: var(--bg-primary);
+            border-radius: var(--radius-base);
+            padding: var(--space-xl);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-md);
+        }
+        .testimonial-card p {
+            font-size: var(--body-md-size);
+            color: var(--text-primary);
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+        .testimonial-author img {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--radius-pill);
+            object-fit: cover;
+            border: 2px solid var(--secondary-accent);
+        }
+        .author-info strong {
+            display: block;
+            font-size: var(--body-md-size);
+            font-weight: var(--h3-weight);
+            color: var(--white);
+        }
+        .author-info span {
+            font-size: var(--body-sm-size);
+            color: var(--text-secondary);
         }
 
         /* Pricing Section */
-        #pricing {
-            background-color: var(--color-background-secondary);
-            text-align: center;
+        #pricing .section-description {
+            max-width: 768px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: var(--space-xxl);
+            color: var(--text-secondary);
         }
-
-        #pricing h2 {
-            margin-bottom: var(--spacing-4xl);
-        }
-
         .pricing-toggle {
             display: inline-flex;
-            background-color: var(--color-background-tertiary);
-            border-radius: var(--border-radius-full);
-            padding: var(--spacing-xs);
-            margin-bottom: var(--spacing-3xl);
-            position: relative;
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius-pill);
+            padding: var(--space-xs);
+            margin-bottom: var(--space-xxl);
+            box-shadow: var(--shadow-sm);
         }
-
-        .pricing-toggle input[type="radio"] {
-            display: none;
-        }
-
-        .pricing-toggle label {
-            padding: var(--spacing-sm) var(--spacing-lg);
-            border-radius: var(--border-radius-full);
-            color: var(--color-text-secondary);
-            font-weight: var(--font-weight-medium);
+        .pricing-toggle button {
+            background-color: transparent;
+            color: var(--text-primary);
+            padding: var(--space-sm) var(--space-xl);
+            border-radius: var(--radius-pill);
+            border: none;
             cursor: pointer;
-            transition: color var(--animation-duration-fast) var(--animation-easing-ease-in-out);
-            position: relative;
-            z-index: 1;
+            font-weight: var(--h3-weight);
+            font-size: var(--body-md-size);
+            transition: background-color var(--transition-short), color var(--transition-short);
         }
-
-        .pricing-toggle input[type="radio"]:checked + label {
-            color: var(--color-text-primary);
+        .pricing-toggle button.active {
+            background-color: var(--primary-accent);
+            color: var(--white);
         }
-
-        .pricing-toggle .toggle-bg {
-            position: absolute;
-            top: var(--spacing-xs);
-            left: var(--spacing-xs);
-            height: calc(100% - calc(2 * var(--spacing-xs)));
-            width: calc(50% - var(--spacing-xs));
-            background-color: var(--color-primary);
-            border-radius: var(--border-radius-full);
-            transition: transform var(--animation-duration-normal) var(--animation-easing-ease-in-out);
-            z-index: 0;
-        }
-
-        #monthly:checked ~ .toggle-bg { transform: translateX(0); }
-        #annually:checked ~ .toggle-bg { transform: translateX(100%); }
-
-
         .pricing-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: var(--spacing-2xl);
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: var(--space-xl);
         }
-
-        .pricing-card {
-            background-color: var(--color-background-primary); /* Slightly darker for pricing cards */
-            border-radius: var(--border-radius-lg);
-            padding: var(--spacing-2xl);
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--color-border-dark);
-            display: flex;
-            flex-direction: column;
-            transition: border-color var(--animation-duration-normal) var(--animation-easing-ease-in-out);
-        }
-
-        .pricing-card.highlighted {
-            border: 2px solid var(--color-primary);
-            background-color: var(--color-background-secondary);
-        }
-
-        .pricing-card h3 {
-            margin-bottom: var(--spacing-md);
-            color: var(--color-primary);
-        }
-
-        .pricing-card .price {
-            font-family: var(--font-family-headings);
-            font-size: var(--font-size-h1);
-            font-weight: var(--font-weight-bold);
-            color: var(--color-text-primary);
-            line-height: 1;
-            margin-bottom: var(--spacing-xs);
-        }
-
-        .pricing-card .price span {
-            font-size: var(--font-size-h3);
-            color: var(--color-text-secondary);
-            vertical-align: super;
-            margin-right: var(--spacing-xs);
-        }
-
-        .pricing-card .period {
-            font-size: var(--font-size-body-sm);
-            color: var(--color-text-secondary);
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .pricing-card ul {
-            list-style: none;
-            margin-bottom: var(--spacing-2xl);
-            flex-grow: 1;
-        }
-
-        .pricing-card li {
-            display: flex;
-            align-items: center;
-            margin-bottom: var(--spacing-sm);
-            color: var(--color-text-secondary);
-            font-size: var(--font-size-body);
-        }
-
-        .pricing-card li svg {
-            flex-shrink: 0;
-            margin-right: var(--spacing-md);
-            width: 18px;
-            height: 18px;
-            fill: var(--color-success);
-        }
-
-        .pricing-card .btn {
-            width: 100%;
-            margin-top: auto; /* Pushes button to bottom */
-        }
-
-        .pricing-card.highlighted .btn-primary {
-            background-color: var(--color-accent);
-        }
-
-        @media (min-width: var(--breakpoint-tablet-min)) {
+        @media (min-width: 768px) {
             .pricing-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-
-        @media (min-width: var(--breakpoint-desktop-min)) {
+        @media (min-width: 1024px) {
             .pricing-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+        }
+        .pricing-card {
+            background-color: var(--bg-secondary);
+            border-radius: var(--radius-base);
+            padding: var(--space-xxl);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: border-color var(--transition-short), transform var(--transition-short), box-shadow var(--transition-short);
+        }
+        .pricing-card.highlight {
+            border-color: var(--primary-accent);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+        .pricing-card h3 {
+            margin-bottom: var(--space-sm);
+            color: var(--white);
+        }
+        .pricing-card .price {
+            font-size: var(--h1-size);
+            font-weight: var(--h1-weight);
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: var(--space-sm);
+        }
+        .pricing-card .price-period {
+            font-size: var(--body-sm-size);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-xl);
+            display: block;
+        }
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+            margin-bottom: var(--space-xxl);
+            flex-grow: 1;
+        }
+        .pricing-card ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--space-sm);
+            font-size: var(--body-md-size);
+            color: var(--text-primary);
+        }
+        .pricing-card ul li svg {
+            margin-right: var(--space-sm);
+            color: var(--success);
+            flex-shrink: 0;
+        }
+        .pricing-card .btn {
+            width: 100%;
+            margin-top: auto; /* Push button to bottom */
+        }
+        .pricing-card .btn-secondary {
+            border-color: var(--text-secondary);
+            color: var(--text-primary);
+        }
+        .pricing-card .btn-secondary:hover {
+            border-color: var(--primary-accent);
+            color: var(--primary-accent);
+            background-color: rgba(42, 100, 246, 0.1);
         }
 
         /* Final CTA Section */
         #final-cta {
-            background-color: var(--color-background-primary);
             text-align: center;
-            padding-bottom: var(--spacing-5xl);
+            background-color: var(--bg-primary);
         }
-
         #final-cta h2 {
-            margin-bottom: var(--spacing-lg);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: var(--space-xl);
+        }
+        #final-cta .btn {
+            padding: var(--space-lg) var(--space-xxl);
+            font-size: var(--body-lg-size);
         }
 
-        #final-cta p {
-            max-width: 700px;
-            margin: 0 auto var(--spacing-2xl) auto;
-            color: var(--color-text-secondary);
-            font-size: var(--font-size-body-lg);
+        /* Footer Section */
+        #footer {
+            background-color: var(--bg-primary);
+            padding: var(--space-xxl) 0 var(--space-xl);
+            border-top: 1px solid var(--bg-secondary);
         }
-
-        /* Footer */
-        footer {
-            background-color: var(--color-background-primary);
-            padding: var(--spacing-3xl) 0;
-            border-top: 1px solid var(--color-border-dark);
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-xxl);
         }
-
-        footer .container {
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1.5fr repeat(3, 1fr) 1.5fr;
+            }
+        }
+        .footer-logo {
+            margin-bottom: var(--space-lg);
             display: flex;
-            flex-direction: column;
-            gap: var(--spacing-2xl);
+            align-items: center;
+            justify-content: center; /* Center on mobile */
         }
-
-        .footer-top {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-2xl);
+        @media (min-width: 768px) {
+            .footer-logo {
+                justify-content: flex-start; /* Align left on desktop */
+            }
         }
-
-        .footer-brand {
-            flex: 1;
+        .footer-logo svg {
+            height: 40px;
+            width: auto;
+            color: var(--white);
         }
-
-        .footer-brand .logo {
-            margin-bottom: var(--spacing-md);
+        .footer-column h4 {
+            font-size: var(--body-lg-size);
+            font-weight: var(--h3-weight);
+            color: var(--white);
+            margin-bottom: var(--space-md);
         }
-
-        .footer-brand p {
-            color: var(--color-text-secondary);
-            font-size: var(--font-size-body-sm);
-            max-width: 300px;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-xl);
-        }
-
-        .footer-links div {
-            flex: 1;
-        }
-
-        .footer-links h4 {
-            font-size: var(--font-size-body);
-            margin-bottom: var(--spacing-md);
-            color: var(--color-text-primary);
-        }
-
-        .footer-links ul {
+        .footer-column ul {
             list-style: none;
+            padding: 0;
         }
-
-        .footer-links li {
-            margin-bottom: var(--spacing-sm);
+        .footer-column ul li {
+            margin-bottom: var(--space-sm);
         }
-
-        .footer-links a {
-            color: var(--color-text-secondary);
-            font-size: var(--font-size-body-sm);
+        .footer-column ul li a {
+            color: var(--text-secondary);
+            font-size: var(--body-md-size);
+            text-decoration: none;
         }
-
-        .footer-social {
-            margin-top: var(--spacing-xl);
+        .footer-column ul li a:hover {
+            color: var(--primary-accent);
+            text-decoration: underline;
         }
-
-        .footer-social a {
-            display: inline-block;
-            margin-right: var(--spacing-md);
-            color: var(--color-text-secondary);
+        .social-links {
+            display: flex;
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+            justify-content: center; /* Center on mobile */
         }
-
-        .footer-social a:hover {
-            color: var(--color-primary);
+        @media (min-width: 768px) {
+            .social-links {
+                justify-content: flex-start; /* Align left on desktop */
+            }
         }
-
-        .footer-social svg {
-            width: 24px;
-            height: 24px;
-            fill: currentColor;
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-base);
+            background-color: var(--bg-secondary);
+            color: var(--text-secondary);
+            transition: background-color var(--transition-short), color var(--transition-short);
         }
-
+        .social-links a:hover {
+            background-color: var(--primary-accent);
+            color: var(--white);
+            text-decoration: none;
+        }
+        .social-links svg {
+            width: 20px;
+            height: 20px;
+        }
         .footer-bottom {
-            border-top: 1px solid var(--color-border-dark);
-            padding-top: var(--spacing-xl);
             text-align: center;
-            color: var(--color-text-tertiary);
-            font-size: var(--font-size-body-sm);
+            margin-top: var(--space-xxl);
+            padding-top: var(--space-xl);
+            border-top: 1px solid var(--bg-secondary);
+        }
+        .footer-bottom p {
+            font-size: var(--body-sm-size);
+            color: var(--text-secondary);
+            margin-bottom: 0;
         }
 
-        @media (min-width: var(--breakpoint-tablet-min)) {
-            .footer-top {
-                flex-direction: row;
-                justify-content: space-between;
+        /* Mobile Adjustments */
+        @media (max-width: 767px) {
+            h1 { font-size: 36px; }
+            h2 { font-size: 30px; }
+            h3 { font-size: 24px; }
+            h4 { font-size: 20px; }
+            .body-lg { font-size: 16px; }
+            .body-md { font-size: 15px; }
+            .btn {
+                padding: var(--space-md) var(--space-lg);
+                font-size: var(--body-md-size);
             }
-            .footer-links {
-                flex-direction: row;
-                gap: var(--spacing-4xl);
+            .btn-group {
+                flex-direction: column;
+                gap: var(--space-md);
             }
-            .footer-brand {
-                flex: 1.5;
+            .mockup {
+                width: 90%;
+                transform: perspective(1000px) rotateY(-2deg) rotateX(1deg); /* Less aggressive on mobile */
             }
+            .stat-item .number { font-size: 40px; }
+            .stat-item .label { font-size: var(--body-md-size); }
+            .pricing-card { padding: var(--space-xl); }
+            .pricing-card .price { font-size: var(--h2-size); }
+            .footer-grid { text-align: center; }
+            .footer-column ul { margin-bottom: var(--space-lg); }
+        }
+
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .container { padding: 0 var(--space-lg); }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
-    <div id="scroll-progress-bar"></div>
-
-    <header>
-        <div class="container">
-            <a href="#" class="logo">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                Trade Journal Pro
-            </a>
-            <nav class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#">Blog</a>
-                <a href="#">Support</a>
-            </nav>
-            <div class="header-actions">
-                <a href="#" class="btn btn-secondary">Sign In</a>
-                <a href="#pricing" class="btn btn-primary magnetic-btn">Start Free Trial</a>
-            </div>
-        </div>
-    </header>
+    <div id="scroll-progress"></div>
 
     <main>
+        <!-- HERO Section -->
         <section id="hero">
+            <div class="hero-gradient-overlay"></div>
             <div class="container">
-                <div id="hero-content">
-                    <h1>Stop Guessing. Start Profiting. Your Trades, Decoded.</h1>
-                    <p class="text-body-lg">Every entry, every exit, every P&L swing. Understand <em>why</em> you're winning and <em>where</em> you're bleeding capital in Futures and Crypto.</p>
-                    <div class="hero-actions">
-                        <a href="#pricing" class="btn btn-primary magnetic-btn">Start Free Trial</a>
-                        <a href="#features" class="btn btn-secondary magnetic-btn">See How It Works</a>
-                    </div>
+                <h1>You're Losing Money on Trades You Can't Explain.</h1>
+                <p class="body-lg">Stop guessing why your equity curve is flat. The Edge Journal gives active Futures and Crypto traders the precise analytics and insights to identify profitable setups, eliminate costly mistakes, and scale their edge.</p>
+                <div class="btn-group">
+                    <a href="#pricing" class="btn btn-primary magnetic-btn"><span class="btn-magnetic-content">Start 14-Day Free Trial</span></a>
+                    <a href="#features" class="btn btn-secondary magnetic-btn"><span class="btn-magnetic-content">See How It Works</span></a>
                 </div>
-                <img src="product-mockup.png" alt="Trade Journal Pro Dashboard Mockup" class="mockup">
+                <img src="product-mockup.png" class="mockup" alt="The Edge Journal Product Mockup">
             </div>
         </section>
 
+        <!-- PROBLEM Section -->
         <section id="problem">
-            <div class="container">
-                <h2 class="text-center">The Hard Truth: You're Leaving Money on the Table.</h2>
-                <div class="pain-points">
-                    <div class="pain-point">
-                        <p class="text-body-lg"><strong>Last Tuesday you took 7 trades. 4 winners. But ended down $340.</strong> Your 3 losers averaged 2.1x your wins. Without knowing your average R:R per setup, you're just flipping a coin.</p>
+            <div class="container text-center">
+                <h2 class="mb-xxl">The Hard Truth: Your Trading Data is Lying to You (Or You're Not Listening)</h2>
+                <div class="problem-grid">
+                    <div class="problem-story">
+                        <p class="body-lg">Last Tuesday you took 7 trades. 4 winners. But ended down $340. Your 3 losers averaged 2.1x your wins. You know you need to cut losers, but <strong class="strong">which specific setups are bleeding you dry?</strong></p>
                     </div>
-                    <div class="pain-point">
-                        <p class="text-body-lg"><strong>You felt great about that breakout trade, but it was a scratch.</strong> Your journal says you entered 17 seconds too early, right before a liquidity sweep. That's a pattern you keep missing.</p>
+                    <div class="problem-story">
+                        <p class="body-lg">You've got a 65% win rate on your scalps, but your equity curve is flat. Why? Because your average winner is $50, and your average loser is $90. You're profitable on paper, but <strong class="strong">slippage and commissions eat your edge.</strong></p>
                     </div>
-                    <div class="pain-point">
-                        <p class="text-body-lg"><strong>Your equity curve looks like a rollercoaster.</strong> You're profitable on 65% of your trades, but your biggest wins are on Mondays, and your biggest losses are on Fridays. You're trading the same on both days.</p>
+                    <div class="problem-story">
+                        <p class="body-lg">You spend hours reviewing charts, trying to spot patterns. You think you see a trend, but you can't quantify it. You need to know if your "gut feeling" is actually a profitable edge, or just <strong class="strong">random noise costing you capital.</strong></p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- BEFORE/AFTER Section -->
         <section id="before-after">
-            <div class="container">
-                <h2 class="text-center">Blind Trading vs. Data-Driven Decisions.</h2>
+            <div class="container text-center">
+                <h2 class="mb-xxl">Stop Guessing. Start Quantifying Your Edge.</h2>
                 <div class="comparison-grid">
-                    <div class="comparison-card before">
-                        <h3>Without Trade Journal Pro</h3>
+                    <div class="comparison-card without">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-circle"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+                            Without The Edge Journal
+                        </h3>
                         <ul>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>
-                                <p><strong>Vague hunches:</strong> Relying on gut feelings and anecdotal memory for trade reviews.</p>
+                            <li class="negative">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-circle"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+                                Vague understanding of P&L.
                             </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>
-                                <p><strong>Inconsistent performance:</strong> Unaware of specific patterns causing drawdowns or missed opportunities.</p>
+                            <li class="negative">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-circle"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+                                No clear data on average R:R per setup.
                             </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>
-                                <p><strong>Time-consuming manual logging:</strong> Hours spent in spreadsheets, still missing critical insights.</p>
+                            <li class="negative">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-circle"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+                                Repeating the same execution errors.
                             </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"/></svg>
-                                <p><strong>Emotional trading:</strong> Reacting to P&L swings without objective data to guide decisions.</p>
+                            <li class="negative">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-circle"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+                                Inability to backtest new strategies effectively.
+                            </li>
+                            <li class="negative">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-minus-circle"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg>
+                                Emotional decisions driven by lack of data.
                             </li>
                         </ul>
                     </div>
-                    <div class="comparison-card after">
-                        <h3>With Trade Journal Pro</h3>
+                    <div class="comparison-card with">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                            With The Edge Journal
+                        </h3>
                         <ul>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <p><strong>Precision insights:</strong> Automated analysis of every trade, revealing true performance drivers.</p>
+                            <li class="positive">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Pinpoint exact profitability of every setup.
                             </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <p><strong>Optimized strategies:</strong> Identify your most profitable setups, times, and instruments.</p>
+                            <li class="positive">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Optimize R:R and win rate with data-driven adjustments.
                             </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <p><strong>Effortless tracking:</strong> Spend minutes, not hours, logging and reviewing your trading activity.</p>
+                            <li class="positive">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Identify and correct recurring behavioral patterns.
                             </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <p><strong>Disciplined execution:</strong> Trade with confidence, backed by your own performance data.</p>
+                            <li class="positive">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Confidently deploy new strategies after rigorous backtesting.
+                            </li>
+                            <li class="positive">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Trade with conviction, backed by your own performance data.
                             </li>
                         </ul>
                     </div>
@@ -1109,88 +901,83 @@
             </div>
         </section>
 
+        <!-- FEATURES Section -->
         <section id="features">
-            <div class="container">
-                <h2 class="text-center">Outcomes, Not Just Metrics.</h2>
+            <div class="container text-center">
+                <h2 class="mb-lg">Quantify Your Edge. Execute with Precision.</h2>
+                <p class="body-lg section-description">Our powerful tools provide the objective data you need to analyze, learn, and improve your trading strategy, turning raw data into actionable insights.</p>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <div class="icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
-                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
                         <h4>See Which Setups Make Money</h4>
-                        <p>Pinpoint your most profitable strategies by instrument, time of day, and market conditions. Stop trading what <em>feels</em> right and start trading what <em>works</em>.</p>
+                        <p>Stop guessing. Identify your most profitable setups, entry/exit points, and market conditions with granular, custom metrics. Understand your true edge.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
-                        </div>
-                        <h4>Optimize Your Entry & Exit Timing</h4>
-                        <p>Analyze the exact seconds between your signal and execution. Discover if you're consistently early or late, and adjust to capture more alpha.</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-test-tube-2"><path d="M14.5 2v3"/><path d="M17.5 17l-1.4-1.4"/><path d="M20.5 14l-1.4-1.4"/><path d="M2 22h20"/><path d="M9 18.5c-.5-1-.7-2.7-.5-3.6C8.7 14.6 9.8 13 11 13c1.2 0 2.3 1.6 2.5 2.9.2.9 0 2.6-.5 3.6l-3 2z"/></svg>
+                        <h4>Validate Strategies, Risk-Free</h4>
+                        <p>Backtest new ideas against your historical trade data or market conditions. Refine your strategy without risking capital, ensuring it holds up under pressure.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
-                        </div>
-                        <h4>Understand Your True Risk-Reward</h4>
-                        <p>Beyond simple P&L, see your average R:R per trade, per day, per setup. Identify where you're taking too much risk for too little reward and fix it.</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                        <h4>Track Your Equity Curve, Real-Time</h4>
+                        <p>Monitor your performance with an interactive equity curve. See your P&L, drawdown, and R:R evolve with every trade, identifying trends and inflection points.</p>
                     </div>
                     <div class="feature-card">
-                        <div class="icon-wrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/></svg>
-                        </div>
-                        <h4>Backtest & Refine Strategies</h4>
-                        <p>Apply historical data to your journaled setups. See how a slight adjustment to entry criteria or stop loss placement would have impacted your P&L.</p>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain"><path d="M12 5c.6 0 1.2-.4 1.4-1 1.5-1.9 0-4.2-2.4-4-1.5.2-2.1 1.7-2.4 3-1.6 1.4-1.1 4.3 2.1 5 .5 0 1-.4 1.2-1"/><path d="M12 5c.6 0 1.2-.4 1.4-1 1.5-1.9 0-4.2-2.4-4-1.5.2-2.1 1.7-2.4 3-1.6 1.4-1.1 4.3 2.1 5 .5 0 1-.4 1.2-1" transform="rotate(180 12 5)"/><path d="M12 5c.6 0 1.2-.4 1.4-1 1.5-1.9 0-4.2-2.4-4-1.5.2-2.1 1.7-2.4 3-1.6 1.4-1.1 4.3 2.1 5 .5 0 1-.4 1.2-1" transform="rotate(90 12 5)"/><path d="M12 5c.6 0 1.2-.4 1.4-1 1.5-1.9 0-4.2-2.4-4-1.5.2-2.1 1.7-2.4 3-1.6 1.4-1.1 4.3 2.1 5 .5 0 1-.4 1.2-1" transform="rotate(-90 12 5)"/><path d="M12 13c-3.3 0-6-2.7-6-6 0-2.2 4-5 6-2 1 .8 1.4 2.1 1.6 3.5"/><path d="M12 13c3.3 0 6-2.7 6-6 0-2.2-4-5-6-2-1 .8-1.4 2.1-1.6 3.5" transform="rotate(180 12 13)"/><path d="M12 13c-3.3 0-6-2.7-6-6 0-2.2 4-5 6-2 1 .8 1.4 2.1 1.6 3.5" transform="rotate(90 12 13)"/><path d="M12 13c3.3 0 6-2.7 6-6 0-2.2-4-5-6-2-1 .8-1.4 2.1-1.6 3.5" transform="rotate(-90 12 13)"/></svg>
+                        <h4>Conquer Your Trading Psychology</h4>
+                        <p>Tag trades with emotional states or specific biases. See how fear, greed, or overconfidence impact your P&L, and build a disciplined approach.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- SOCIAL PROOF Section -->
         <section id="social-proof">
-            <div class="container">
-                <h2 class="text-center">Traders Like You Are Already Seeing Results.</h2>
-                <div class="stats-bar">
+            <div class="container text-center">
+                <h2 class="mb-xxl">Trusted by Serious Traders. Proven Results.</h2>
+                <div class="stats-grid">
                     <div class="stat-item">
                         <div class="number">12,847+</div>
-                        <div class="label">Active Daytraders</div>
+                        <div class="label">Active Traders</div>
                     </div>
                     <div class="stat-item">
                         <div class="number">$7.3M+</div>
-                        <div class="label">P&L Tracked Monthly</div>
+                        <div class="label">Profit Tracked</div>
                     </div>
                     <div class="stat-item">
-                        <div class="number">1.8M+</div>
-                        <div class="label">Trades Logged</div>
+                        <div class="number">2.1x</div>
+                        <div class="label">Avg. R:R Improvement</div>
                     </div>
                 </div>
 
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
-                        <p class="quote">"My win rate was 71% but my R:R was only 0.8. Trade Journal Pro showed me I was cutting winners too fast. Switched to holding for 2R targets, now my R:R is 2.3 and profit is up 340%."</p>
-                        <div class="author-info">
-                            <img src="https://api.dicebear.com/7.x/personas/svg?seed=Marcus" alt="Marcus Weber Avatar" class="author-avatar">
-                            <div>
-                                <div class="author-name">Marcus Weber</div>
-                                <div class="author-title">Prop Trader, Futures</div>
+                        <p>"My win rate was 71% but my R:R was only 0.8. The Edge Journal showed me I was holding losers too long on specific setups. Switched to a swing-focused approach, and now my R:R is 2.3, with profits up 340% in 3 months."</p>
+                        <div class="testimonial-author">
+                            <img src="https://api.dicebear.com/7.x/personas/svg?seed=Marcus" alt="Marcus Weber Avatar">
+                            <div class="author-info">
+                                <strong>Marcus Weber</strong>
+                                <span>Prop Trader, Futures</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
-                        <p class="quote">"I thought I was good at scalping ETH. The journal revealed my average holding time for profitable trades was 45 seconds, but for losers it was 2 minutes. Now I exit faster, cutting my average loss by 60%."</p>
-                        <div class="author-info">
-                            <img src="https://api.dicebear.com/7.x/personas/svg?seed=Sarah" alt="Sarah Chen Avatar" class="author-avatar">
-                            <div>
-                                <div class="author-name">Sarah Chen</div>
-                                <div class="author-title">Crypto Daytrader</div>
+                        <p>"I thought I was disciplined, but the journal highlighted my tendency to revenge trade after a big loss. By tracking my emotional state, I've reduced my largest drawdowns by 50% and my monthly consistency is way up."</p>
+                        <div class="testimonial-author">
+                            <img src="https://api.dicebear.com/7.x/personas/svg?seed=Sarah" alt="Sarah Chen Avatar">
+                            <div class="author-info">
+                                <strong>Sarah Chen</strong>
+                                <span>Crypto Day Trader</span>
                             </div>
                         </div>
                     </div>
                     <div class="testimonial-card">
-                        <p class="quote">"My biggest problem was overtrading. Trade Journal Pro's daily limits and detailed analytics on my 'revenge trades' helped me reduce my trade count by 30% and increase my weekly profit by $1,200."</p>
-                        <div class="author-info">
-                            <img src="https://api.dicebear.com/7.x/personas/svg?seed=David" alt="David Lee Avatar" class="author-avatar">
-                            <div>
-                                <div class="author-name">David Lee</div>
-                                <div class="author-title">Full-time Futures Trader</div>
+                        <p>"Before, I'd just look at my P&L. Now, I see my average profit per trade on specific timeframes, my best performing assets, and even the optimal time of day to trade. It's like having a trading coach built-in."</p>
+                        <div class="testimonial-author">
+                            <img src="https://api.dicebear.com/7.x/personas/svg?seed=David" alt="David Lee Avatar">
+                            <div class="author-info">
+                                <strong>David Lee</strong>
+                                <span>FX & Futures Scalper</span>
                             </div>
                         </div>
                     </div>
@@ -1198,295 +985,277 @@
             </div>
         </section>
 
+        <!-- PRICING Section -->
         <section id="pricing">
-            <div class="container">
-                <h2 class="text-center">Transparent Pricing. Serious Value.</h2>
+            <div class="container text-center">
+                <h2 class="mb-lg">Simple Pricing, Powerful Edge.</h2>
+                <p class="body-lg section-description">Choose the plan that fits your trading volume and analytical needs. Every plan includes a 14-day free trial.</p>
 
-                <div class="pricing-toggle">
-                    <input type="radio" id="monthly" name="billing" value="monthly" checked>
-                    <label for="monthly">Monthly</label>
-                    <input type="radio" id="annually" name="billing" value="annually">
-                    <label for="annually">Annually (Save 20%)</label>
-                    <div class="toggle-bg"></div>
+                <div class="pricing-toggle mb-xxl">
+                    <button class="active" data-period="monthly">Monthly</button>
+                    <button data-period="annually">Annually (Save 20%)</button>
                 </div>
 
                 <div class="pricing-grid">
+                    <!-- Basic Plan -->
                     <div class="pricing-card">
                         <h3>Starter</h3>
-                        <div class="price"><span>$</span>29</div>
-                        <div class="period">per month</div>
+                        <div class="price" data-monthly="$29" data-annually="$23"></div>
+                        <span class="price-period">/month</span>
                         <ul>
                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Basic P&L Tracking
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Up to 500 trades/month
                             </li>
                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Win Rate & R:R
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Basic P&L & R:R tracking
                             </li>
                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Equity Curve
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Equity curve visualization
                             </li>
                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Up to 500 Trades/Month
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Trade tagging & notes
                             </li>
                         </ul>
-                        <a href="#" class="btn btn-primary magnetic-btn">Choose Plan</a>
-                        <p class="text-caption text-secondary mt-md">14-day free trial included</p>
+                        <a href="#" class="btn btn-secondary magnetic-btn"><span class="btn-magnetic-content">Start 14-Day Free Trial</span></a>
                     </div>
 
-                    <div class="pricing-card highlighted">
-                        <h3>Pro</h3>
-                        <div class="price"><span>$</span>59</div>
-                        <div class="period">per month</div>
+                    <!-- Pro Plan (Highlighted) -->
+                    <div class="pricing-card highlight">
+                        <h3>Pro Trader</h3>
+                        <div class="price" data-monthly="$49" data-annually="$39"></div>
+                        <span class="price-period">/month</span>
                         <ul>
                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Everything in Starter
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Unlimited trades
                             </li>
                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Advanced Entry/Exit Timing
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Advanced custom metrics
                             </li>
                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Setup & Instrument Analysis
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Strategy backtesting engine
                             </li>
                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Unlimited Trades
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Behavioral pattern analysis
                             </li>
                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Custom Tags & Filters
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Exportable data
                             </li>
                         </ul>
-                        <a href="#" class="btn btn-primary magnetic-btn">Choose Plan</a>
-                        <p class="text-caption text-secondary mt-md">14-day free trial included</p>
+                        <a href="#" class="btn btn-primary magnetic-btn"><span class="btn-magnetic-content">Start 14-Day Free Trial</span></a>
                     </div>
 
+                    <!-- Elite Plan -->
                     <div class="pricing-card">
-                        <h3>Elite</h3>
-                        <div class="price"><span>$</span>99</div>
-                        <div class="period">per month</div>
+                        <h3>Elite Analyst</h3>
+                        <div class="price" data-monthly="$99" data-annually="$79"></div>
+                        <span class="price-period">/month</span>
                         <ul>
                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Everything in Pro
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                All Pro Trader features
                             </li>
                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Strategy Backtesting Engine
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Multi-account aggregation
                             </li>
                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Multi-Account Support
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Dedicated support
                             </li>
                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Priority Support
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Custom integration API access
                             </li>
                             <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                Dedicated Onboarding
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M5 12l5 5L20 7"/></svg>
+                                Quarterly strategy review sessions
                             </li>
                         </ul>
-                        <a href="#" class="btn btn-primary magnetic-btn">Choose Plan</a>
-                        <p class="text-caption text-secondary mt-md">14-day free trial included</p>
+                        <a href="#" class="btn btn-secondary magnetic-btn"><span class="btn-magnetic-content">Start 14-Day Free Trial</span></a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- FINAL CTA Section -->
         <section id="final-cta">
             <div class="container">
-                <h2>Tired of Unexplained Losses?</h2>
-                <p class="text-body-lg">Stop trading blind. Get the objective data and insights you need to turn your trading around. Your next profitable breakthrough is just a few clicks away.</p>
-                <a href="#pricing" class="btn btn-primary magnetic-btn">Claim Your 14-Day Free Trial</a>
+                <h2 class="mb-xl">Stop Explaining Away Losses. Start Quantifying Your Edge.</h2>
+                <a href="#pricing" class="btn btn-primary magnetic-btn"><span class="btn-magnetic-content">Claim Your 14-Day Free Trial Now</span></a>
             </div>
         </section>
     </main>
 
-    <footer>
+    <!-- FOOTER Section -->
+    <footer id="footer">
         <div class="container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                        Trade Journal Pro
-                    </a>
-                    <p>The premium trading journal for Futures and Crypto Daytraders. Gain an unfair advantage with advanced analytics.</p>
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-line-chart"><path d="M3 3v18h18"/><path d="m18 10-4.5 4.5L9 9l-3.5 3.5L3 8"/></svg>
+                        <span style="font-size: 24px; font-weight: 700; color: var(--white); margin-left: 8px;">The Edge Journal</span>
+                    </div>
+                    <p class="body-sm">Your data-driven partner for mastering Futures and Crypto trading.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17-18 11.6 2.2.1 4.4-.6 6-2 1.1-1.1 1.6-3.1 2-5.8 0 0-2.4-2.5-4-3.5 2.4-2.7 5-4 7-4 1.5-1 3.5-2 4-2.5s2.1-.7 2.1-.7z"/></svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/></svg>
+                        </a>
+                        <a href="#" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-youtube"><path d="M2.8 7.1c-.6.3-1 1.1-1 2V15c0 .9.4 1.7 1 2 .6.3 1.4.5 2.2.5h14c.8 0 1.6-.2 2.2-.5.6-.3 1-1.1 1-2V9c0-.9-.4-1.7-1-2-.6-.3-1.4-.5-2.2-.5H5c-.8 0-1.6.2-2.2.5z"/><path d="m10 10 5 2-5 2z"/></svg>
+                        </a>
+                    </div>
                 </div>
-                <div class="footer-links">
-                    <div>
-                        <h4>Product</h4>
-                        <ul>
-                            <li><a href="#features">Features</a></li>
-                            <li><a href="#pricing">Pricing</a></li>
-                            <li><a href="#">Integrations</a></li>
-                            <li><a href="#">Roadmap</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Careers</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Blog</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4>Legal</h4>
-                        <ul>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms of Service</a></li>
-                            <li><a href="#">Disclaimer</a></li>
-                        </ul>
-                    </div>
+
+                <div class="footer-column">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#">Integrations</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">API Docs</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="footer-social">
-                    <a href="#" aria-label="Twitter">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.37-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.4 7.5 3.53 4.48c-.35.61-.55 1.32-.55 2.09 0 1.48.75 2.79 1.88 3.56-.69-.02-1.34-.21-1.91-.53v.03c0 2.08 1.48 3.82 3.44 4.21-.36.1-.74.15-1.13.15-.28 0-.55-.03-.81-.08.55 1.71 2.14 2.95 4.03 2.98-1.47 1.15-3.33 1.84-5.36 1.84-.35 0-.7-.02-1.05-.06C3.78 20.12 5.8 21 7.94 21c8.34 0 12.89-6.92 12.89-12.96 0-.2-.01-.4-.02-.6.9-.65 1.68-1.47 2.3-2.4z"/></svg>
-                    </a>
-                    <a href="#" aria-label="Discord">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.37 3.63c-1.83-1.14-3.87-1.75-6.02-1.75-2.15 0-4.19.61-6.02 1.75C6.1 4.77 4.5 6.4 3.25 8.25c-.92 1.32-1.5 2.74-1.75 4.25-.08.48-.08.96 0 1.44.25 1.51.83 2.93 1.75 4.25 1.25 1.85 2.85 3.48 4.75 4.62 1.83 1.14 3.87 1.75 6.02 1.75 2.15 0 4.19-.61 6.02-1.75 1.9-1.14 3.5-2.77 4.75-4.62.92-1.32 1.5-2.74 1.75-4.25.08-.48.08-.96 0-1.44-.25-1.51-.83-2.93-1.75-4.25-1.25-1.85-2.85-3.48-4.75-4.62zM8.5 15c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm7 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
-                    </a>
-                </div>
-                <p>&copy; 2024 Trade Journal Pro. All rights reserved.</p>
+                <p class="caption">&copy; 2023 The Edge Journal. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // 1. Scroll Reveal Animation
-            const sections = document.querySelectorAll('section');
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15 // Trigger when 15% of the section is visible
-            };
-
-            const sectionObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        // Optional: stop observing once visible
-                        // observer.unobserve(entry.target);
-                    } else {
-                        // Optional: remove visible class when out of view
-                        // entry.target.classList.remove('visible');
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                sectionObserver.observe(section);
-            });
-
-            // Handle prefers-reduced-motion
-            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                sections.forEach(section => {
-                    section.classList.add('visible'); // Make all sections visible immediately
-                });
-            }
-
-            // 2. Cursor-following gradient on hero
-            const heroSection = document.getElementById('hero');
-            if (heroSection) {
-                heroSection.addEventListener('mousemove', (e) => {
-                    const rect = heroSection.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-
-                    heroSection.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(108, 99, 255, 0.1) 0%, rgba(10, 10, 12, 0.8) 70%), url('hero-bg.png') center/cover`;
-                    heroSection.style.backgroundBlendMode = 'overlay';
-                });
-
-                heroSection.addEventListener('mouseleave', () => {
-                    // Reset to initial state
-                    heroSection.style.background = `radial-gradient(circle at 50% 50%, rgba(108, 99, 255, 0.1) 0%, rgba(10, 10, 12, 0.8) 70%), url('hero-bg.png') center/cover`;
-                    heroSection.style.backgroundBlendMode = 'overlay';
-                });
-            }
-
-            // 3. Magnetic CTA buttons
-            const magneticButtons = document.querySelectorAll('.magnetic-btn');
-            const magneticForce = 0.4; // Adjust for stronger/weaker effect
-
-            magneticButtons.forEach(button => {
-                button.addEventListener('mousemove', (e) => {
-                    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
-                    const rect = button.getBoundingClientRect();
-                    const centerX = rect.left + rect.width / 2;
-                    const centerY = rect.top + rect.height / 2;
-
-                    const deltaX = e.clientX - centerX;
-                    const deltaY = e.clientY - centerY;
-
-                    button.style.transform = `translate(${deltaX * magneticForce}px, ${deltaY * magneticForce}px)`;
-                });
-
-                button.addEventListener('mouseleave', () => {
-                    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-                    button.style.transform = `translate(0, 0)`;
-                });
-            });
-
-            // 4. Scroll progress bar
-            const progressBar = document.getElementById('scroll-progress-bar');
-            window.addEventListener('scroll', () => {
-                const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPosition = window.scrollY;
-                const progress = (scrollPosition / totalHeight) * 100;
-                progressBar.style.width = `${progress}%`;
-            });
-
-            // 5. Pricing Toggle
-            const monthlyRadio = document.getElementById('monthly');
-            const annuallyRadio = document.getElementById('annually');
-            const pricingCards = document.querySelectorAll('.pricing-card');
-
-            const monthlyPrices = {
-                "Starter": "$29",
-                "Pro": "$59",
-                "Elite": "$99"
-            };
-            const annuallyPrices = {
-                "Starter": "$23", // 29 * 0.8
-                "Pro": "$47",   // 59 * 0.8
-                "Elite": "$79"    // 99 * 0.8
-            };
-
-            function updatePricing() {
-                const isAnnually = annuallyRadio.checked;
-                pricingCards.forEach(card => {
-                    const planName = card.querySelector('h3').textContent;
-                    const priceElement = card.querySelector('.price');
-                    const periodElement = card.querySelector('.period');
-
-                    if (isAnnually) {
-                        priceElement.innerHTML = `<span>$</span>${annuallyPrices[planName]}`;
-                        periodElement.textContent = 'per month (billed annually)';
-                    } else {
-                        priceElement.innerHTML = `<span>$</span>${monthlyPrices[planName]}`;
-                        periodElement.textContent = 'per month';
-                    }
-                });
-            }
-
-            monthlyRadio.addEventListener('change', updatePricing);
-            annuallyRadio.addEventListener('change', updatePricing);
-
-            // Initial pricing update
-            updatePricing();
+        // 1. Scroll Progress Bar
+        const scrollProgress = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', () => {
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (window.scrollY / totalHeight) * 100;
+            scrollProgress.style.width = `${progress}%`;
         });
+
+        // 2. Scroll Reveal Animation
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.15 // Trigger when 15% of the section is visible
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Disable scroll reveal if prefers-reduced-motion is active
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            document.querySelectorAll('.js section').forEach(section => {
+                section.classList.add('visible');
+            });
+        }
+
+        // 3. Cursor-following gradient on hero
+        const heroSection = document.getElementById('hero');
+        const heroGradientOverlay = document.querySelector('.hero-gradient-overlay');
+
+        if (heroSection && heroGradientOverlay && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            heroSection.addEventListener('mousemove', (e) => {
+                const rect = heroSection.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                heroGradientOverlay.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(42, 100, 246, 0.1) 0%, transparent 40%)`;
+            });
+
+            heroSection.addEventListener('mouseleave', () => {
+                // Reset to default or fade out
+                heroGradientOverlay.style.background = `radial-gradient(circle at 50% 50%, rgba(42, 100, 246, 0.1) 0%, transparent 40%)`;
+            });
+        }
+
+
+        // 4. Magnetic CTA buttons
+        const magneticButtons = document.querySelectorAll('.magnetic-btn');
+
+        magneticButtons.forEach(button => {
+            const content = button.querySelector('.btn-magnetic-content');
+            if (!content) return; // Ensure content element exists
+
+            const strength = 0.4; // How strong the magnetic effect is
+
+            button.addEventListener('mousemove', (e) => {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+                const rect = button.getBoundingClientRect();
+                const x = e.clientX - (rect.left + rect.width / 2);
+                const y = e.clientY - (rect.top + rect.height / 2);
+
+                content.style.transform = `translate(${x * strength}px, ${y * strength}px)`;
+            });
+
+            button.addEventListener('mouseleave', () => {
+                if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+                content.style.transform = `translate(0, 0)`;
+            });
+        });
+
+        // 5. Pricing Toggle Logic
+        const pricingToggleButtons = document.querySelectorAll('.pricing-toggle button');
+        const pricingCards = document.querySelectorAll('.pricing-card');
+
+        function updatePricing(period) {
+            pricingCards.forEach(card => {
+                const priceElement = card.querySelector('.price');
+                const pricePeriodElement = card.querySelector('.price-period');
+                if (priceElement && pricePeriodElement) {
+                    priceElement.textContent = priceElement.dataset[period];
+                    pricePeriodElement.textContent = period === 'monthly' ? '/month' : '/year';
+                }
+            });
+        }
+
+        pricingToggleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                pricingToggleButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                updatePricing(button.dataset.period);
+            });
+        });
+
+        // Initialize pricing on load
+        updatePricing('monthly');
+
     </script>
 </body>
 </html>

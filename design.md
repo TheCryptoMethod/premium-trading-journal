@@ -1,316 +1,186 @@
-# Design System Documentation: Premium Trading Journal
+```markdown
+# Design System for Premium Trading Journal
 
-This document outlines the core design principles and specifications for the Premium Trading Journal SaaS project. It serves as a single source of truth for all UI/UX elements, ensuring consistency and efficiency in development.
-
----
-
-## 1. Project Overview
-
-*   **Project Name:** Premium Trading Journal
-*   **Type:** SaaS (Software as a Service)
-*   **Description:** A sophisticated trading journal for Futures and Crypto Daytraders, providing advanced analytics, performance tracking, backtesting, and equity curve visualization.
-*   **Style:** Dark, professional, modern, data-focused.
+This document outlines the core design principles and specifications for the "Premium Trading Journal" SaaS project. It aims to provide a consistent and scalable foundation for UI development, ensuring a premium, professional, and intuitive user experience.
 
 ---
 
-## 2. Color Palette
+## 1. Color Palette
 
-The color palette is designed to be dark, professional, and easy on the eyes during long trading sessions, with clear indicators for performance metrics.
+A sophisticated dark theme with vibrant accents for data visualization and interactive elements.
 
-*   **Background:**
-    *   `--color-background-primary`: `#0A0A0C` (Deepest dark grey, almost black)
-    *   `--color-background-secondary`: `#1A1A1D` (Slightly lighter dark grey for cards/sections)
-    *   `--color-background-tertiary`: `#2C2C30` (For elevated elements like modals, tooltips)
-*   **Primary Brand Colors:**
-    *   `--color-primary`: `#6C63FF` (Deep professional purple for main branding, active states)
-    *   `--color-primary-light`: `#8E88FF` (Lighter purple for secondary actions, subtle highlights)
-*   **Accent Color:**
-    *   `--color-accent`: `#00C896` (Vibrant teal/green for CTAs, profit indicators, key data points)
-*   **Text Colors:**
-    *   `--color-text-primary`: `#E0E0E0` (Light grey for main content)
-    *   `--color-text-secondary`: `#A0A0A0` (Medium grey for secondary information, labels)
-    *   `--color-text-tertiary`: `#6B6B6B` (Darker grey for subtle details, timestamps)
-*   **Status Colors:**
-    *   `--color-success`: `#00C896` (Profit, positive indicators - same as accent)
-    *   `--color-error`: `#FF4D4D` (Loss, negative indicators, error messages)
-    *   `--color-warning`: `#FFC107` (Caution, alerts)
-    *   `--color-info`: `#5BC0DE` (Informational messages)
-*   **Border Colors:**
-    *   `--color-border-light`: `#3A3A3F` (Light border for subtle separation)
-    *   `--color-border-dark`: `#252528` (Darker border for internal component separation)
+*   **Background Primary**: `#0A0A0C` (Deep Charcoal) - Main background for pages and sections.
+*   **Background Secondary**: `#1A1A1E` (Dark Grey) - Used for cards, modals, and elevated UI elements.
+*   **Text Primary**: `#E0E0E0` (Light Grey) - Main body text, labels.
+*   **Text Secondary**: `#A0A0A0` (Medium Grey) - Secondary information, helper text, disabled states.
+*   **Primary Accent**: `#2A64F6` (Vibrant Blue) - Main interactive elements, primary buttons, active states, key data highlights.
+*   **Secondary Accent**: `#00C4B4` (Teal) - Secondary interactive elements, charts, progress indicators, positive trends.
+*   **Success**: `#00E676` (Bright Green) - Positive feedback, successful actions, profit indicators.
+*   **Warning**: `#FFC107` (Amber) - Cautionary messages, neutral trends.
+*   **Danger**: `#DC3545` (Red) - Error messages, destructive actions, loss indicators.
 
 ---
 
-## 3. Typography
+## 2. Typography
 
-The `Inter` font family is chosen for its modern, clean, and highly readable characteristics across various sizes and weights, suitable for data-intensive applications.
+Utilizing a modern, highly readable sans-serif font for both headings and body text to maintain consistency and clarity, crucial for data-heavy applications.
 
-*   **Font Family:**
-    *   `--font-family-headings`: `'Inter', sans-serif`
-    *   `--font-family-body`: `'Inter', sans-serif`
-*   **Font Weights:**
-    *   `--font-weight-light`: 300
-    *   `--font-weight-regular`: 400
-    *   `--font-weight-medium`: 500
-    *   `--font-weight-semibold`: 600
-    *   `--font-weight-bold`: 700
-*   **Font Sizes (Responsive):**
-    *   **H1 (Page Title/Hero Headline):**
-        *   Desktop: `64px` (`--font-size-h1-desktop`)
-        *   Tablet: `48px` (`--font-size-h1-tablet`)
-        *   Mobile: `36px` (`--font-size-h1-mobile`)
-        *   Line Height: `1.2`
-        *   Weight: `bold`
-    *   **H2 (Section Titles):**
-        *   Desktop: `48px` (`--font-size-h2-desktop`)
-        *   Tablet: `36px` (`--font-size-h2-tablet`)
-        *   Mobile: `28px` (`--font-size-h2-mobile`)
-        *   Line Height: `1.3`
-        *   Weight: `semibold`
-    *   **H3 (Card Titles, Sub-sections):**
-        *   Desktop: `32px` (`--font-size-h3-desktop`)
-        *   Tablet: `28px` (`--font-size-h3-tablet`)
-        *   Mobile: `24px` (`--font-size-h3-mobile`)
-        *   Line Height: `1.4`
-        *   Weight: `semibold`
-    *   **H4 (Component Titles, FAQ Questions):**
-        *   Desktop: `24px` (`--font-size-h4-desktop`)
-        *   Tablet: `20px` (`--font-size-h4-tablet`)
-        *   Mobile: `18px` (`--font-size-h4-mobile`)
-        *   Line Height: `1.5`
-        *   Weight: `medium`
-    *   **Body Large (Lead paragraphs, important text):**
-        *   All devices: `18px` (`--font-size-body-lg`)
-        *   Line Height: `1.6`
-        *   Weight: `regular`
-    *   **Body (Standard text):**
-        *   All devices: `16px` (`--font-size-body`)
-        *   Line Height: `1.6`
-        *   Weight: `regular`
-    *   **Body Small (Metadata, captions, legal text):**
-        *   All devices: `14px` (`--font-size-body-sm`)
-        *   Line Height: `1.6`
-        *   Weight: `regular`
-    *   **Caption (Smallest text, e.g., chart labels):**
-        *   All devices: `12px` (`--font-size-caption`)
-        *   Line Height: `1.5`
-        *   Weight: `regular`
+*   **Font Family**: `Inter`, `sans-serif`
+    *   **Import**: `@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');`
+*   **Headings Font**: `Inter`
+    *   `H1`: 48px, `font-weight: 800`, `line-height: 1.2`, `color: #FFFFFF`
+    *   `H2`: 36px, `font-weight: 700`, `line-height: 1.3`, `color: #FFFFFF`
+    *   `H3`: 28px, `font-weight: 600`, `line-height: 1.4`, `color: #FFFFFF`
+    *   `H4`: 22px, `font-weight: 600`, `line-height: 1.5`, `color: #FFFFFF`
+*   **Body Font**: `Inter`
+    *   `Body Large`: 18px, `font-weight: 400`, `line-height: 1.6`, `color: #E0E0E0`
+    *   `Body Medium`: 16px, `font-weight: 400`, `line-height: 1.6`, `color: #E0E0E0`
+    *   `Body Small`: 14px, `font-weight: 400`, `line-height: 1.7`, `color: #A0A0A0`
+    *   `Caption`: 12px, `font-weight: 300`, `line-height: 1.8`, `color: #A0A0A0`
+*   **Emphasis**:
+    *   `Strong`: `font-weight: 600`
+    *   `Link`: `color: #2A64F6`, `text-decoration: underline` on hover
 
 ---
 
-## 4. Spacing Scale
+## 3. Spacing Scale
 
-A consistent 8px base spacing scale is used to maintain rhythm and hierarchy.
+A consistent 8px grid-based spacing system for all UI elements.
 
-*   `--spacing-xs`: `4px`
-*   `--spacing-sm`: `8px`
-*   `--spacing-md`: `16px`
-*   `--spacing-lg`: `24px`
-*   `--spacing-xl`: `32px`
-*   `--spacing-2xl`: `48px`
-*   `--spacing-3xl`: `64px`
-*   `--spacing-4xl`: `96px`
-*   `--spacing-5xl`: `128px`
+*   `xs`: 4px
+*   `sm`: 8px
+*   `md`: 16px
+*   `lg`: 24px
+*   `xl`: 32px
+*   `xxl`: 48px
+*   `xxxl`: 64px
 
 ---
 
-## 5. Border Radius
+## 4. Border Radius
 
-Subtle rounding for a modern, friendly, yet professional feel.
+Subtle rounding for a modern and friendly, yet professional aesthetic.
 
-*   `--border-radius-none`: `0px`
-*   `--border-radius-sm`: `4px`
-*   `--border-radius-md`: `8px`
-*   `--border-radius-lg`: `12px`
-*   `--border-radius-full`: `9999px` (For pill-shaped elements like buttons, tags)
+*   **Base Radius**: `8px` - Applied to cards, buttons, input fields, and most UI containers.
+*   **Small Radius**: `4px` - For smaller elements like tags or badges.
+*   **Pill Radius**: `9999px` - For pill-shaped buttons or tags.
 
 ---
 
-## 6. Shadow Styles
+## 5. Shadow Styles
 
-Shadows are used sparingly and subtly to provide depth and emphasize interactive elements, especially on a dark background where strong shadows can be lost. Focus on inner glows or very soft, low-opacity outer shadows.
+Subtle shadows to provide depth and hierarchy without overwhelming the dark theme. Shadows are typically darker and less spread out than in light themes.
 
-*   `--shadow-sm`: `0px 1px 3px rgba(0, 0, 0, 0.2), 0px 1px 2px rgba(0, 0, 0, 0.12)`
-*   `--shadow-md`: `0px 4px 6px rgba(0, 0, 0, 0.3), 0px 2px 4px rgba(0, 0, 0, 0.18)`
-*   `--shadow-lg`: `0px 10px 15px rgba(0, 0, 0, 0.4), 0px 4px 6px rgba(0, 0, 0, 0.24)`
-*   `--shadow-card-hover`: `0px 0px 0px 2px var(--color-primary) inset` (Subtle inner glow for interactive cards/elements on hover)
-*   `--shadow-button-focus`: `0px 0px 0px 3px rgba(108, 99, 255, 0.5)` (Focus ring for accessibility)
-
----
-
-## 7. Component Specifications by Section
-
-### 7.1. Hero Section
-
-*   **Layout:** Full-width, centered content. Left-aligned text, right-aligned image/mockup on desktop. Stacked on mobile.
-*   **Background:** `--color-background-primary`
-*   **Headline:**
-    *   Text: "Unlock Your Trading Edge with Advanced Analytics."
-    *   Style: `H1`, `--font-weight-bold`, `--color-text-primary`
-*   **Subheadline:**
-    *   Text: "Seamlessly track P&L, win-rate, entry/exit timing, and backtest strategies for Futures and Crypto Daytraders."
-    *   Style: `Body Large`, `--color-text-secondary`
-*   **Call to Action (CTA) Button:**
-    *   Text: "Start Free Trial"
-    *   Background: `--color-accent`
-    *   Text Color: `--color-background-primary` (or pure white `#FFFFFF` for contrast)
-    *   Border Radius: `--border-radius-md`
-    *   Padding: `--spacing-md` vertical, `--spacing-xl` horizontal
-    *   Hover: `background-color` darkens slightly, `--shadow-button-focus`
-*   **Secondary CTA (Optional):**
-    *   Text: "Learn More"
-    *   Background: Transparent
-    *   Text Color: `--color-primary`
-    *   Border: `1px solid var(--color-primary)`
-    *   Border Radius: `--border-radius-md`
-    *   Padding: `--spacing-md` vertical, `--spacing-xl` horizontal
-    *   Hover: `background-color` `rgba(108, 99, 255, 0.1)`
-*   **Image/Video:** High-quality mockup of the journal UI, showcasing key features in a dark theme.
-
-### 7.2. Features Section
-
-*   **Layout:** Grid-based, 3 columns on desktop, 2 columns on tablet, 1 column on mobile.
-*   **Background:** `--color-background-secondary`
-*   **Section Title:**
-    *   Text: "Powerful Features Designed for Traders"
-    *   Style: `H2`, `--font-weight-semibold`, `--color-text-primary`
-*   **Feature Card:**
-    *   **Container:**
-        *   Background: `--color-background-tertiary`
-        *   Border Radius: `--border-radius-lg`
-        *   Padding: `--spacing-xl`
-        *   Shadow: `--shadow-sm`
-        *   Hover: `--shadow-card-hover`
-    *   **Icon:**
-        *   Size: `48px x 48px`
-        *   Color: `--color-primary`
-        *   Background: `rgba(108, 99, 255, 0.1)` (subtle circle)
-        *   Border Radius: `50%`
-    *   **Title:**
-        *   Style: `H4`, `--font-weight-medium`, `--color-text-primary`
-        *   Margin Top: `--spacing-md`
-    *   **Description:**
-        *   Style: `Body`, `--color-text-secondary`
-        *   Margin Top: `--spacing-sm`
-
-### 7.3. Pricing Section
-
-*   **Layout:** Centered content. Pricing cards arranged in a row (3 columns desktop, 2 tablet, 1 mobile).
-*   **Background:** `--color-background-primary`
-*   **Section Title:**
-    *   Text: "Simple, Transparent Pricing"
-    *   Style: `H2`, `--font-weight-semibold`, `--color-text-primary`
-*   **Pricing Toggle (Monthly/Annually):**
-    *   Style: Pill-shaped toggle with active state highlighted by `--color-primary`.
-    *   Text Color: `--color-text-secondary` (inactive), `--color-text-primary` (active)
-*   **Pricing Card:**
-    *   **Container:**
-        *   Background: `--color-background-secondary`
-        *   Border Radius: `--border-radius-lg`
-        *   Padding: `--spacing-2xl`
-        *   Shadow: `--shadow-md`
-        *   Highlighted Plan (e.g., "Pro"): `border: 2px solid var(--color-primary)`
-    *   **Plan Name:**
-        *   Style: `H3`, `--font-weight-semibold`, `--color-text-primary`
-    *   **Price:**
-        *   Large, bold text (e.g., `H1` size, `--font-weight-bold`)
-        *   Currency symbol: `--color-text-secondary`
-        *   Number: `--color-text-primary`
-        *   Per period: `Body Small`, `--color-text-secondary`
-    *   **Features List:**
-        *   List items: `Body`, `--color-text-primary`
-        *   Checkmark icon: `--color-success`
-        *   Spacing: `--spacing-sm` between items
-    *   **CTA Button:**
-        *   Text: "Choose Plan"
-        *   Background: `--color-primary` (for standard), `--color-accent` (for highlighted plan)
-        *   Text Color: `--color-background-primary`
-        *   Border Radius: `--border-radius-md`
-        *   Padding: `--spacing-md` vertical, `--spacing-xl` horizontal
-        *   Hover: `background-color` darkens slightly, `--shadow-button-focus`
-
-### 7.4. FAQ Section
-
-*   **Layout:** Centered content, max-width container.
-*   **Background:** `--color-background-secondary`
-*   **Section Title:**
-    *   Text: "Frequently Asked Questions"
-    *   Style: `H2`, `--font-weight-semibold`, `--color-text-primary`
-*   **Accordion Component:**
-    *   **Question Header:**
-        *   Background: `--color-background-tertiary`
-        *   Padding: `--spacing-lg`
-        *   Border Radius: `--border-radius-md`
-        *   Text: `H4`, `--font-weight-medium`, `--color-text-primary`
-        *   Icon: Chevron icon, rotates on open/close.
-        *   Hover: `background-color` slightly lighter `var(--color-background-tertiary)`
-    *   **Answer Content:**
-        *   Background: `--color-background-tertiary` (or transparent if preferred)
-        *   Padding: `--spacing-lg` (top/bottom), `--spacing-xl` (left/right)
-        *   Text: `Body`, `--color-text-secondary`
-        *   Transition: Smooth slide/fade on open/close.
-
-### 7.5. Footer Section
-
-*   **Layout:** Full-width, multi-column on desktop (e.g., Logo/Description, Navigation, Social, Legal). Stacked on mobile.
-*   **Background:** `--color-background-primary`
-*   **Logo:** SVG or high-res PNG, white/light version.
-*   **Description:**
-    *   Text: Brief project description.
-    *   Style: `Body Small`, `--color-text-secondary`
-*   **Navigation Links:**
-    *   Text: `Body Small`, `--color-text-secondary`
-    *   Hover: `color: var(--color-primary)`
-*   **Social Media Icons:**
-    *   Icons: Standard social media icons (Twitter, Discord, etc.)
-    *   Color: `--color-text-secondary`
-    *   Hover: `color: var(--color-primary)`
-*   **Copyright:**
-    *   Text: `Body Small`, `--color-text-tertiary`
-    *   Margin Top: `--spacing-xl`
+*   **Shadow-sm**: `0px 1px 3px rgba(0, 0, 0, 0.3)` - For subtle elevation on interactive elements.
+*   **Shadow-md**: `0px 4px 8px rgba(0, 0, 0, 0.4)` - For cards, dropdowns, and modals.
+*   **Shadow-lg**: `0px 10px 20px rgba(0, 0, 0, 0.5)` - For prominent modals or fixed headers/footers.
+*   **Inner Shadow (for recessed elements)**: `inset 0px 1px 2px rgba(0, 0, 0, 0.6)` - For input fields or toggles.
 
 ---
 
-## 8. Responsive Breakpoints
+## 6. Component Specifications
 
-These breakpoints define how the layout and components adapt to different screen sizes.
+### 6.1. Hero Section
 
-*   **Mobile:**
-    *   `--breakpoint-mobile-max`: `max-width: 767px`
-    *   Target devices: Smartphones (portrait & landscape)
-*   **Tablet:**
-    *   `--breakpoint-tablet-min`: `min-width: 768px`
-    *   `--breakpoint-tablet-max`: `max-width: 1023px`
-    *   Target devices: Tablets (portrait & landscape), small laptops
-*   **Desktop:**
-    *   `--breakpoint-desktop-min`: `min-width: 1024px`
-    *   `--breakpoint-desktop-max`: `max-width: 1439px`
-    *   Target devices: Standard laptops, desktop monitors
-*   **Large Desktop:**
-    *   `--breakpoint-large-desktop-min`: `min-width: 1440px`
-    *   Target devices: Large monitors, ultra-wide screens
+*   **Layout**: Full-width, centered content. Image/video on one side, text/CTA on the other (desktop). Stacked on mobile.
+*   **Background**: `linear-gradient(180deg, #0A0A0C 0%, #1A1A1E 100%)` or a subtle background pattern.
+*   **Headline**: `H1` (`48px`, `font-weight: 800`, `color: #FFFFFF`). Bold, impactful statement.
+    *   *Example*: "Master Your Trades. Maximize Your Profits."
+*   **Subheadline**: `Body Large` (`18px`, `font-weight: 400`, `color: #E0E0E0`). Clear, concise explanation.
+    *   *Example*: "Advanced analytics, backtesting, and performance tracking designed for active daytraders."
+*   **Call to Action (CTA)**:
+    *   **Primary Button**: `background-color: #2A64F6`, `color: #FFFFFF`, `padding: 16px 32px`, `border-radius: 8px`, `font-weight: 600`, `font-size: 18px`.
+        *   *Example*: "Start Free Trial"
+    *   **Secondary Button (optional)**: `background-color: transparent`, `border: 1px solid #2A64F6`, `color: #2A64F6`, `padding: 16px 32px`, `border-radius: 8px`, `font-weight: 600`, `font-size: 18px`.
+        *   *Example*: "Watch Demo"
+*   **Visual Element**: Placeholder for a high-quality screenshot of the journal UI or a short demo video. Aspect ratio `16:9`.
+
+### 6.2. Features Section
+
+*   **Layout**: Grid-based for feature cards. 3 columns on desktop, 2 on tablet, 1 on mobile.
+*   **Section Title**: `H2` (`36px`, `font-weight: 700`, `color: #FFFFFF`), centered.
+    *   *Example*: "Unlock Unprecedented Trading Insights"
+*   **Section Description**: `Body Large` (`18px`, `font-weight: 400`, `color: #A0A0A0`), centered, max-width `768px`.
+    *   *Example*: "Our powerful tools provide the edge you need to analyze, learn, and improve your trading strategy."
+*   **Feature Card**:
+    *   **Container**: `background-color: #1A1A1E`, `border-radius: 8px`, `padding: 32px`, `box-shadow: Shadow-md`.
+    *   **Icon**: `48px x 48px`, `color: #00C4B4` (or other accent colors), SVG.
+    *   **Title**: `H4` (`22px`, `font-weight: 600`, `color: #FFFFFF`), `margin-top: 16px`.
+    *   **Description**: `Body Medium` (`16px`, `font-weight: 400`, `color: #E0E0E0`), `margin-top: 8px`.
+    *   *Examples*:
+        *   **Card 1**: Icon (Analytics), Title: "Advanced Analytics", Description: "Dive deep into your performance with custom metrics and interactive charts."
+        *   **Card 2**: Icon (Backtesting), Title: "Robust Backtesting", Description: "Test strategies against historical data without risking a single dollar."
+        *   **Card 3**: Icon (Tracking), Title: "Real-time Performance", Description: "Track every trade, every decision, and see your progress instantly."
+
+### 6.3. Pricing Section
+
+*   **Layout**: Centered content, pricing cards in a row (desktop), stacked (mobile/tablet).
+*   **Section Title**: `H2` (`36px`, `font-weight: 700`, `color: #FFFFFF`), centered.
+    *   *Example*: "Simple Pricing, Powerful Features"
+*   **Section Description**: `Body Large` (`18px`, `font-weight: 400`, `color: #A0A0A0`), centered, max-width `768px`.
+    *   *Example*: "Choose the plan that fits your trading style and start optimizing your results today."
+*   **Pricing Toggle (Monthly/Annually)**:
+    *   **Container**: `background-color: #1A1A1E`, `border-radius: 9999px`, `padding: 4px`, `display: inline-flex`.
+    *   **Button (Active)**: `background-color: #2A64F6`, `color: #FFFFFF`, `padding: 8px 24px`, `border-radius: 9999px`, `font-weight: 600`.
+    *   **Button (Inactive)**: `background-color: transparent`, `color: #E0E0E0`, `padding: 8px 24px`, `border-radius: 9999px`, `font-weight: 500`.
+*   **Pricing Card**:
+    *   **Container**: `background-color: #1A1A1E`, `border-radius: 8px`, `padding: 40px`, `box-shadow: Shadow-md`. Highlighted card might have `border: 2px solid #2A64F6`.
+    *   **Plan Name**: `H3` (`28px`, `font-weight: 600`, `color: #FFFFFF`).
+    *   **Price**: `H1` (`48px`, `font-weight: 800`, `color: #FFFFFF`). Subtext for `/month` or `/year` in `Body Small`, `color: #A0A0A0`.
+        *   *Example*: `$49` (H1) `/month` (Body Small)
+    *   **Features List**: `Body Medium` (`16px`, `color: #E0E0E0`). Each item prefixed with a checkmark icon (`color: #00E676`). `margin-top: 24px`.
+    *   **Call to Action (CTA)**:
+        *   **Primary Button**: `background-color: #2A64F6`, `color: #FFFFFF`, `padding: 14px 28px`, `border-radius: 8px`, `font-weight: 600`, `font-size: 16px`.
+        *   **Secondary Button (for lower tiers)**: `background-color: transparent`, `border: 1px solid #6C757D`, `color: #E0E0E0`, `padding: 14px 28px`, `border-radius: 8px`, `font-weight: 600`, `font-size: 16px`.
+
+### 6.4. Footer Section
+
+*   **Layout**: Full-width, multi-column on desktop, stacked on mobile.
+*   **Background**: `#0A0A0C` (or slightly darker than main background if desired).
+*   **Content**:
+    *   **Logo**: `height: 40px`, SVG.
+    *   **Navigation Links**: Grouped by category (e.g., Product, Company, Resources).
+        *   **Category Title**: `H4` (`22px`, `font-weight: 600`, `color: #FFFFFF`).
+        *   **Link Item**: `Body Medium` (`16px`, `font-weight: 400`, `color: #A0A0A0`). Hover state: `color: #2A64F6`, `text-decoration: underline`.
+    *   **Social Media Links**: Icons (`24px x 24px`, `color: #A0A0A0`). Hover state: `color: #2A64F6`.
+    *   **Copyright**: `Body Small` (`14px`, `font-weight: 300`, `color: #A0A0A0`).
+        *   *Example*: `© 2023 Premium Trading Journal. All rights reserved.`
 
 ---
 
-## 9. Animation Guidelines
+## 7. Responsive Breakpoints
 
-Animations should be subtle, professional, and enhance the user experience without being distracting. They should feel fast and fluid.
+Standard breakpoints for adapting the layout across various devices.
 
-*   **Duration:**
-    *   `--animation-duration-fast`: `150ms` (for hover states, small changes)
-    *   `--animation-duration-normal`: `250ms` (for modal transitions, accordion toggles)
-    *   `--animation-duration-slow`: `350ms` (for complex transitions, page loads)
-*   **Easing:**
-    *   `--animation-easing-ease-in-out`: `cubic-bezier(0.4, 0, 0.2, 1)` (Standard smooth curve)
-    *   `--animation-easing-ease-out`: `cubic-bezier(0, 0, 0.2, 1)` (Starts fast, ends slow)
-*   **Types of Animations:**
-    *   **Hover States:** Subtle `background-color` changes, `border-color` changes, `transform: translateY(-2px)` for elevation.
-    *   **Focus States:** Clear `box-shadow` or `outline` for accessibility.
-    *   **Transitions:** `opacity` for fades, `transform: translateX/Y` for slides, `height` for accordion open/close.
-    *   **Loading States:** Subtle spinners or skeleton loaders.
-    *   **Modals/Drawers:** Fade in/out with slight scale or slide.
-*   **Principles:**
-    *   **Purposeful:** Every animation should serve a clear UX purpose (feedback, hierarchy, context).
-    *   **Performant:** Avoid animations that cause jank or slow down the interface. Use `transform` and `opacity` where possible for hardware acceleration.
-    *   **Subtle:** No flashy or overly complex animations.
-    *   **Consistent:** Apply similar animation styles to similar interactions across the platform.
+*   **Mobile**: `max-width: 767px`
+    *   Typically single-column layouts, larger text for readability, touch-friendly elements.
+*   **Tablet**: `min-width: 768px` and `max-width: 1023px`
+    *   Two-column layouts, adjusted spacing, slightly smaller text than desktop.
+*   **Desktop**: `min-width: 1024px` and `max-width: 1439px`
+    *   Standard multi-column layouts, full feature set.
+*   **Large Desktop**: `min-width: 1440px`
+    *   Wider layouts, potentially more content density, optimized for large screens.
+
+---
+
+## 8. Animation Guidelines
+
+Animations should be subtle, professional, and enhance the user experience without being distracting.
+
+*   **Ease-in-out**: Most common easing function for smooth starts and ends.
+    *   `transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);`
+*   **Ease-out**: For elements that appear quickly and settle.
+    *   `transition-timing-function: cubic-bezier(0, 0, 0.2, 1);`
+*   **Duration**:
+    *   **Short**: `150ms` - For hover states, small color changes, quick feedback.
+    *   **Medium**: `250ms` - For component transitions, modal openings/closings, larger state changes.
+    *   **Long**: `350ms` - For complex animations or full-page transitions (rare).
+*   **Properties**: Animate only necessary properties (e.g., `opacity`, `transform`, `background-color`, `box-shadow`) to ensure performance.
+*   **Interactions**:
+    *   **Hover**: Subtle `background-color` change, slight `box-shadow` increase, or `transform: translateY(-2px)`.
+    *   **Click/Tap**: Quick `scale(0.98)` or `opacity` change for immediate feedback.
+    *   **Loading States**: Smooth progress bars or skeleton loaders.
+*   **Accessibility**: Ensure animations can be disabled via user preferences (e.g., `prefers-reduced-motion`).
+
+---
+```
