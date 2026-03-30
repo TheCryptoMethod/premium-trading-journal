@@ -1,186 +1,248 @@
-```markdown
-# Design System for Premium Trading Journal
+# Design System Documentation
 
-This document outlines the core design principles and specifications for the "Premium Trading Journal" SaaS project. It aims to provide a consistent and scalable foundation for UI development, ensuring a premium, professional, and intuitive user experience.
-
----
-
-## 1. Color Palette
-
-A sophisticated dark theme with vibrant accents for data visualization and interactive elements.
-
-*   **Background Primary**: `#0A0A0C` (Deep Charcoal) - Main background for pages and sections.
-*   **Background Secondary**: `#1A1A1E` (Dark Grey) - Used for cards, modals, and elevated UI elements.
-*   **Text Primary**: `#E0E0E0` (Light Grey) - Main body text, labels.
-*   **Text Secondary**: `#A0A0A0` (Medium Grey) - Secondary information, helper text, disabled states.
-*   **Primary Accent**: `#2A64F6` (Vibrant Blue) - Main interactive elements, primary buttons, active states, key data highlights.
-*   **Secondary Accent**: `#00C4B4` (Teal) - Secondary interactive elements, charts, progress indicators, positive trends.
-*   **Success**: `#00E676` (Bright Green) - Positive feedback, successful actions, profit indicators.
-*   **Warning**: `#FFC107` (Amber) - Cautionary messages, neutral trends.
-*   **Danger**: `#DC3545` (Red) - Error messages, destructive actions, loss indicators.
+This document outlines the core design principles and specifications for the premium trading journal SaaS project. It serves as a single source of truth for UI/UX elements, ensuring consistency and efficiency in development.
 
 ---
 
-## 2. Typography
+## 1. Project Overview
 
-Utilizing a modern, highly readable sans-serif font for both headings and body text to maintain consistency and clarity, crucial for data-heavy applications.
-
-*   **Font Family**: `Inter`, `sans-serif`
-    *   **Import**: `@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');`
-*   **Headings Font**: `Inter`
-    *   `H1`: 48px, `font-weight: 800`, `line-height: 1.2`, `color: #FFFFFF`
-    *   `H2`: 36px, `font-weight: 700`, `line-height: 1.3`, `color: #FFFFFF`
-    *   `H3`: 28px, `font-weight: 600`, `line-height: 1.4`, `color: #FFFFFF`
-    *   `H4`: 22px, `font-weight: 600`, `line-height: 1.5`, `color: #FFFFFF`
-*   **Body Font**: `Inter`
-    *   `Body Large`: 18px, `font-weight: 400`, `line-height: 1.6`, `color: #E0E0E0`
-    *   `Body Medium`: 16px, `font-weight: 400`, `line-height: 1.6`, `color: #E0E0E0`
-    *   `Body Small`: 14px, `font-weight: 400`, `line-height: 1.7`, `color: #A0A0A0`
-    *   `Caption`: 12px, `font-weight: 300`, `line-height: 1.8`, `color: #A0A0A0`
-*   **Emphasis**:
-    *   `Strong`: `font-weight: 600`
-    *   `Link`: `color: #2A64F6`, `text-decoration: underline` on hover
+**Project Name:** Premium Trading Journal
+**Type:** SaaS
+**Style:** Dark, Modern, Professional
+**Description:** A sophisticated trading journal for daytraders, featuring advanced analytics, backtesting, and a sleek dark-themed interface.
 
 ---
 
-## 3. Spacing Scale
+## 2. Color Palette
 
-A consistent 8px grid-based spacing system for all UI elements.
+A carefully selected dark color scheme with a vibrant accent to highlight key actions and data.
 
-*   `xs`: 4px
-*   `sm`: 8px
-*   `md`: 16px
-*   `lg`: 24px
-*   `xl`: 32px
-*   `xxl`: 48px
-*   `xxxl`: 64px
-
----
-
-## 4. Border Radius
-
-Subtle rounding for a modern and friendly, yet professional aesthetic.
-
-*   **Base Radius**: `8px` - Applied to cards, buttons, input fields, and most UI containers.
-*   **Small Radius**: `4px` - For smaller elements like tags or badges.
-*   **Pill Radius**: `9999px` - For pill-shaped buttons or tags.
+*   **Background:** `#0A0A0F` (Deep Charcoal - Main page background)
+*   **Primary (UI Elements):** `#1A1A22` (Dark Grey - Card backgrounds, primary containers)
+*   **Secondary (Borders, Subtle Accents):** `#2C2C38` (Medium Dark Grey - Borders, dividers, secondary UI elements)
+*   **Accent (Interactive Elements):** `#00C896` (Vibrant Teal - CTAs, highlights, active states, key data points)
+*   **Text Primary:** `#E0E0E6` (Off-White - Main body text, headings)
+*   **Text Secondary:** `#A0A0A8` (Light Grey - Secondary text, labels, disabled states)
+*   **Success:** `#34D399` (Green - Positive feedback, success messages)
+*   **Error:** `#EF4444` (Red - Negative feedback, error messages)
+*   **Warning:** `#FBBF24` (Amber - Warning messages, alerts)
 
 ---
 
-## 5. Shadow Styles
+## 3. Typography
 
-Subtle shadows to provide depth and hierarchy without overwhelming the dark theme. Shadows are typically darker and less spread out than in light themes.
+Using a single, versatile font family for consistency and readability across all elements.
 
-*   **Shadow-sm**: `0px 1px 3px rgba(0, 0, 0, 0.3)` - For subtle elevation on interactive elements.
-*   **Shadow-md**: `0px 4px 8px rgba(0, 0, 0, 0.4)` - For cards, dropdowns, and modals.
-*   **Shadow-lg**: `0px 10px 20px rgba(0, 0, 0, 0.5)` - For prominent modals or fixed headers/footers.
-*   **Inner Shadow (for recessed elements)**: `inset 0px 1px 2px rgba(0, 0, 0, 0.6)` - For input fields or toggles.
+*   **Font Family:** `Inter`, sans-serif
+    *   **Fallback:** `system-ui`, `-apple-system`, `BlinkMacSystemFont`, `"Segoe UI"`, `Roboto`, `"Helvetica Neue"`, `Arial`, `"Noto Sans"`, `sans-serif`, `"Apple Color Emoji"`, `"Segoe UI Emoji"`, `"Segoe UI Symbol"`, `"Noto Color Emoji"`
+*   **Font Weights Used:** Regular (400), Medium (500), SemiBold (600), Bold (700)
 
----
+### Font Sizes (Desktop Base)
 
-## 6. Component Specifications
+*   **H1 (Hero Titles):** `48px` (Bold)
+*   **H2 (Section Titles):** `36px` (SemiBold)
+*   **H3 (Card Titles, Sub-sections):** `28px` (Medium)
+*   **H4 (Minor Headings):** `22px` (Medium)
+*   **Body Large:** `18px` (Regular)
+*   **Body:** `16px` (Regular - Default text size)
+*   **Small:** `14px` (Regular - Captions, meta info)
 
-### 6.1. Hero Section
+### Line Heights
 
-*   **Layout**: Full-width, centered content. Image/video on one side, text/CTA on the other (desktop). Stacked on mobile.
-*   **Background**: `linear-gradient(180deg, #0A0A0C 0%, #1A1A1E 100%)` or a subtle background pattern.
-*   **Headline**: `H1` (`48px`, `font-weight: 800`, `color: #FFFFFF`). Bold, impactful statement.
-    *   *Example*: "Master Your Trades. Maximize Your Profits."
-*   **Subheadline**: `Body Large` (`18px`, `font-weight: 400`, `color: #E0E0E0`). Clear, concise explanation.
-    *   *Example*: "Advanced analytics, backtesting, and performance tracking designed for active daytraders."
-*   **Call to Action (CTA)**:
-    *   **Primary Button**: `background-color: #2A64F6`, `color: #FFFFFF`, `padding: 16px 32px`, `border-radius: 8px`, `font-weight: 600`, `font-size: 18px`.
-        *   *Example*: "Start Free Trial"
-    *   **Secondary Button (optional)**: `background-color: transparent`, `border: 1px solid #2A64F6`, `color: #2A64F6`, `padding: 16px 32px`, `border-radius: 8px`, `font-weight: 600`, `font-size: 18px`.
-        *   *Example*: "Watch Demo"
-*   **Visual Element**: Placeholder for a high-quality screenshot of the journal UI or a short demo video. Aspect ratio `16:9`.
-
-### 6.2. Features Section
-
-*   **Layout**: Grid-based for feature cards. 3 columns on desktop, 2 on tablet, 1 on mobile.
-*   **Section Title**: `H2` (`36px`, `font-weight: 700`, `color: #FFFFFF`), centered.
-    *   *Example*: "Unlock Unprecedented Trading Insights"
-*   **Section Description**: `Body Large` (`18px`, `font-weight: 400`, `color: #A0A0A0`), centered, max-width `768px`.
-    *   *Example*: "Our powerful tools provide the edge you need to analyze, learn, and improve your trading strategy."
-*   **Feature Card**:
-    *   **Container**: `background-color: #1A1A1E`, `border-radius: 8px`, `padding: 32px`, `box-shadow: Shadow-md`.
-    *   **Icon**: `48px x 48px`, `color: #00C4B4` (or other accent colors), SVG.
-    *   **Title**: `H4` (`22px`, `font-weight: 600`, `color: #FFFFFF`), `margin-top: 16px`.
-    *   **Description**: `Body Medium` (`16px`, `font-weight: 400`, `color: #E0E0E0`), `margin-top: 8px`.
-    *   *Examples*:
-        *   **Card 1**: Icon (Analytics), Title: "Advanced Analytics", Description: "Dive deep into your performance with custom metrics and interactive charts."
-        *   **Card 2**: Icon (Backtesting), Title: "Robust Backtesting", Description: "Test strategies against historical data without risking a single dollar."
-        *   **Card 3**: Icon (Tracking), Title: "Real-time Performance", Description: "Track every trade, every decision, and see your progress instantly."
-
-### 6.3. Pricing Section
-
-*   **Layout**: Centered content, pricing cards in a row (desktop), stacked (mobile/tablet).
-*   **Section Title**: `H2` (`36px`, `font-weight: 700`, `color: #FFFFFF`), centered.
-    *   *Example*: "Simple Pricing, Powerful Features"
-*   **Section Description**: `Body Large` (`18px`, `font-weight: 400`, `color: #A0A0A0`), centered, max-width `768px`.
-    *   *Example*: "Choose the plan that fits your trading style and start optimizing your results today."
-*   **Pricing Toggle (Monthly/Annually)**:
-    *   **Container**: `background-color: #1A1A1E`, `border-radius: 9999px`, `padding: 4px`, `display: inline-flex`.
-    *   **Button (Active)**: `background-color: #2A64F6`, `color: #FFFFFF`, `padding: 8px 24px`, `border-radius: 9999px`, `font-weight: 600`.
-    *   **Button (Inactive)**: `background-color: transparent`, `color: #E0E0E0`, `padding: 8px 24px`, `border-radius: 9999px`, `font-weight: 500`.
-*   **Pricing Card**:
-    *   **Container**: `background-color: #1A1A1E`, `border-radius: 8px`, `padding: 40px`, `box-shadow: Shadow-md`. Highlighted card might have `border: 2px solid #2A64F6`.
-    *   **Plan Name**: `H3` (`28px`, `font-weight: 600`, `color: #FFFFFF`).
-    *   **Price**: `H1` (`48px`, `font-weight: 800`, `color: #FFFFFF`). Subtext for `/month` or `/year` in `Body Small`, `color: #A0A0A0`.
-        *   *Example*: `$49` (H1) `/month` (Body Small)
-    *   **Features List**: `Body Medium` (`16px`, `color: #E0E0E0`). Each item prefixed with a checkmark icon (`color: #00E676`). `margin-top: 24px`.
-    *   **Call to Action (CTA)**:
-        *   **Primary Button**: `background-color: #2A64F6`, `color: #FFFFFF`, `padding: 14px 28px`, `border-radius: 8px`, `font-weight: 600`, `font-size: 16px`.
-        *   **Secondary Button (for lower tiers)**: `background-color: transparent`, `border: 1px solid #6C757D`, `color: #E0E0E0`, `padding: 14px 28px`, `border-radius: 8px`, `font-weight: 600`, `font-size: 16px`.
-
-### 6.4. Footer Section
-
-*   **Layout**: Full-width, multi-column on desktop, stacked on mobile.
-*   **Background**: `#0A0A0C` (or slightly darker than main background if desired).
-*   **Content**:
-    *   **Logo**: `height: 40px`, SVG.
-    *   **Navigation Links**: Grouped by category (e.g., Product, Company, Resources).
-        *   **Category Title**: `H4` (`22px`, `font-weight: 600`, `color: #FFFFFF`).
-        *   **Link Item**: `Body Medium` (`16px`, `font-weight: 400`, `color: #A0A0A0`). Hover state: `color: #2A64F6`, `text-decoration: underline`.
-    *   **Social Media Links**: Icons (`24px x 24px`, `color: #A0A0A0`). Hover state: `color: #2A64F6`.
-    *   **Copyright**: `Body Small` (`14px`, `font-weight: 300`, `color: #A0A0A0`).
-        *   *Example*: `© 2023 Premium Trading Journal. All rights reserved.`
+*   Headings: `1.2`
+*   Body Text: `1.5`
 
 ---
 
-## 7. Responsive Breakpoints
+## 4. Spacing Scale
 
-Standard breakpoints for adapting the layout across various devices.
+A consistent 8px-based spacing scale for all layout and component spacing.
 
-*   **Mobile**: `max-width: 767px`
-    *   Typically single-column layouts, larger text for readability, touch-friendly elements.
-*   **Tablet**: `min-width: 768px` and `max-width: 1023px`
-    *   Two-column layouts, adjusted spacing, slightly smaller text than desktop.
-*   **Desktop**: `min-width: 1024px` and `max-width: 1439px`
-    *   Standard multi-column layouts, full feature set.
-*   **Large Desktop**: `min-width: 1440px`
-    *   Wider layouts, potentially more content density, optimized for large screens.
+*   **xs:** `8px`
+*   **sm:** `16px`
+*   **md:** `24px`
+*   **lg:** `48px`
+*   **xl:** `80px`
+*   **xxl:** `120px` (For large section padding)
 
 ---
 
-## 8. Animation Guidelines
+## 5. Border Radius
+
+Subtle rounding for a modern and friendly feel, without being overly soft.
+
+*   **Default:** `8px` (For cards, buttons, input fields)
+*   **Small:** `4px` (For smaller elements, badges)
+*   **Full:** `9999px` (For pill-shaped elements, avatars)
+
+---
+
+## 6. Shadow Styles
+
+Subtle, dark shadows to provide depth and hierarchy in the dark interface.
+
+*   **Small Shadow (Subtle Lift):**
+    *   `box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);`
+*   **Medium Shadow (Card Elevation):**
+    *   `box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);`
+*   **Large Shadow (Modal, Popover):**
+    *   `box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.4);`
+
+---
+
+## 7. Component Specifications
+
+Detailed specifications for key sections of the landing page.
+
+### 7.1. Hero Section
+
+*   **Background:** `Background` color (`#0A0A0F`) with a subtle gradient or pattern for depth.
+*   **Container:** Max-width `1280px`, centered, `xl` padding top/bottom.
+*   **Heading (H1):**
+    *   Font: `Inter`, `48px`, `Bold`.
+    *   Color: `Text Primary` (`#E0E0E6`).
+    *   Key phrase/word within heading to use `Accent` color (`#00C896`).
+*   **Subheading (Body Large):**
+    *   Font: `Inter`, `18px`, `Regular`.
+    *   Color: `Text Secondary` (`#A0A0A8`).
+    *   Spacing: `md` margin-top from H1.
+*   **Call to Action (CTA) Button:**
+    *   Background: `Accent` color (`#00C896`).
+    *   Text Color: `Background` color (`#0A0A0F`).
+    *   Padding: `16px` vertical, `32px` horizontal.
+    *   Border Radius: `8px`.
+    *   Font: `Inter`, `18px`, `SemiBold`.
+    *   Hover: Background darkens slightly (`#00A37A`), subtle `Medium Shadow`.
+    *   Spacing: `lg` margin-top from subheading.
+*   **Supporting Image/Mockup:**
+    *   High-quality screenshot or illustration of the app interface, dark-themed.
+    *   Positioned to complement text, potentially floating or slightly overlapping.
+
+### 7.2. Features Section
+
+*   **Background:** `Primary (UI Elements)` color (`#1A1A22`).
+*   **Section Title (H2):**
+    *   Font: `Inter`, `36px`, `SemiBold`.
+    *   Color: `Text Primary` (`#E0E0E6`).
+    *   Centered.
+    *   Spacing: `xl` padding top/bottom for the section.
+*   **Feature Grid:**
+    *   Layout: Responsive grid (e.g., 3 columns desktop, 2 columns tablet, 1 column mobile).
+    *   Gap: `lg` between cards.
+*   **Feature Card:**
+    *   Background: `Primary (UI Elements)` color (`#1A1A22`).
+    *   Border: `1px` solid `Secondary (Borders)` color (`#2C2C38`).
+    *   Border Radius: `8px`.
+    *   Padding: `lg`.
+    *   Shadow: `Medium Shadow`.
+    *   **Icon:**
+        *   Size: `48px` x `48px`.
+        *   Color: `Accent` color (`#00C896`).
+        *   Spacing: `md` margin-bottom.
+    *   **Title (H3):**
+        *   Font: `Inter`, `28px`, `Medium`.
+        *   Color: `Text Primary` (`#E0E0E6`).
+        *   Spacing: `sm` margin-bottom.
+    *   **Description (Body):**
+        *   Font: `Inter`, `16px`, `Regular`.
+        *   Color: `Text Secondary` (`#A0A0A8`).
+
+### 7.3. Pricing Section
+
+*   **Background:** `Background` color (`#0A0A0F`).
+*   **Section Title (H2):**
+    *   Font: `Inter`, `36px`, `SemiBold`.
+    *   Color: `Text Primary` (`#E0E0E6`).
+    *   Centered.
+    *   Spacing: `xl` padding top/bottom for the section.
+*   **Pricing Grid:**
+    *   Layout: Responsive grid (e.g., 3 columns desktop, 1-2 columns tablet/mobile).
+    *   Gap: `lg` between cards.
+*   **Pricing Card:**
+    *   Background: `Primary (UI Elements)` color (`#1A1A22`).
+    *   Border: `1px` solid `Secondary (Borders)` color (`#2C2C38`).
+    *   Border Radius: `8px`.
+    *   Padding: `lg`.
+    *   Shadow: `Medium Shadow`.
+    *   **Plan Name (H3):**
+        *   Font: `Inter`, `28px`, `Medium`.
+        *   Color: `Text Primary` (`#E0E0E6`).
+        *   Centered.
+        *   Spacing: `md` margin-bottom.
+    *   **Price:**
+        *   Font: `Inter`, `48px`, `Bold`.
+        *   Color: `Accent` color (`#00C896`).
+        *   Centered.
+        *   Suffix (e.g., "/month"): `Text Secondary`, `18px`.
+        *   Spacing: `md` margin-bottom.
+    *   **Features List:**
+        *   Unordered list.
+        *   List Item Font: `Inter`, `16px`, `Regular`.
+        *   List Item Color: `Text Primary` (`#E0E0E6`).
+        *   Icon (checkmark): `Accent` color (`#00C896`).
+        *   Spacing: `sm` vertical spacing between items.
+        *   Spacing: `lg` margin-bottom for the list.
+    *   **CTA Button:**
+        *   Style: Same as Hero CTA, but potentially `100%` width within the card.
+        *   Text: "Choose Plan" or "Start Free Trial".
+    *   **"Most Popular" Badge (Optional):**
+        *   Position: Top-right corner of the card.
+        *   Background: `Accent` color (`#00C896`).
+        *   Text Color: `Background` color (`#0A0A0F`).
+        *   Font: `Inter`, `14px`, `SemiBold`.
+        *   Padding: `xs` vertical, `sm` horizontal.
+        *   Border Radius: `Full`.
+        *   Applied to one specific pricing card.
+
+### 7.4. Footer Section
+
+*   **Background:** `Background` color (`#0A0A0F`).
+*   **Padding:** `xl` top/bottom.
+*   **Layout:** Grid or flexbox for columns (e.g., logo, navigation, legal, social).
+*   **Logo:** Project logo (white/light version).
+*   **Navigation Links:**
+    *   Font: `Inter`, `16px`, `Regular`.
+    *   Color: `Text Secondary` (`#A0A0A8`).
+    *   Hover: `Accent` color (`#00C896`).
+    *   Spacing: `sm` vertical spacing.
+*   **Copyright Text:**
+    *   Font: `Inter`, `14px`, `Regular`.
+    *   Color: `Text Secondary` (`#A0A0A8`).
+*   **Social Media Icons:**
+    *   Icons: SVG or icon font.
+    *   Color: `Text Secondary` (`#A0A0A8`).
+    *   Hover: `Accent` color (`#00C896`).
+    *   Size: `24px` x `24px`.
+    *   Spacing: `sm` horizontal spacing.
+
+---
+
+## 8. Responsive Breakpoints
+
+Standard breakpoints for adapting the layout across devices.
+
+*   **Mobile:** `0px` - `767px`
+    *   Layouts typically stack vertically.
+    *   Font sizes may be reduced (e.g., H1: `36px`, Body: `15px`).
+    *   Padding and margins reduced (e.g., `lg` becomes `md`).
+*   **Tablet:** `768px` - `1023px`
+    *   Layouts may start to use multiple columns (e.g., 2-column grids).
+    *   Font sizes closer to desktop, but potentially slightly smaller.
+*   **Desktop:** `1024px` and up
+    *   Full desktop layouts.
+    *   Max content width `1280px` for main sections.
+
+---
+
+## 9. Animation Guidelines
 
 Animations should be subtle, professional, and enhance the user experience without being distracting.
 
-*   **Ease-in-out**: Most common easing function for smooth starts and ends.
-    *   `transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);`
-*   **Ease-out**: For elements that appear quickly and settle.
-    *   `transition-timing-function: cubic-bezier(0, 0, 0.2, 1);`
-*   **Duration**:
-    *   **Short**: `150ms` - For hover states, small color changes, quick feedback.
-    *   **Medium**: `250ms` - For component transitions, modal openings/closings, larger state changes.
-    *   **Long**: `350ms` - For complex animations or full-page transitions (rare).
-*   **Properties**: Animate only necessary properties (e.g., `opacity`, `transform`, `background-color`, `box-shadow`) to ensure performance.
-*   **Interactions**:
-    *   **Hover**: Subtle `background-color` change, slight `box-shadow` increase, or `transform: translateY(-2px)`.
-    *   **Click/Tap**: Quick `scale(0.98)` or `opacity` change for immediate feedback.
-    *   **Loading States**: Smooth progress bars or skeleton loaders.
-*   **Accessibility**: Ensure animations can be disabled via user preferences (e.g., `prefers-reduced-motion`).
-
----
-```
+*   **Duration:** Short to medium (`150ms` - `300ms`).
+*   **Easing:** `ease-in-out` for most transitions.
+*   **Types of Animations:**
+    *   **Hover Effects:** Buttons, links, cards should have subtle color changes, slight lifts (`Small Shadow`), or scale transformations.
+    *   **Focus States:** Clear visual indication for keyboard navigation.
+    *   **Transitions:** Smooth transitions for state changes (e.g., menu open/close, tab switching).
+    *   **Loading States:** Minimalistic loaders or skeleton screens.
+*   **Avoid:** Excessive bouncing, flashing, or overly complex animations. Performance is key.

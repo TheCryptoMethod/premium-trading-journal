@@ -1,8 +1,8 @@
 {
-  "prompt": "Premium Trading Journal fuer Futures und Crypto Daytrader. Dark theme mit Electric Blue und Magenta Akzent. Inspiriert von Tradezella + Linear.app. Features: P&L Analytics per Strategy, Win-Rate per Setup/Timeframe, Entry/Exit Timing Heatmap, Backtesting, Equity Curve. Zielgruppe: Trader mit 10-30 Trades/Tag. Pricing: Starter Free, Pro 39/mo, Elite 89/mo, 14-Tage Trial.",
+  "prompt": "Premium Trading Journal fuer aktive Daytrader. Dark theme, Electric Blue und Magenta Akzente. Inspiriert von Tradezella und Linear.app. Features: P&L Analytics per Strategy, Win-Rate per Setup, Entry/Exit Timing Heatmap, Backtesting, Equity Curve. Zielgruppe: Futures und Crypto Trader mit 10-30 Trades/Tag. Pricing: Free, Pro 39/mo, Elite 89/mo.",
   "brief": {
     "project_name": "premium-trading-journal",
-    "description": "A premium trading journal for Futures and Crypto Daytraders, offering advanced analytics like P&L, win-rate, entry/exit timing, backtesting, and equity curve tracking.",
+    "description": "A premium trading journal for active daytraders, offering advanced analytics, backtesting, and performance tracking.",
     "type": "saas",
     "style": "dark",
     "color_scheme": "dark",
@@ -10,37 +10,37 @@
       "hero",
       "features",
       "pricing",
-      "faq",
       "footer"
     ],
     "features": [
-      "P&L Analytics per Strategy",
-      "Win-Rate per Setup/Timeframe",
-      "Entry/Exit Timing Heatmap",
-      "Backtesting",
-      "Equity Curve",
-      "14-Day Trial",
-      "responsive"
+      "pnl-analytics-per-strategy",
+      "win-rate-per-setup",
+      "entry-exit-timing-heatmap",
+      "backtesting",
+      "equity-curve",
+      "responsive",
+      "seo"
     ],
-    "target_audience": "Daytraders (Futures and Crypto) making 10-30 trades per day.",
+    "target_audience": "Futures and Crypto traders making 10-30 trades per day.",
     "reference_urls": [
-      "Tradezella",
-      "Linear.app"
+      "https://tradezella.com",
+      "https://linear.app"
     ],
-    "framework": null,
-    "original_prompt": "Premium Trading Journal fuer Futures und Crypto Daytrader. Dark theme mit Electric Blue und Magenta Akzent. Inspiriert von Tradezella + Linear.app. Features: P&L Analytics per Strategy, Win-Rate per Setup/Timeframe, Entry/Exit Timing Heatmap, Backtesting, Equity Curve. Zielgruppe: Trader mit 10-30 Trades/Tag. Pricing: Starter Free, Pro 39/mo, Elite 89/mo, 14-Tage Trial.",
+    "framework": "nextjs",
+    "original_prompt": "Premium Trading Journal fuer aktive Daytrader. Dark theme, Electric Blue und Magenta Akzente. Inspiriert von Tradezella und Linear.app. Features: P&L Analytics per Strategy, Win-Rate per Setup, Entry/Exit Timing Heatmap, Backtesting, Equity Curve. Zielgruppe: Futures und Crypto Trader mit 10-30 Trades/Tag. Pricing: Free, Pro 39/mo, Elite 89/mo.",
     "hero_image": "hero-bg.png",
     "product_mockup": "product-mockup.png"
   },
   "project_dir": "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal",
   "qa": {
     "passed": true,
-    "score": 17,
+    "score": 16,
     "max_score": 15,
     "issues": [
+      "Missing navigation",
       "No CSS animations \u2014 site feels static"
     ],
-    "html_size": 61156,
+    "html_size": 60699,
     "screenshots": {
       "desktop": "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\screenshot-desktop.png",
       "scroll_shots": [
@@ -50,16 +50,13 @@
         "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-03.png",
         "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-04.png",
         "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-05.png",
-        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-06.png",
-        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-07.png",
-        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-08.png",
-        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-09.png"
+        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-06.png"
       ],
       "video": "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\videos\\32d7845caa1a580be342e6bf8597c228.webm",
       "mobile": "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\screenshot-mobile.png"
     }
   },
   "url": "https://thecryptomethod.github.io/premium-trading-journal/",
-  "duration": 145.7,
-  "timestamp": "2026-03-31T01:15:36.277767"
+  "duration": 205.3,
+  "timestamp": "2026-03-31T01:41:41.575978"
 }
