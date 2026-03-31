@@ -1,279 +1,227 @@
-This `design.md` file outlines the core visual and interactive guidelines for the premium trading journal web application. It serves as a single source of truth for design decisions, ensuring consistency and a high-quality user experience.
+This `design.md` file outlines the core design system for the "Premium Trading Journal" SaaS project. It provides specific guidelines for an AI coder to reference during implementation, ensuring consistency and adherence to the brand's aesthetic.
 
 ---
 
 # Design System: Premium Trading Journal
 
-**Project:** A premium trading journal web application designed for daytraders, featuring advanced analytics and performance tracking.
+## Project Overview
+A premium trading journal for daytraders, offering advanced analytics such as P&L tracking, win-rate breakdown, backtesting capabilities, and equity curve visualization.
+
+## Style & Tone
 **Type:** SaaS
-**Style:** Dark
-**Color Scheme:** Dark
+**Style:** Dark, professional, sophisticated, data-driven, clean, and modern.
+**Tone:** Trustworthy, empowering, analytical, high-performance.
 
 ---
 
 ## 1. Color Palette
 
-A sophisticated dark theme with a vibrant accent for key interactions and data highlights.
+The color palette is designed to be dark and sleek, with vibrant accents for data visualization and interactive elements.
 
-*   **Background**: `#121212` (Deep Charcoal - Main page background)
-*   **Surface/Card Background**: `#1E1E1E` (Slightly lighter charcoal - For elevated components like cards, modals)
-*   **Primary Accent**: `#00C4B4` (Vibrant Teal - For CTAs, active states, key data points, primary branding)
-*   **Secondary Accent**: `#6C7B95` (Muted Blue-Grey - For subtle highlights, secondary actions, borders, inactive states)
-*   **Text Primary**: `#E0E0E0` (Light Grey - For main headings and body text)
-*   **Text Secondary**: `#A0A0A0` (Medium Grey - For descriptions, helper text, less prominent information)
-*   **Text Disabled**: `#555555` (Darker Grey - For disabled elements)
-*   **Border**: `#333333` (Subtle dark border for separation)
-*   **Error**: `#FF6B6B` (Red - For error messages and destructive actions)
-*   **Success**: `#4CAF50` (Green - For success messages and positive indicators)
-*   **Warning**: `#FFD700` (Gold - For warning messages)
+*   **Background:**
+    *   `--color-background-primary`: `#0A0A0C` (Deepest dark grey, almost black)
+    *   `--color-background-secondary`: `#1A1A1E` (Slightly lighter dark grey for cards/surfaces)
+    *   `--color-background-tertiary`: `#2D2D32` (Dark grey for subtle differentiation)
+*   **Text:**
+    *   `--color-text-primary`: `#E2E8F0` (Light grey for main content)
+    *   `--color-text-secondary`: `#A0AEC0` (Medium grey for secondary information, captions)
+    *   `--color-text-disabled`: `#6B7280` (Darker grey for disabled states)
+*   **Primary Accent:**
+    *   `--color-accent-primary`: `#6366F1` (Indigo - for main CTAs, active states, key highlights)
+    *   `--color-accent-primary-hover`: `#4F46E5` (Darker Indigo for hover states)
+*   **Secondary Accent:**
+    *   `--color-accent-secondary`: `#8B5CF6` (Violet - for secondary CTAs, subtle interactive elements)
+*   **Border & Divider:**
+    *   `--color-border`: `#374151` (Dark grey for borders and separators)
+*   **Status & Data Visualization:**
+    *   `--color-success`: `#10B981` (Emerald Green - for profit, positive metrics)
+    *   `--color-error`: `#EF4444` (Red - for loss, negative metrics, error messages)
+    *   `--color-warning`: `#F59E0B` (Amber - for warnings, neutral alerts)
+    *   `--color-info`: `#3B82F6` (Blue - for informational messages)
 
 ---
 
 ## 2. Typography
 
-A clean, modern, and highly readable font family for optimal data consumption and UI clarity.
+Using a single, highly readable sans-serif font for consistency and modern appeal.
 
-*   **Font Family**: `Inter`, sans-serif (Google Fonts: `https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap`)
-*   **Base Font Size**: `16px`
-
-### Font Weights:
-*   Light: `300`
-*   Regular: `400`
-*   Medium: `500`
-*   Semi-Bold: `600`
-*   Bold: `700`
-
-### Text Styles:
-
-*   **H1**:
-    *   Font Size: `48px`
-    *   Line Height: `1.2`
-    *   Font Weight: `700` (Bold)
-    *   Color: `var(--text-primary)`
-*   **H2**:
-    *   Font Size: `36px`
-    *   Line Height: `1.25`
-    *   Font Weight: `700` (Bold)
-    *   Color: `var(--text-primary)`
-*   **H3**:
-    *   Font Size: `28px`
-    *   Line Height: `1.3`
-    *   Font Weight: `600` (Semi-Bold)
-    *   Color: `var(--text-primary)`
-*   **H4**:
-    *   Font Size: `22px`
-    *   Line Height: `1.4`
-    *   Font Weight: `600` (Semi-Bold)
-    *   Color: `var(--text-primary)`
-*   **Body Large**:
-    *   Font Size: `18px`
-    *   Line Height: `1.5`
-    *   Font Weight: `400` (Regular)
-    *   Color: `var(--text-primary)`
-*   **Body Regular**:
-    *   Font Size: `16px`
-    *   Line Height: `1.6`
-    *   Font Weight: `400` (Regular)
-    *   Color: `var(--text-primary)`
-*   **Body Small**:
-    *   Font Size: `14px`
-    *   Line Height: `1.6`
-    *   Font Weight: `400` (Regular)
-    *   Color: `var(--text-secondary)`
-*   **Caption**:
-    *   Font Size: `12px`
-    *   Line Height: `1.6`
-    *   Font Weight: `400` (Regular)
-    *   Color: `var(--text-secondary)`
-*   **Button Text**:
-    *   Font Size: `16px`
-    *   Line Height: `1`
-    *   Font Weight: `600` (Semi-Bold)
-    *   Color: `var(--text-primary)` (or contrasting for accent buttons)
+*   **Font Family:**
+    *   `--font-family-primary`: `'Inter', sans-serif`
+*   **Headings (Font Weight: 700 - Bold):**
+    *   `--font-size-h1`: `48px` (`line-height: 1.2`)
+    *   `--font-size-h2`: `36px` (`line-height: 1.25`)
+    *   `--font-size-h3`: `30px` (`line-height: 1.3`)
+    *   `--font-size-h4`: `24px` (`line-height: 1.35`)
+    *   `--font-size-h5`: `20px` (`line-height: 1.4`)
+    *   `--font-size-h6`: `18px` (`line-height: 1.45`)
+*   **Body Text (Font Weight: 400 - Regular):**
+    *   `--font-size-body-lg`: `18px` (`line-height: 1.6`)
+    *   `--font-size-body-md`: `16px` (`line-height: 1.6`)
+    *   `--font-size-body-sm`: `14px` (`line-height: 1.6`)
+*   **Caption & Small Text (Font Weight: 400 - Regular):**
+    *   `--font-size-caption`: `12px` (`line-height: 1.5`)
+*   **Button Text (Font Weight: 600 - Semi-bold):**
+    *   `--font-size-button-lg`: `18px`
+    *   `--font-size-button-md`: `16px`
+    *   `--font-size-button-sm`: `14px`
 
 ---
 
 ## 3. Spacing Scale
 
-A consistent 8px grid system for all spacing and sizing.
+A consistent 4px-based spacing scale for all elements.
 
-*   **xs**: `4px`
-*   **sm**: `8px`
-*   **md**: `16px`
-*   **lg**: `32px`
-*   **xl**: `64px`
-*   **xxl**: `128px`
+*   `--spacing-xs`: `4px`
+*   `--spacing-sm`: `8px`
+*   `--spacing-md`: `16px`
+*   `--spacing-lg`: `24px`
+*   `--spacing-xl`: `32px`
+*   `--spacing-xxl`: `48px`
+*   `--spacing-xxxl`: `64px`
+*   `--spacing-xxxxl`: `96px`
 
 ---
 
 ## 4. Border Radius
 
-Subtle rounding for a modern and friendly, yet professional, aesthetic.
+Subtle rounded corners for a modern, friendly, yet professional feel.
 
-*   **sm**: `4px` (For small elements like buttons, input fields)
-*   **md**: `8px` (For cards, larger components)
-*   **lg**: `12px` (For modals, larger containers)
-*   **full**: `9999px` (For pill-shaped elements like tags, avatars)
+*   `--border-radius-sm`: `4px`
+*   `--border-radius-md`: `8px`
+*   `--border-radius-lg`: `12px`
+*   `--border-radius-full`: `9999px` (for pills, avatars)
 
 ---
 
 ## 5. Shadow Styles
 
-Subtle shadows to provide depth and hierarchy on a dark background, avoiding harsh contrasts.
+Subtle, dark shadows to provide depth and hierarchy without being distracting.
 
-*   **elevation-1 (Subtle Lift)**:
-    *   `0px 2px 4px rgba(0, 0, 0, 0.2)`
-    *   *Use case:* Default state for cards, subtle separation.
-*   **elevation-2 (Moderate Lift)**:
-    *   `0px 4px 8px rgba(0, 0, 0, 0.3)`
-    *   *Use case:* Hover state for cards, dropdowns, tooltips.
-*   **elevation-3 (Prominent Lift)**:
-    *   `0px 8px 16px rgba(0, 0, 0, 0.4)`
-    *   *Use case:* Modals, prominent floating elements.
-*   **inner-shadow (Input Fields)**:
-    *   `inset 0px 1px 3px rgba(0, 0, 0, 0.5)`
-    *   *Use case:* Giving depth to input fields on a dark background.
+*   `--shadow-sm`: `0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.1)`
+*   `--shadow-md`: `0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.1)`
+*   `--shadow-lg`: `0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2)`
+*   `--shadow-inset`: `inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)`
 
 ---
 
-## 6. Component Specifications
+## 6. Component Specifications by Section
 
-Detailed guidelines for key sections of the application.
+### Global Components
 
-### 6.1. Hero Section
+*   **Buttons:**
+    *   **Primary:** `background: var(--color-accent-primary); color: var(--color-text-primary); border-radius: var(--border-radius-md); padding: var(--spacing-md) var(--spacing-lg); font-size: var(--font-size-button-md); font-weight: 600; transition: all 0.2s ease-in-out;`
+        *   `Hover:` `background: var(--color-accent-primary-hover);`
+    *   **Secondary:** `background: transparent; color: var(--color-accent-primary); border: 1px solid var(--color-accent-primary); border-radius: var(--border-radius-md); padding: var(--spacing-md) var(--spacing-lg); font-size: var(--font-size-button-md); font-weight: 600; transition: all 0.2s ease-in-out;`
+        *   `Hover:` `background: rgba(99, 102, 241, 0.1);`
+    *   **Tertiary (Text-only):** `background: transparent; color: var(--color-text-secondary); font-size: var(--font-size-button-sm); font-weight: 600; transition: all 0.2s ease-in-out;`
+        *   `Hover:` `color: var(--color-text-primary);`
+*   **Input Fields:** `background: var(--color-background-secondary); border: 1px solid var(--color-border); color: var(--color-text-primary); border-radius: var(--border-radius-sm); padding: var(--spacing-sm) var(--spacing-md); font-size: var(--font-size-body-md);`
+    *   `Focus:` `border-color: var(--color-accent-primary); box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);`
+*   **Cards:** `background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: var(--spacing-xl); box-shadow: var(--shadow-md);`
 
-*   **Purpose**: Captivate users and clearly communicate the value proposition.
-*   **Layout**: Centered content, full-width background.
-*   **Background**: `var(--background)`
-*   **Content**:
-    *   **Title**:
-        *   Text: "Unlock Your Trading Edge with Advanced Analytics."
-        *   Style: `H1`, `var(--text-primary)`
-        *   Alignment: Centered
-    *   **Subtitle**:
-        *   Text: "Seamlessly track performance, identify patterns, and optimize strategies with our premium trading journal."
-        *   Style: `Body Large`, `var(--text-secondary)`
-        *   Alignment: Centered
-        *   Max Width: `700px`
-    *   **Call to Action (CTA) Button**:
-        *   Text: "Start Your Free Trial"
-        *   Background: `var(--primary-accent)`
-        *   Text Color: `var(--text-primary)` (or a slightly darker contrasting color if needed for accessibility on teal)
-        *   Padding: `14px 32px`
-        *   Border Radius: `var(--border-radius-sm)`
-        *   Hover: Slight background darken, `elevation-1` shadow.
-    *   **Visual Element**:
-        *   Concept: Abstract data visualization, stylized stock charts, or a sleek illustration of the app UI on a dark, premium device.
-        *   Placement: Below text content, or subtly integrated into the background.
+### Section: Hero
 
-### 6.2. Features Section
+*   **Layout:** Full-width section. Left-aligned text content (Headline, Subheadline, CTAs), right-aligned visual (product screenshot/mockup).
+*   **Headline:** `h1` (`--font-size-h1`), `color: var(--color-text-primary);`
+*   **Subheadline:** `body-lg` (`--font-size-body-lg`), `color: var(--color-text-secondary);`
+*   **Call-to-Action (CTA) Buttons:** Two buttons, Primary (e.g., "Start Free Trial") and Secondary (e.g., "Learn More").
+*   **Visual:** High-fidelity mockup of the trading journal UI on a dark device frame. `max-width: 600px; height: auto;`
 
-*   **Purpose**: Highlight key functionalities and benefits.
-*   **Layout**: Grid of feature cards, centered section title.
-*   **Background**: `var(--background)`
-*   **Content**:
-    *   **Section Title**:
-        *   Text: "Powerful Features to Elevate Your Trading"
-        *   Style: `H2`, `var(--text-primary)`
-        *   Alignment: Centered
-    *   **Feature Cards (Grid)**:
-        *   **Card Background**: `var(--surface-card-background)`
-        *   **Card Padding**: `var(--lg)`
-        *   **Border Radius**: `var(--border-radius-md)`
-        *   **Shadow**: `var(--elevation-1)` (on hover: `var(--elevation-2)`)
-        *   **Icon**:
-            *   Style: SVG, `24px` or `32px` size.
-            *   Color: `var(--primary-accent)`
-        *   **Feature Title**:
-            *   Style: `H4`, `var(--text-primary)`
-        *   **Feature Description**:
-            *   Style: `Body Regular`, `var(--text-secondary)`
-        *   **Example Features**:
-            *   "Advanced Performance Metrics": Detailed analytics on trades.
-            *   "Customizable Journal Entries": Flexible logging for every trade.
-            *   "Strategy Backtesting": Test strategies against historical data.
-            *   "Interactive Charting": Visualize trades directly on charts.
-            *   "Risk Management Tools": Built-in tools to manage exposure.
-            *   "Multi-Broker Integration": Connect with various trading platforms.
+### Section: Features
 
-### 6.3. Pricing Section
+*   **Layout:** Grid-based layout (e.g., 3 columns on desktop, 2 on tablet, 1 on mobile).
+*   **Feature Card:**
+    *   `background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: var(--spacing-xl); text-align: center;`
+    *   **Icon:** `color: var(--color-accent-primary); font-size: 48px; margin-bottom: var(--spacing-md);`
+    *   **Title:** `h4` (`--font-size-h4`), `color: var(--color-text-primary); margin-bottom: var(--spacing-sm);`
+    *   **Description:** `body-md` (`--font-size-body-md`), `color: var(--color-text-secondary);`
 
-*   **Purpose**: Present subscription plans clearly and encourage conversion.
-*   **Layout**: Grid of pricing cards, centered section title.
-*   **Background**: `var(--background)`
-*   **Content**:
-    *   **Section Title**:
-        *   Text: "Simple, Transparent Pricing"
-        *   Style: `H2`, `var(--text-primary)`
-        *   Alignment: Centered
-    *   **Pricing Cards (Grid)**:
-        *   **Card Background**: `var(--surface-card-background)`
-        *   **Card Padding**: `var(--lg)`
-        *   **Border Radius**: `var(--border-radius-md)`
-        *   **Shadow**: `var(--elevation-1)` (highlighted plan: `var(--elevation-2)`)
-        *   **Plan Name**:
-            *   Style: `H3`, `var(--text-primary)`
-        *   **Price**:
-            *   Style: `H1` (adjusted to `40px` for pricing), `var(--text-primary)`
-            *   Suffix: `/month` or `/year` (Body Small, `var(--text-secondary)`)
-        *   **Features List**:
-            *   Style: `Body Regular`, `var(--text-primary)`
-            *   Each feature preceded by a checkmark icon (`var(--primary-accent)`)
-        *   **Call to Action (CTA) Button**:
-            *   Text: "Choose Plan"
-            *   Background: `var(--primary-accent)`
-            *   Text Color: `var(--text-primary)`
-            *   Padding: `12px 24px`
-            *   Border Radius: `var(--border-radius-sm)`
-            *   Hover: Slight background darken, `elevation-1` shadow.
-        *   **Example Plans**: "Basic Trader", "Pro Analyst", "Elite Strategist"
+### Section: Pricing
 
-### 6.4. Footer Section
+*   **Layout:** Flexbox or Grid for pricing cards (e.g., 3 columns on desktop).
+*   **Pricing Card:**
+    *   `background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: var(--spacing-xl); text-align: center; border: 1px solid var(--color-border);`
+    *   **"Most Popular" Highlight:** `border-color: var(--color-accent-primary); box-shadow: var(--shadow-lg);`
+    *   **Plan Name:** `h3` (`--font-size-h3`), `color: var(--color-text-primary); margin-bottom: var(--spacing-sm);`
+    *   **Price:** `h1` (`--font-size-h1`), `color: var(--color-text-primary); font-weight: 700;` (e.g., "$49")
+        *   `Suffix (per month/year):` `body-md` (`--font-size-body-md`), `color: var(--color-text-secondary);`
+    *   **Features List:** Unordered list, `body-md` (`--font-size-body-md`), `color: var(--color-text-secondary);`
+        *   Each item with a checkmark icon (`color: var(--color-success);`).
+    *   **CTA Button:** Primary button, `margin-top: var(--spacing-xl);`
+*   **Monthly/Annual Toggle:** `background: var(--color-background-tertiary); border-radius: var(--border-radius-full); padding: var(--spacing-xs); display: inline-flex;`
+    *   `Active state:` `background: var(--color-accent-primary); color: var(--color-text-primary);`
+    *   `Inactive state:` `background: transparent; color: var(--color-text-secondary);`
 
-*   **Purpose**: Provide essential links and copyright information.
-*   **Layout**: Full-width, divided into columns or rows for links and copyright.
-*   **Background**: `var(--background)` (or slightly darker if desired, e.g., `#0A0A0A`)
-*   **Content**:
-    *   **Copyright**:
-        *   Text: "© 2023 [Project Name]. All rights reserved."
-        *   Style: `Caption`, `var(--text-secondary)`
-    *   **Navigation Links**:
-        *   Links: "Privacy Policy", "Terms of Service", "Support", "About Us"
-        *   Style: `Body Small`, `var(--text-secondary)`
-        *   Hover: `var(--primary-accent)`
-    *   **Social Media Links**:
-        *   Icons: Twitter, LinkedIn, etc. (SVG)
-        *   Style: `20px` size, `var(--text-secondary)`
-        *   Hover: `var(--primary-accent)`
+### Section: Testimonials
+
+*   **Layout:** Carousel or grid of testimonial cards.
+*   **Testimonial Card:**
+    *   `background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: var(--spacing-xl);`
+    *   **Quote:** `body-lg` (`--font-size-body-lg`), `color: var(--color-text-primary); font-style: italic; margin-bottom: var(--spacing-lg);`
+    *   **Author Info:**
+        *   **Avatar:** `width: 56px; height: 56px; border-radius: var(--border-radius-full); margin-right: var(--spacing-md);`
+        *   **Name:** `h6` (`--font-size-h6`), `color: var(--color-text-primary);`
+        *   **Title/Company:** `body-sm` (`--font-size-body-sm`), `color: var(--color-text-secondary);`
+
+### Section: FAQ
+
+*   **Layout:** Accordion style.
+*   **FAQ Item:**
+    *   **Question (Header):** `h5` (`--font-size-h5`), `color: var(--color-text-primary); padding: var(--spacing-md) 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--color-border);`
+        *   `Icon (chevron):` `color: var(--color-text-secondary); transition: transform 0.2s ease-in-out;`
+        *   `Active state:` `transform: rotate(180deg);`
+    *   **Answer (Content):** `body-md` (`--font-size-body-md`), `color: var(--color-text-secondary); padding: var(--spacing-md) 0 var(--spacing-xl) 0; overflow: hidden; transition: max-height 0.3s ease-in-out;` (Initially `max-height: 0;`)
+
+### Section: Contact
+
+*   **Layout:** Two columns (form on left, contact info/social on right) on desktop, stacked on mobile/tablet.
+*   **Contact Form:**
+    *   `background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: var(--spacing-xl);`
+    *   **Labels:** `body-sm` (`--font-size-body-sm`), `color: var(--color-text-secondary); margin-bottom: var(--spacing-xs);`
+    *   **Input Fields:** Standard input field styles.
+    *   **Textarea:** Same as input, but `min-height: 120px; resize: vertical;`
+    *   **Submit Button:** Primary button.
+*   **Contact Info:**
+    *   `h4` (`--font-size-h4`), `color: var(--color-text-primary); margin-bottom: var(--spacing-md);`
+    *   `body-md` (`--font-size-body-md`), `color: var(--color-text-secondary);`
+    *   **Social Links:** Icons (`font-size: 24px; color: var(--color-text-secondary);`) with `margin-right: var(--spacing-md);`
+        *   `Hover:` `color: var(--color-accent-primary);`
+
+### Section: Footer
+
+*   **Layout:** Multi-column on desktop (Logo/Copyright, Nav links, Social links), stacked on mobile.
+*   **Background:** `var(--color-background-primary);`
+*   **Text:** `body-sm` (`--font-size-body-sm`), `color: var(--color-text-secondary);`
+*   **Logo:** SVG or image, `height: 32px;`
+*   **Navigation Links:** `color: var(--color-text-secondary); text-decoration: none;`
+    *   `Hover:` `color: var(--color-text-primary);`
+*   **Social Media Icons:** Same as Contact section.
 
 ---
 
 ## 7. Responsive Breakpoints
 
-Standard breakpoints for adapting the layout across devices.
+Standard breakpoints for adapting layout across devices.
 
-*   **Mobile**: `< 768px` (e.g., `max-width: 767px`)
-*   **Tablet**: `768px - 1023px` (e.g., `min-width: 768px` and `max-width: 1023px`)
-*   **Desktop**: `1024px +` (e.g., `min-width: 1024px`)
+*   **Mobile:** `0px` to `767px`
+*   **Tablet:** `768px` to `1023px`
+*   **Desktop:** `1024px` to `1439px`
+*   **Large Desktop:** `1440px` and above
 
 ---
 
 ## 8. Animation Guidelines
 
-Animations should be subtle, professional, and enhance the user experience without being distracting.
+Animations should be subtle, professional, and enhance user experience without being distracting or slowing down performance.
 
-*   **Purpose**: Provide visual feedback, guide user attention, and add a premium feel.
-*   **Duration**:
-    *   Short (e.g., hover states, small changes): `150ms - 200ms`
-    *   Medium (e.g., modal transitions, section fades): `250ms - 350ms`
-*   **Easing**:
-    *   Most transitions: `ease-in-out` (smooth start and end)
-    *   Quick feedback: `ease-out`
-*   **Common Animations**:
-    *   **Hover Effects**: Buttons, links, and cards should have subtle visual feedback (e.g., slight background color change, `elevation-1` shadow, minor scale).
-    *   **State Changes**: Input fields, checkboxes, and toggles should animate smoothly between states.
-    *   **Modals/Drawers**: Fade in/out with a slight scale or slide effect.
-    *   **Data Updates**: Subtle fade or slide for new data appearing in charts or tables.
-    *   **Scroll Reveal**: Elements fading or sliding into view as the user scrolls, but used sparingly to avoid overuse.
+*   **Timing Function:** `ease-in-out` for most transitions.
+*   **Duration:** `200ms` to `300ms` for most interactive elements (hovers, clicks, toggles).
+*   **Types of Animations:**
+    *   **Hover Effects:** Subtle background changes, border highlights, or slight scaling on interactive elements (buttons, cards, links).
+    *   **Focus States:** Clear visual indication for keyboard navigation.
+    *   **Content Reveals:** Smooth transitions for accordions, modals, or loading states.
+    *   **Micro-interactions:** Small, delightful animations on success/error messages, form submissions.
+*   **Performance:** Prioritize CSS transforms and opacity changes for smooth animations. Avoid animating properties that cause layout reflows where possible.
+*   **Accessibility:** Ensure animations can be disabled or reduced for users with motion sensitivities (e.g., via `prefers-reduced-motion` media query).
 
 ---

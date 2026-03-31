@@ -1,6 +1,6 @@
 {
   "project_name": "premium-trading-journal",
-  "description": "A premium trading journal web application designed for daytraders, featuring advanced analytics and performance tracking.",
+  "description": "A premium trading journal for daytraders, offering advanced analytics such as P&L tracking, win-rate breakdown, backtesting capabilities, and equity curve visualization.",
   "type": "saas",
   "style": "dark",
   "color_scheme": "dark",
@@ -8,23 +8,22 @@
     "hero",
     "features",
     "pricing",
+    "testimonials",
+    "faq",
+    "contact",
     "footer"
   ],
   "features": [
-    "pnl-per-strategy",
-    "win-rate-per-setup",
-    "backtesting",
-    "equity-curve",
     "responsive",
     "seo"
   ],
-  "target_audience": "Daytraders seeking a sophisticated platform to track, analyze, and improve their trading strategies.",
+  "target_audience": "Daytraders specializing in Futures and Cryptocurrency markets.",
   "reference_urls": [
     "https://tradezella.com",
     "https://linear.app"
   ],
   "framework": "nextjs",
-  "original_prompt": "Premium Trading Journal fuer Daytrader. Dark theme, Electric Blue + Magenta. Inspiriert von Tradezella + Linear.app. Features: P&L per Strategy, Win-Rate per Setup, Backtesting, Equity Curve. Pricing: Free, Pro 39/mo, Elite 89/mo.",
+  "original_prompt": "Premium Trading Journal fuer Daytrader. Dark Electric Blue + Magenta theme. Inspired by Tradezella + Linear.app. P&L Analytics, Win-Rate Breakdown, Backtesting, Equity Curve. For Futures/Crypto traders. Free, Pro 39/mo, Elite 89/mo.",
   "hero_image": "hero-bg.png",
   "product_mockup": "product-mockup.png"
 }
