@@ -3,447 +3,688 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sovereign HUD: The Ultimate Trading Journal for Daytraders</title>
-    <meta name="description" content="Stop losing money on trades you can't explain. Pinpoint your edge, eliminate costly mistakes, and scale your profits with the ultimate daytrading journal for Futures and Crypto.">
-    <meta name="keywords" content="trading journal, day trading, futures trading, crypto trading, trading analytics, trade tracking, trading performance, trading software">
+    <title>TradeFlow – Advanced Trading Journal for Daytraders</title>
+    <meta name="description" content="TradeFlow is a premium trading journal web application designed for daytraders. Track, analyze, and improve your trading strategies with advanced analytics and performance tracking.">
+    <meta name="keywords" content="trading journal, day trading, trading analytics, performance tracking, trading strategy, SaaS, finance, stock market">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.yourdomain.com/">
-    <meta property="og:title" content="Sovereign HUD: The Ultimate Trading Journal for Daytraders">
-    <meta property="og:description" content="Stop losing money on trades you can't explain. Pinpoint your edge, eliminate costly mistakes, and scale your profits with the ultimate daytrading journal for Futures and Crypto.">
-    <meta property="og:image" content="https://www.yourdomain.com/social-share.jpg"> <!-- Replace with actual image -->
+    <meta property="og:url" content="https://www.tradeflow.com/"> <!-- Replace with actual URL -->
+    <meta property="og:title" content="TradeFlow – Advanced Trading Journal for Daytraders">
+    <meta property="og:description" content="TradeFlow is a premium trading journal web application designed for daytraders. Track, analyze, and improve your trading strategies with advanced analytics and performance tracking.">
+    <meta property="og:image" content="https://www.tradeflow.com/social-share.jpg"> <!-- Replace with actual image -->
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.yourdomain.com/">
-    <meta property="twitter:title" content="Sovereign HUD: The Ultimate Trading Journal for Daytraders">
-    <meta property="twitter:description" content="Stop losing money on trades you can't explain. Pinpoint your edge, eliminate costly mistakes, and scale your profits with the ultimate daytrading journal for Futures and Crypto.">
-    <meta property="twitter:image" content="https://www.yourdomain.com/social-share.jpg"> <!-- Replace with actual image -->
+    <meta property="twitter:url" content="https://www.tradeflow.com/"> <!-- Replace with actual URL -->
+    <meta property="twitter:title" content="TradeFlow – Advanced Trading Journal for Daytraders">
+    <meta property="twitter:description" content="TradeFlow is a premium trading journal web application designed for daytraders. Track, analyze, and improve your trading strategies with advanced analytics and performance tracking.">
+    <meta property="twitter:image" content="https://www.tradeflow.com/social-share.jpg"> <!-- Replace with actual image -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Add .js class for JS-enabled features -->
     <script>document.documentElement.classList.add('js')</script>
 
     <style>
-        /* Design Tokens */
+        /* 1. Design Tokens */
         :root {
             /* Colors */
-            --surface: #0b0e14;
-            --surface-dim: #0b0e14;
-            --surface-container-lowest: #000000;
-            --surface-container-low: #10131a;
-            --surface-container-high: #1c2028;
-            --surface-container-highest: #282c36;
-            --surface-bright: #282c36;
+            --background: #121212;
+            --surface-card-background: #1E1E1E;
+            --primary-accent: #00C4B4;
+            --secondary-accent: #6C7B95;
+            --text-primary: #E0E0E0;
+            --text-secondary: #A0A0A0;
+            --text-disabled: #555555;
+            --border: #333333;
+            --error: #FF6B6B;
+            --success: #4CAF50;
+            --warning: #FFD700;
 
-            --primary: #72dcff; /* Electric Blue - Bullish/Positive */
-            --primary-container: #00d2ff; /* Deeper Electric Blue for solid buttons */
-            --on-primary: #000000; /* Text on primary */
+            /* Typography */
+            --font-family-inter: 'Inter', sans-serif;
+            --base-font-size: 16px;
 
-            --secondary: #ff51fa; /* Magenta - Bearish/Negative */
-            --secondary-container: #e000d2; /* Deeper Magenta */
-            --on-secondary: #000000; /* Text on secondary */
-
-            --on-surface: #ecedf6; /* Primary text color */
-            --on-surface-variant: #a9abb3; /* Secondary text/labels (All-Caps) */
-
-            --outline: #45484f;
-            --outline-variant: #45484f;
-
-            /* Typography - Manrope */
-            --font-family: 'Manrope', sans-serif;
-
-            --display-lg-size: 2.5rem; /* Mobile */
-            --display-lg-weight: 700;
-            --display-lg-lh: 1.1;
-
-            --headline-sm-size: 1.25rem; /* Mobile */
-            --headline-sm-weight: 600;
-            --headline-sm-ls: -0.02em;
-            --headline-sm-lh: 1.3;
-
-            --title-lg-size: 1.125rem;
-            --title-lg-weight: 500;
-            --title-lg-lh: 1.4;
-
-            --title-md-size: 1rem;
-            --title-md-weight: 500;
-            --title-md-lh: 1.4;
-
-            --title-sm-size: 0.875rem;
-            --title-sm-weight: 500;
-            --title-sm-lh: 1.5;
-
-            --label-lg-size: 0.875rem;
-            --label-lg-weight: 600;
-            --label-lg-ls: 0.02em;
-            --label-lg-lh: 1.4;
-
-            --label-md-size: 0.75rem;
-            --label-md-weight: 600;
-            --label-md-ls: 0.05em;
-            --label-md-lh: 1.4;
-
-            --body-lg-size: 1rem;
-            --body-lg-weight: 400;
-            --body-lg-lh: 1.6;
-
-            --body-md-size: 0.875rem;
-            --body-md-weight: 400;
-            --body-md-lh: 1.6;
-
-            --body-sm-size: 0.75rem;
-            --body-sm-weight: 400;
-            --body-sm-lh: 1.6;
-
-            /* Spacing Scale */
-            --spacing-1: 0.25rem;
-            --spacing-2: 0.5rem;
-            --spacing-3: 0.75rem;
-            --spacing-3-5: 0.75rem; /* Custom value */
-            --spacing-4: 1rem;
-            --spacing-5: 1.25rem;
-            --spacing-6: 1.5rem;
-            --spacing-8: 2rem;
-            --spacing-10: 2.5rem;
-            --spacing-12: 3rem;
-            --spacing-16: 4rem;
-            --spacing-20: 5rem;
-            --spacing-24: 6rem;
+            /* Spacing */
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 32px;
+            --spacing-xl: 64px;
+            --spacing-xxl: 128px;
 
             /* Border Radius */
-            --rounded-sm: 0.125rem;
-            --rounded-md: 0.25rem;
-            --rounded-lg: 0.5rem;
-            --rounded-xl: 0.75rem;
-            --rounded-full: 9999px;
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+            --border-radius-full: 9999px;
 
-            /* Shadows (Ambient Radiance) */
-            --shadow-ambient-primary: 0 0 40px rgba(114, 220, 255, 0.06);
-            --shadow-ambient-secondary: 0 0 40px rgba(255, 81, 250, 0.06);
-            --shadow-mockup: 0 25px 50px rgba(0,0,0,0.5);
+            /* Shadow Styles */
+            --elevation-1: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            --elevation-2: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            --elevation-3: 0px 8px 16px rgba(0, 0, 0, 0.4);
+            --inner-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.5);
+
+            /* Animation */
+            --transition-duration-short: 0.2s;
+            --transition-duration-medium: 0.3s;
+            --transition-easing: ease-in-out;
         }
 
-        @media (min-width: 768px) {
-            :root {
-                --display-lg-size: 3.5rem;
-                --headline-sm-size: 1.5rem;
-            }
-        }
-
-        /* Base Styles & Reset */
+        /* 2. Base Styles & Reset */
         *, *::before, *::after {
             box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            font-family: var(--font-family);
-            background-color: var(--surface);
-            color: var(--on-surface);
-            line-height: var(--body-lg-lh);
-            text-rendering: optimizeLegibility;
+            font-family: var(--font-family-inter);
+            font-size: var(--base-font-size);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--background);
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden; /* Prevent horizontal scroll from magnetic buttons */
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            margin-top: 0;
-            margin-bottom: var(--spacing-4);
-            color: var(--on-surface);
-        }
-
-        p {
-            margin-top: 0;
-            margin-bottom: var(--spacing-4);
-        }
-
         a {
-            color: var(--primary);
+            color: var(--primary-accent);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color var(--transition-duration-short) var(--transition-easing);
         }
 
         a:hover {
-            color: var(--primary-container);
+            color: var(--text-primary);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            font-family: var(--font-family-inter);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1;
+            padding: 14px 32px;
+            border-radius: var(--border-radius-sm);
+            border: none;
+            cursor: pointer;
+            transition: background-color var(--transition-duration-short) var(--transition-easing),
+                        transform var(--transition-duration-short) var(--transition-easing),
+                        box-shadow var(--transition-duration-short) var(--transition-easing);
+            color: var(--text-primary); /* Default for buttons */
+        }
+
+        button.primary-btn {
+            background-color: var(--primary-accent);
+            color: var(--background); /* Ensure contrast on accent */
+        }
+
+        button.primary-btn:hover {
+            background-color: color-mix(in srgb, var(--primary-accent) 85%, black); /* Darken by 15% */
+            box-shadow: var(--elevation-1);
+        }
+
+        button.secondary-btn {
+            background-color: var(--surface-card-background);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        button.secondary-btn:hover {
+            background-color: color-mix(in srgb, var(--surface-card-background) 85%, white); /* Lighten slightly */
+            box-shadow: var(--elevation-1);
+        }
+
+        /* Typography Styles */
+        h1 { font-size: 48px; line-height: 1.2; font-weight: 700; color: var(--text-primary); }
+        h2 { font-size: 36px; line-height: 1.25; font-weight: 700; color: var(--text-primary); }
+        h3 { font-size: 28px; line-height: 1.3; font-weight: 600; color: var(--text-primary); }
+        h4 { font-size: 22px; line-height: 1.4; font-weight: 600; color: var(--text-primary); }
+        .body-large { font-size: 18px; line-height: 1.5; font-weight: 400; color: var(--text-primary); }
+        .body-regular { font-size: 16px; line-height: 1.6; font-weight: 400; color: var(--text-primary); }
+        .body-small { font-size: 14px; line-height: 1.6; font-weight: 400; color: var(--text-secondary); }
+        .caption { font-size: 12px; line-height: 1.6; font-weight: 400; color: var(--text-secondary); }
+
+        /* Responsive Typography */
+        @media (max-width: 767px) {
+            h1 { font-size: 36px; }
+            h2 { font-size: 28px; }
+            h3 { font-size: 24px; }
+            h4 { font-size: 20px; }
+            .body-large { font-size: 16px; }
         }
 
         /* Utility Classes */
         .container {
-            max-width: 1280px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: var(--spacing-4);
-            padding-right: var(--spacing-4);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
         }
 
         .text-center { text-align: center; }
-        .text-left { text-align: left; }
-        .text-right { text-align: right; }
-        .uppercase { text-transform: uppercase; }
+        .mb-sm { margin-bottom: var(--spacing-sm); }
+        .mb-md { margin-bottom: var(--spacing-md); }
+        .mb-lg { margin-bottom: var(--spacing-lg); }
+        .mb-xl { margin-bottom: var(--spacing-xl); }
+        .mt-lg { margin-top: var(--spacing-lg); }
+        .mt-xl { margin-top: var(--spacing-xl); }
+        .py-xl { padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl); }
+        .py-xxl { padding-top: var(--spacing-xxl); padding-bottom: var(--spacing-xxl); }
 
-        .text-primary { color: var(--primary); }
-        .text-secondary { color: var(--secondary); }
-        .text-on-surface { color: var(--on-surface); }
-        .text-on-surface-variant { color: var(--on-surface-variant); }
+        /* 3. Component Specific Styles */
 
-        .bg-surface { background-color: var(--surface); }
-        .bg-surface-container-low { background-color: var(--surface-container-low); }
-        .bg-surface-container-high { background-color: var(--surface-container-high); }
-        .bg-surface-container-highest { background-color: var(--surface-container-highest); }
-        .bg-surface-bright { background-color: var(--surface-bright); }
-
-        .display-lg {
-            font-size: var(--display-lg-size);
-            font-weight: var(--display-lg-weight);
-            line-height: var(--display-lg-lh);
-        }
-
-        .headline-sm {
-            font-size: var(--headline-sm-size);
-            font-weight: var(--headline-sm-weight);
-            letter-spacing: var(--headline-sm-ls);
-            line-height: var(--headline-sm-lh);
-        }
-
-        .title-lg {
-            font-size: var(--title-lg-size);
-            font-weight: var(--title-lg-weight);
-            line-height: var(--title-lg-lh);
-        }
-
-        .title-md {
-            font-size: var(--title-md-size);
-            font-weight: var(--title-md-weight);
-            line-height: var(--title-md-lh);
-        }
-
-        .label-md {
-            font-size: var(--label-md-size);
-            font-weight: var(--label-md-weight);
-            letter-spacing: var(--label-md-ls);
-            line-height: var(--label-md-lh);
-            text-transform: uppercase;
-        }
-
-        .body-lg {
-            font-size: var(--body-lg-size);
-            font-weight: var(--body-lg-weight);
-            line-height: var(--body-lg-lh);
-        }
-
-        .body-md {
-            font-size: var(--body-md-size);
-            font-weight: var(--body-md-weight);
-            line-height: var(--body-md-lh);
-        }
-
-        .py-20 { padding-top: var(--spacing-20); padding-bottom: var(--spacing-20); }
-        .py-16 { padding-top: var(--spacing-16); padding-bottom: var(--spacing-16); }
-        .py-12 { padding-top: var(--spacing-12); padding-bottom: var(--spacing-12); }
-        .mb-8 { margin-bottom: var(--spacing-8); }
-        .mb-6 { margin-bottom: var(--spacing-6); }
-        .mb-4 { margin-bottom: var(--spacing-4); }
-        .mt-8 { margin-top: var(--spacing-8); }
-        .mt-12 { margin-top: var(--spacing-12); }
-        .gap-4 { gap: var(--spacing-4); }
-        .gap-6 { gap: var(--spacing-6); }
-        .gap-8 { gap: var(--spacing-8); }
-        .gap-10 { gap: var(--spacing-10); }
-
-        .flex { display: flex; }
-        .grid { display: grid; }
-        .items-center { align-items: center; }
-        .justify-center { justify-content: center; }
-        .justify-between { justify-content: space-between; }
-        .flex-col { flex-direction: column; }
-        .flex-wrap { flex-wrap: wrap; }
-
-        .rounded-sm { border-radius: var(--rounded-sm); }
-        .rounded-md { border-radius: var(--rounded-md); }
-        .rounded-lg { border-radius: var(--rounded-lg); }
-        .rounded-full { border-radius: var(--rounded-full); }
-
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: var(--spacing-3) var(--spacing-6);
-            font-size: var(--body-lg-size);
-            font-weight: var(--label-lg-weight);
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-container);
-            color: var(--on-primary);
-            border: none;
-            border-radius: var(--rounded-sm);
-            box-shadow: 0 0 0 rgba(0,0,0,0); /* For consistent transition */
-        }
-
-        .btn-primary:hover {
-            background-color: var(--primary);
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
-            transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: none;
-            color: var(--primary);
-            border: 1px solid var(--outline);
-            border-radius: var(--rounded-sm);
-        }
-
-        .btn-secondary:hover {
-            color: var(--on-primary);
-            background-color: var(--primary);
-            border-color: var(--primary);
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
-            transform: translateY(-2px);
+        /* Scroll Progress Bar */
+        #scroll-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background-color: var(--primary-accent);
+            width: 0%;
+            z-index: 1000;
         }
 
         /* Hero Section */
-        .hero {
+        .hero-section {
             position: relative;
-            background: url('hero-bg.png') center/cover no-repeat;
-            background-blend-mode: overlay;
-            padding-top: var(--spacing-20);
-            padding-bottom: var(--spacing-20);
+            padding: var(--spacing-xxl) var(--spacing-md);
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            overflow: hidden;
+            overflow: hidden; /* For cursor gradient */
+            background-color: var(--background); /* Fallback */
+            z-index: 1; /* Ensure content is above background overlay */
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: var(--surface);
-            opacity: 0.2;
-            z-index: 0;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: var(--spacing-4);
-        }
-
-        .hero-content h1 {
-            font-size: var(--display-lg-size);
-            font-weight: var(--display-lg-weight);
-            line-height: var(--display-lg-lh);
-            margin-bottom: var(--spacing-6);
-            background: linear-gradient(90deg, var(--primary), var(--primary-container));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 15px rgba(114, 220, 255, 0.3);
-        }
-
-        .hero-content p {
-            font-size: var(--title-lg-size);
-            color: var(--on-surface-variant);
-            margin-bottom: var(--spacing-10);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-4);
-            margin-bottom: var(--spacing-12);
-            justify-content: center;
-            align-items: center;
-        }
-
-        @media (min-width: 768px) {
-            .hero-actions {
-                flex-direction: row;
-            }
-        }
-
-        .mockup {
-            width: 90%;
-            max-width: 800px;
-            border-radius: var(--rounded-xl);
-            box-shadow: var(--shadow-mockup);
-            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
-            margin-top: var(--spacing-10);
-            transition: transform 0.5s ease;
-        }
-
-        /* Cursor-following gradient on hero */
-        .hero-gradient-overlay {
+        .hero-background-overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none;
-            background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(114, 220, 255, 0.08) 0%, transparent 40%);
-            opacity: 0;
-            transition: opacity 0.5s ease;
-            z-index: 0;
-        }
-        .hero:hover .hero-gradient-overlay {
-            opacity: 1;
+            background: url('hero-bg.png') center/cover no-repeat;
+            opacity: 0.2; /* Specified opacity */
+            z-index: -1; /* Behind content */
         }
 
-        /* Magnetic Buttons */
-        .magnetic-btn {
-            transform: translate(0, 0);
-            transition: transform 0.1s ease-out;
-        }
-
-        /* Scroll Progress Bar */
-        #scroll-progress {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            background-color: var(--primary);
-            width: 0%;
-            z-index: 1000;
-        }
-
-        /* Section Styling */
-        section {
-            padding-top: var(--spacing-16);
-            padding-bottom: var(--spacing-16);
+        .hero-content {
             position: relative;
-            z-index: 1;
+            z-index: 2;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-lg);
         }
 
+        .hero-content h1 {
+            max-width: 800px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hero-content .body-large {
+            max-width: 700px;
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .hero-product-mockup {
+            width: 70%;
+            max-width: 800px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+            margin-top: var(--spacing-xl);
+            transition: transform 0.5s var(--transition-easing); /* For potential hover/interaction */
+        }
+
+        @media (max-width: 767px) {
+            .hero-section {
+                padding-top: var(--spacing-xl);
+                padding-bottom: var(--spacing-xl);
+                min-height: 80vh;
+            }
+            .hero-actions {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+            }
+            .hero-actions button {
+                width: 100%;
+            }
+            .hero-product-mockup {
+                width: 90%;
+                transform: perspective(1000px) rotateY(-3deg) rotateX(1deg); /* Less aggressive on mobile */
+            }
+        }
+
+        /* Problem Section */
+        .problem-section {
+            background-color: var(--background);
+            padding: var(--spacing-xxl) var(--spacing-md);
+            text-align: center;
+        }
+
+        .problem-section h2 {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .problem-stories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .problem-story {
+            background-color: var(--surface-card-background);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--elevation-1);
+            text-align: left;
+            transition: transform var(--transition-duration-short) var(--transition-easing),
+                        box-shadow var(--transition-duration-short) var(--transition-easing);
+        }
+
+        .problem-story:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--elevation-2);
+        }
+
+        .problem-story h4 {
+            color: var(--primary-accent);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .problem-story p {
+            color: var(--text-secondary);
+        }
+
+        /* Before/After Section */
+        .before-after-section {
+            background-color: var(--background);
+            padding: var(--spacing-xxl) var(--spacing-md);
+            text-align: center;
+        }
+
+        .before-after-section h2 {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .comparison-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .comparison-card {
+            background-color: var(--surface-card-background);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--elevation-1);
+            text-align: left;
+        }
+
+        .comparison-card h3 {
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .comparison-card h3.without { color: var(--error); }
+        .comparison-card h3.with { color: var(--success); }
+
+        .comparison-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .comparison-card li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-secondary);
+        }
+
+        .comparison-card li svg {
+            flex-shrink: 0;
+            margin-right: var(--spacing-sm);
+            width: 20px;
+            height: 20px;
+        }
+
+        .comparison-card li.negative svg { color: var(--error); }
+        .comparison-card li.positive svg { color: var(--success); }
+
+
+        /* Features Section */
+        .features-section {
+            background-color: var(--background);
+            padding: var(--spacing-xxl) var(--spacing-md);
+            text-align: center;
+        }
+
+        .features-section h2 {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background-color: var(--surface-card-background);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--elevation-1);
+            text-align: left;
+            transition: transform var(--transition-duration-short) var(--transition-easing),
+                        box-shadow var(--transition-duration-short) var(--transition-easing);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--elevation-2);
+        }
+
+        .feature-card svg {
+            color: var(--primary-accent);
+            width: 32px;
+            height: 32px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .feature-card h4 {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+        }
+
+        /* Social Proof Section */
+        .social-proof-section {
+            background-color: var(--background);
+            padding: var(--spacing-xxl) var(--spacing-md);
+            text-align: center;
+        }
+
+        .social-proof-section h2 {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xxl);
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 180px;
+        }
+
+        .stat-item .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary-accent);
+            line-height: 1;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .stat-item .stat-label {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        .testimonial-card {
+            background-color: var(--surface-card-background);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--elevation-1);
+            text-align: left;
+            transition: transform var(--transition-duration-short) var(--transition-easing),
+                        box-shadow var(--transition-duration-short) var(--transition-easing);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--elevation-2);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: var(--spacing-md);
+            color: var(--text-primary);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        .testimonial-author img {
+            width: 56px;
+            height: 56px;
+            border-radius: var(--border-radius-full);
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .author-info strong {
+            display: block;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .author-info span {
+            color: var(--text-secondary);
+            font-size: var(--base-font-size);
+        }
+
+        /* Pricing Section */
+        .pricing-section {
+            background-color: var(--background);
+            padding: var(--spacing-xxl) var(--spacing-md);
+            text-align: center;
+        }
+
+        .pricing-section h2 {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        .pricing-card {
+            background-color: var(--surface-card-background);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--elevation-1);
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            transition: transform var(--transition-duration-short) var(--transition-easing),
+                        box-shadow var(--transition-duration-short) var(--transition-easing);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--elevation-2);
+        }
+
+        .pricing-card.highlight {
+            border: 2px solid var(--primary-accent);
+            box-shadow: var(--elevation-2);
+        }
+
+        .pricing-card h3 {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .price-display {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .price-display .price-amount {
+            font-size: 40px; /* Specific for pricing */
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1;
+        }
+
+        .price-display .price-period {
+            font-size: var(--base-font-size);
+            color: var(--text-secondary);
+            margin-left: var(--spacing-xs);
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: var(--spacing-lg);
+            flex-grow: 1; /* Push button to bottom */
+        }
+
+        .pricing-card li {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-primary);
+        }
+
+        .pricing-card li svg {
+            color: var(--primary-accent);
+            margin-right: var(--spacing-sm);
+            flex-shrink: 0;
+        }
+
+        .pricing-card .primary-btn {
+            width: 100%;
+            padding: 12px 24px;
+        }
+
+        /* Final CTA Section */
+        .final-cta-section {
+            background-color: var(--background);
+            padding: var(--spacing-xxl) var(--spacing-md);
+            text-align: center;
+        }
+
+        .final-cta-section h2 {
+            max-width: 800px;
+            margin: 0 auto var(--spacing-xl) auto;
+        }
+
+        /* Footer Section */
+        .footer-section {
+            background-color: var(--background);
+            border-top: 1px solid var(--border);
+            padding: var(--spacing-lg) var(--spacing-md);
+            color: var(--text-secondary);
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-md);
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        .footer-links a, .footer-social a {
+            color: var(--text-secondary);
+            margin: 0 var(--spacing-sm);
+            font-size: var(--base-font-size);
+        }
+
+        .footer-links a:hover, .footer-social a:hover {
+            color: var(--primary-accent);
+        }
+
+        .footer-social svg {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+
+        /* 4. Animations */
+
+        /* Scroll Reveal */
         .js section {
             opacity: 0;
             transform: translateY(40px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
+            transition: opacity 0.8s var(--transition-easing), transform 0.8s var(--transition-easing);
         }
 
         .js section.visible {
@@ -451,765 +692,318 @@
             transform: none;
         }
 
+        /* Reduce motion preference */
         @media (prefers-reduced-motion: reduce) {
             .js section {
                 opacity: 1;
                 transform: none;
                 transition: none;
             }
-        }
-
-        .section-title {
-            font-size: var(--headline-sm-size);
-            font-weight: var(--headline-sm-weight);
-            letter-spacing: var(--headline-sm-ls);
-            line-height: var(--headline-sm-lh);
-            margin-bottom: var(--spacing-8);
-            text-align: center;
-            color: var(--primary);
-            text-shadow: 0 0 10px rgba(114, 220, 255, 0.2);
-        }
-
-        .section-subtitle {
-            font-size: var(--title-lg-size);
-            color: var(--on-surface-variant);
-            text-align: center;
-            margin-bottom: var(--spacing-12);
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Problem Section */
-        .problem-story {
-            background-color: var(--surface-container-low);
-            padding: var(--spacing-8);
-            border-radius: var(--rounded-lg);
-            margin-bottom: var(--spacing-8);
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-ambient-primary);
-        }
-        .problem-story:last-child {
-            margin-bottom: 0;
-        }
-        .problem-story h3 {
-            font-size: var(--title-lg-size);
-            color: var(--primary);
-            margin-bottom: var(--spacing-3);
-        }
-        .problem-story p {
-            font-size: var(--body-md-size);
-            color: var(--on-surface-variant);
-        }
-        .problem-story::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 4px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary), var(--secondary));
-            opacity: 0.6;
-        }
-
-        /* Before/After Section */
-        .comparison-card {
-            background-color: var(--surface-container-high);
-            padding: var(--spacing-8);
-            border-radius: var(--rounded-lg);
-            box-shadow: var(--shadow-ambient-primary);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            height: 100%;
-        }
-        .comparison-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 60px rgba(114, 220, 255, 0.1);
-        }
-        .comparison-card h3 {
-            font-size: var(--headline-sm-size);
-            margin-bottom: var(--spacing-4);
-        }
-        .comparison-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .comparison-card li {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: var(--spacing-3);
-            font-size: var(--body-lg-size);
-            color: var(--on-surface-variant);
-        }
-        .comparison-card li svg {
-            flex-shrink: 0;
-            margin-right: var(--spacing-3);
-            width: 24px;
-            height: 24px;
-        }
-        .comparison-card.without h3 { color: var(--secondary); }
-        .comparison-card.without li svg { color: var(--secondary); }
-        .comparison-card.with h3 { color: var(--primary); }
-        .comparison-card.with li svg { color: var(--primary); }
-
-        /* Features Section */
-        .feature-card {
-            background-color: var(--surface-container-high);
-            padding: var(--spacing-8);
-            border-radius: var(--rounded-lg);
-            box-shadow: var(--shadow-ambient-primary);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            height: 100%;
-        }
-        .feature-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 60px rgba(114, 220, 255, 0.1);
-        }
-        .feature-card h3 {
-            font-size: var(--title-lg-size);
-            color: var(--primary);
-            margin-bottom: var(--spacing-3);
-        }
-        .feature-card p {
-            font-size: var(--body-md-size);
-            color: var(--on-surface-variant);
-        }
-        .feature-card svg {
-            width: 48px;
-            height: 48px;
-            margin-bottom: var(--spacing-4);
-            color: var(--primary-container);
-            filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.4));
-        }
-
-        /* Social Proof Section */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--spacing-8);
-            margin-bottom: var(--spacing-12);
-        }
-        @media (min-width: 768px) {
-            .stats-grid {
-                grid-template-columns: repeat(3, 1fr);
+            .hero-product-mockup {
+                transform: none !important; /* Override perspective transform */
             }
         }
-        .stat-item {
-            background-color: rgba(40, 44, 54, 0.4); /* surface-container-highest at 40% */
-            backdrop-filter: blur(20px);
-            border-radius: var(--rounded-lg);
-            padding: var(--spacing-8);
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-ambient-primary);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .stat-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 60px rgba(114, 220, 255, 0.1);
-        }
-        .stat-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to right, rgba(114, 220, 255, 0.1), rgba(0, 210, 255, 0.1));
-            opacity: 0.1;
-            z-index: -1;
-        }
-        .stat-item .number {
-            font-size: var(--display-lg-size);
-            font-weight: var(--display-lg-weight);
-            line-height: var(--display-lg-lh);
-            color: var(--primary);
-            text-shadow: 0 0 15px rgba(114, 220, 255, 0.3);
-            margin-bottom: var(--spacing-2);
-        }
-        .stat-item .label {
-            font-size: var(--label-lg-size);
-            font-weight: var(--label-lg-weight);
-            color: var(--on-surface-variant);
-            text-transform: uppercase;
-            letter-spacing: var(--label-lg-ls);
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--spacing-8);
-        }
-        @media (min-width: 768px) {
-            .testimonial-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        .testimonial-card {
-            background-color: var(--surface-container-high);
-            padding: var(--spacing-8);
-            border-radius: var(--rounded-lg);
-            box-shadow: var(--shadow-ambient-primary);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: 100%;
-        }
-        .testimonial-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 60px rgba(114, 220, 255, 0.1);
-        }
-        .testimonial-card p {
-            font-size: var(--body-md-size);
-            color: var(--on-surface-variant);
-            margin-bottom: var(--spacing-6);
-            flex-grow: 1;
-        }
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            margin-top: var(--spacing-4);
-        }
-        .testimonial-author img {
-            width: 48px;
-            height: 48px;
-            border-radius: var(--rounded-full);
-            margin-right: var(--spacing-4);
-            border: 2px solid var(--primary);
-            box-shadow: 0 0 10px rgba(114, 220, 255, 0.4);
-        }
-        .testimonial-author .name {
-            font-size: var(--title-md-size);
-            font-weight: var(--title-md-weight);
-            color: var(--primary);
-        }
-        .testimonial-author .role {
-            font-size: var(--label-md-size);
-            color: var(--on-surface-variant);
-            text-transform: uppercase;
-            letter-spacing: var(--label-md-ls);
-        }
-
-        /* Pricing Section */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: var(--spacing-8);
-        }
-        @media (min-width: 768px) {
-            .pricing-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        .pricing-card {
-            background-color: var(--surface-container-high);
-            padding: var(--spacing-8);
-            border-radius: var(--rounded-lg);
-            box-shadow: var(--shadow-ambient-primary);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-        .pricing-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 0 60px rgba(114, 220, 255, 0.1);
-        }
-        .pricing-card.highlight {
-            border: 2px solid var(--primary);
-            box-shadow: 0 0 80px rgba(114, 220, 255, 0.2);
-        }
-        .pricing-card h3 {
-            font-size: var(--headline-sm-size);
-            color: var(--primary);
-            margin-bottom: var(--spacing-3);
-        }
-        .pricing-card .price {
-            font-size: var(--display-lg-size);
-            font-weight: var(--display-lg-weight);
-            color: var(--on-surface);
-            margin-bottom: var(--spacing-2);
-        }
-        .pricing-card .price span {
-            font-size: var(--title-lg-size);
-            color: var(--on-surface-variant);
-            font-weight: var(--body-lg-weight);
-        }
-        .pricing-card .duration {
-            font-size: var(--body-md-size);
-            color: var(--on-surface-variant);
-            margin-bottom: var(--spacing-6);
-        }
-        .pricing-card ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            flex-grow: 1;
-            margin-bottom: var(--spacing-8);
-        }
-        .pricing-card li {
-            display: flex;
-            align-items: center;
-            margin-bottom: var(--spacing-3);
-            font-size: var(--body-md-size);
-            color: var(--on-surface-variant);
-        }
-        .pricing-card li svg {
-            flex-shrink: 0;
-            margin-right: var(--spacing-3);
-            width: 20px;
-            height: 20px;
-            color: var(--primary);
-        }
-        .pricing-card .btn {
-            width: 100%;
-            margin-top: auto; /* Push button to bottom */
-        }
-
-        /* Final CTA */
-        .final-cta {
-            text-align: center;
-            padding-top: var(--spacing-16);
-            padding-bottom: var(--spacing-16);
-        }
-        .final-cta h2 {
-            font-size: var(--headline-sm-size);
-            color: var(--primary);
-            margin-bottom: var(--spacing-8);
-        }
-        .final-cta .btn {
-            padding: var(--spacing-4) var(--spacing-10);
-            font-size: var(--title-lg-size);
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--surface-container-lowest);
-            padding-top: var(--spacing-12);
-            padding-bottom: var(--spacing-12);
-            font-size: var(--body-sm-size);
-            color: var(--on-surface-variant);
-            text-align: center;
-        }
-        .footer-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: var(--spacing-6);
-            margin-bottom: var(--spacing-6);
-        }
-        .footer-links a {
-            color: var(--on-surface-variant);
-            font-weight: var(--body-md-weight);
-        }
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 767px) {
-            .hero {
-                padding-top: var(--spacing-12);
-                padding-bottom: var(--spacing-12);
-                min-height: auto;
-            }
-            .hero-content h1 {
-                font-size: var(--display-lg-size); /* Mobile specific size */
-            }
-            .hero-content p {
-                font-size: var(--title-md-size);
-            }
-            .mockup {
-                transform: perspective(1000px) rotateY(-2deg) rotateX(1deg);
-            }
-            .section-title {
-                font-size: var(--headline-sm-size); /* Mobile specific size */
-            }
-            .section-subtitle {
-                font-size: var(--title-md-size);
-            }
-            .problem-grid, .comparison-grid, .features-grid, .stats-grid, .testimonial-grid, .pricing-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Specific layout for problem section */
-        .problem-grid {
-            display: grid;
-            gap: var(--spacing-8);
-        }
-        @media (min-width: 768px) {
-            .problem-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (min-width: 1024px) {
-            .problem-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        /* Specific layout for before/after section */
-        .comparison-grid {
-            display: grid;
-            gap: var(--spacing-8);
-        }
-        @media (min-width: 768px) {
-            .comparison-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        /* Specific layout for features section */
-        .features-grid {
-            display: grid;
-            gap: var(--spacing-8);
-        }
-        @media (min-width: 768px) {
-            .features-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (min-width: 1024px) {
-            .features-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
     </style>
 </head>
 <body>
-    <div id="scroll-progress"></div>
+    <div id="scroll-progress-bar"></div>
 
-    <header class="hero">
-        <div class="hero-gradient-overlay"></div>
-        <div class="hero-content">
-            <h1 class="display-lg">Your Trades Tell a Story. Are You Listening?</h1>
-            <p class="title-lg">Stop guessing why you're losing. Pinpoint your edge, eliminate costly mistakes, and scale your profits with the ultimate daytrading journal for Futures and Crypto.</p>
+    <header class="hero-section" id="hero">
+        <div class="hero-background-overlay"></div>
+        <div class="container hero-content">
+            <h1>Are Unexplained Losses Eating Your Trading Capital?</h1>
+            <p class="body-large">Stop guessing why you're losing money. TradeFlow provides the deep analytics and clear insights you need to pinpoint flaws, refine strategies, and finally trade with consistent profitability.</p>
             <div class="hero-actions">
-                <a href="#pricing" class="btn btn-primary magnetic-btn">Start Your 14-Day Trial</a>
-                <a href="#how-it-works" class="btn btn-secondary magnetic-btn">See How It Works</a>
+                <button class="primary-btn magnetic-btn">Start Your 14-Day Free Trial</button>
+                <button class="secondary-btn magnetic-btn">See How It Works</button>
             </div>
-            <img src="product-mockup.png" alt="Sovereign HUD Product Mockup" class="mockup">
+            <img src='product-mockup.png' class='hero-product-mockup' alt='TradeFlow product dashboard mockup showing advanced analytics and charts'>
         </div>
     </header>
 
-    <main>
-        <section id="problem" class="py-20 bg-surface-dim">
-            <div class="container">
-                <h2 class="section-title">The Unseen Leaks in Your Trading Account</h2>
-                <p class="section-subtitle">You're a skilled trader, but without precise data, even winning streaks can mask deeper issues. These hidden patterns erode your edge.</p>
-
-                <div class="problem-grid">
-                    <div class="problem-story">
-                        <h3>The "Why Did I Do That?" Loop</h3>
-                        <p class="body-md">Last Tuesday you took 7 trades. 4 winners. But ended down $340. Your 3 losers averaged 2.1x your wins. You know you shouldn't let losers run, but in the heat of the moment, the discipline vanishes. Without a clear, objective record, you're doomed to repeat the same emotional mistakes, trade after trade.</p>
-                    </div>
-                    <div class="problem-story">
-                        <h3>The "Good Setup, Bad Outcome" Mystery</h3>
-                        <p class="body-md">You've identified a high-probability setup—a clear divergence on the 5-minute chart, strong volume confirmation. Yet, 60% of the time, these trades barely break even or stop you out. Is the setup flawed? Is your entry too early? Or is it your exit strategy? Without granular data, it's just a gut feeling, not an actionable insight.</p>
-                    </div>
-                    <div class="problem-story">
-                        <h3>The "Profit Fade" Phenomenon</h3>
-                        <p class="body-md">You start the week strong, up 2R by Wednesday. But by Friday, you've given back half your gains. Was it overtrading? Trading outside your prime hours? Or chasing low-probability moves? Without a system that highlights these behavioral patterns, you're constantly fighting an invisible enemy, leaving money on the table.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="how-it-works" class="py-20 bg-surface">
-            <div class="container">
-                <h2 class="section-title">From Blind Spots to Precision Edge</h2>
-                <p class="section-subtitle">The difference between guessing and knowing is your journal. See how Sovereign HUD transforms your trading.</p>
-
-                <div class="comparison-grid mt-12">
-                    <div class="comparison-card without">
-                        <h3>Without Sovereign HUD</h3>
-                        <ul>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-                                <span>Fuzzy P&L: Unclear why you're up or down.</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-                                <span>Emotional Decisions: Discipline erodes under pressure.</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-                                <span>Repeating Errors: The same mistakes, different day.</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
-                                <span>No Actionable Insights: Just a list of trades.</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="comparison-card with">
-                        <h3>With Sovereign HUD</h3>
-                        <ul>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>Data-Driven Clarity: Understand every dollar.</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>Optimized Setups: Trade only what works.</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>Consistent Growth: Scale your edge systematically.</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>Actionable Insights: Refine, adapt, profit.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="features" class="py-20 bg-surface-dim">
-            <div class="container">
-                <h2 class="section-title">Outcomes, Not Just Capabilities</h2>
-                <p class="section-subtitle">Sovereign HUD isn't just a tool; it's your co-pilot to consistent profitability.</p>
-
-                <div class="features-grid mt-12">
-                    <div class="feature-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2h1.93l-.93 1.93zM17.93 13H15v-2c0-1.1-.9-2-2-2h-2V6.07c3.95.49 7 3.85 7 7.93 0 .62-.08 1.21-.21 1.79L15 9v1c0 1.1.9 2 2 2h.93l1.93-.93z"/></svg>
-                        <h3>Identify Your Highest-Probability Setups</h3>
-                        <p class="body-md">Stop guessing which patterns work. Sovereign HUD analyzes your historical data to reveal the exact setups, market conditions, and timeframes that consistently generate profit. Focus your energy where it counts.</p>
-                    </div>
-                    <div class="feature-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2h1.93l-.93 1.93zM17.93 13H15v-2c0-1.1-.9-2-2-2h-2V6.07c3.95.49 7 3.85 7 7.93 0 .62-.08 1.21-.21 1.79L15 9v1c0 1.1.9 2 2 2h.93l1.93-.93z"/></svg>
-                        <h3>Optimize Risk-Reward Ratios</h3>
-                        <p class="body-md">Are you letting winners run and cutting losers short? Or the opposite? Our analytics highlight your average R:R per setup, market, and even day of the week, allowing you to fine-tune your trade management for maximum efficiency.</p>
-                    </div>
-                    <div class="feature-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2h1.93l-.93 1.93zM17.93 13H15v-2c0-1.1-.9-2-2-2h-2V6.07c3.95.49 7 3.85 7 7.93 0 .62-.08 1.21-.21 1.79L15 9v1c0 1.1.9 2 2 2h.93l1.93-.93z"/></svg>
-                        <h3>Eliminate Emotional Trading Biases</h3>
-                        <p class="body-md">Your journal becomes an objective mirror. See precisely when revenge trading, overtrading, or fear-based exits impact your bottom line. Build a data-backed routine that overrides impulse and reinforces discipline.</p>
-                    </div>
-                    <div class="feature-card">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2h1.93l-.93 1.93zM17.93 13H15v-2c0-1.1-.9-2-2-2h-2V6.07c3.95.49 7 3.85 7 7.93 0 .62-.08 1.21-.21 1.79L15 9v1c0 1.1.9 2 2 2h.93l1.93-.93z"/></svg>
-                        <h3>Track Performance Across Markets & Sessions</h3>
-                        <p class="body-md">Are you better at scalping ES futures or swinging BTC? Do you perform best in the London open or New York close? Sovereign HUD provides the granular data to identify your optimal trading environments.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="social-proof" class="py-20 bg-surface">
-            <div class="container">
-                <h2 class="section-title">Traders Are Seeing Real Results</h2>
-                <p class="section-subtitle">Don't just take our word for it. The numbers speak for themselves.</p>
-
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="number">12,847+</div>
-                        <div class="label">Active Traders</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="number">$7.3M+</div>
-                        <div class="label">Profit Tracked</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="number">92%</div>
-                        <div class="label">Improved Consistency</div>
-                    </div>
-                </div>
-
-                <div class="testimonial-grid mt-12">
-                    <div class="testimonial-card">
-                        <p class="body-md">"My win rate was 71% but R:R only 0.8. Sovereign HUD showed me I was cutting winners too fast. Switched to swings based on the data, now I'm at 2.3 R:R, profit up 340% in 3 months."</p>
-                        <div class="testimonial-author">
-                            <img src="https://api.dicebear.com/7.x/personas/svg?seed=Marcus" alt="Marcus Weber">
-                            <div>
-                                <div class="name">Marcus Weber</div>
-                                <div class="role">Prop Trader</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="body-md">"I thought my crypto scalping strategy was solid. The journal highlighted my worst performance was always on Mondays, and my best setups were between 14:00-16:00 UTC. Now I only trade those hours, my equity curve is finally smooth."</p>
-                        <div class="testimonial-author">
-                            <img src="https://api.dicebear.com/7.x/personas/svg?seed=Sarah" alt="Sarah Chen">
-                            <div>
-                                <div class="name">Sarah Chen</div>
-                                <div class="role">Crypto Scalper</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <p class="body-md">"Before Sovereign HUD, I was just logging trades. Now I see my average loss on NQ futures is 1.5x my average win on Thursdays. I've adjusted my stop placement and avoided those specific days. It's like having a trading coach in my pocket."</p>
-                        <div class="testimonial-author">
-                            <img src="https://api.dicebear.com/7.x/personas/svg?seed=David" alt="David Kim">
-                            <div>
-                                <div class="name">David Kim</div>
-                                <div class="role">Futures Swing Trader</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="pricing" class="py-20 bg-surface-dim">
-            <div class="container">
-                <h2 class="section-title">Choose Your Command Center</h2>
-                <p class="section-subtitle">Select the plan that fits your trading intensity. All plans include a 14-day free trial.</p>
-
-                <div class="pricing-grid mt-12">
-                    <div class="pricing-card">
-                        <h3>Pilot</h3>
-                        <div class="price">$29<span>/month</span></div>
-                        <div class="duration">Billed Annually</div>
-                        <ul>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>Essential Journaling</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>Basic Performance Metrics</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>1 Market Tracked</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>Standard Support</span>
-                            </li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Start Pilot Trial</a>
-                    </div>
-                    <div class="pricing-card highlight">
-                        <h3>Navigator</h3>
-                        <div class="price">$49<span>/month</span></div>
-                        <div class="duration">Billed Annually</div>
-                        <ul>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>All Pilot Features</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>Advanced Analytics & Filters</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>Multi-Market Tracking</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>Strategy Backtesting Tools</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>Priority Support</span>
-                            </li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Start Navigator Trial</a>
-                    </div>
-                    <div class="pricing-card">
-                        <h3>Sovereign</h3>
-                        <div class="price">$99<span>/month</span></div>
-                        <div class="duration">Billed Annually</div>
-                        <ul>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>All Navigator Features</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>AI-Powered Insights & Alerts</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>Dedicated Account Manager</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>Custom Integrations (API)</span>
-                            </li>
-                            <li>
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                                <span>Exclusive Beta Access</span>
-                            </li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Start Sovereign Trial</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="final-cta bg-surface">
-            <div class="container">
-                <h2 class="headline-sm">Stop leaving money on the table.</h2>
-                <p class="title-lg text-on-surface-variant mb-8">Start journaling with precision. Uncover your true edge.</p>
-                <a href="#pricing" class="btn btn-primary magnetic-btn">Claim Your 14-Day Free Trial Now</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
+    <section class="problem-section" id="problem">
         <div class="container">
+            <h2>The Harsh Reality: Trading Without Data is Just Gambling</h2>
+            <div class="problem-stories">
+                <div class="problem-story">
+                    <h4>The "Good Day, Bad Week" Cycle</h4>
+                    <p>Last Tuesday, you hit 4 winners and felt great. But by Friday, you were down $340. Your 3 losing trades averaged 2.1x your wins, and you can't explain why. Was it position sizing? Entry timing? You just don't know.</p>
+                </div>
+                <div class="problem-story">
+                    <h4>Chasing Strategies, Finding Frustration</h4>
+                    <p>You've tried every YouTube strategy, every indicator. Some days they work, most days they don't. Without a clear record of what *actually* works for *you*, you're stuck endlessly searching, burning capital and confidence.</p>
+                </div>
+                <div class="problem-story">
+                    <h4>Emotional Decisions, Unseen Patterns</h4>
+                    <p>You know you shouldn't revenge trade, but it happens. You cut winners short, let losers run. These emotional leaks are costing you, but without objective data, they remain hidden, sabotaging your efforts trade after trade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="before-after-section" id="solution">
+        <div class="container">
+            <h2>From Guesswork to Precision: Your Trading Transformation</h2>
+            <div class="comparison-grid">
+                <div class="comparison-card">
+                    <h3 class="without">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-circle"><circle cx="12" cy="12" r="10"/><path d="m15 9-6 6"/><path d="m9 9 6 6"/></svg>
+                        Without TradeFlow
+                    </h3>
+                    <ul>
+                        <li class="negative">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                            Vague understanding of profit/loss.
+                        </li>
+                        <li class="negative">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                            No clear data on what strategies work.
+                        </li>
+                        <li class="negative">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                            Emotional leaks go unaddressed.
+                        </li>
+                        <li class="negative">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                            Inconsistent results, constant frustration.
+                        </li>
+                    </ul>
+                </div>
+                <div class="comparison-card">
+                    <h3 class="with">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+                        With TradeFlow
+                    </h3>
+                    <ul>
+                        <li class="positive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Precise profit/loss breakdown by setup.
+                        </li>
+                        <li class="positive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Identify your highest probability, highest R:R strategies.
+                        </li>
+                        <li class="positive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Visualize emotional impact and develop discipline.
+                        </li>
+                        <li class="positive">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Consistent, data-driven improvement and growth.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2>Outcomes You'll Achieve with TradeFlow</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+                    <h4>Pinpoint Your Profitable Setups</h4>
+                    <p>Stop guessing. See exactly which trading strategies, timeframes, and instruments consistently generate positive expectancy for your unique style.</p>
+                </div>
+                <div class="feature-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    <h4>Optimize Entry & Exit Precision</h4>
+                    <p>Analyze your average entry and exit points against market moves. Identify slippage, premature exits, or late entries that erode your edge.</p>
+                </div>
+                <div class="feature-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                    <h4>Master Risk Management</h4>
+                    <p>Understand your true risk-to-reward ratio, average loss size, and maximum drawdown. Implement data-driven position sizing to protect capital.</p>
+                </div>
+                <div class="feature-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trending-up"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                    <h4>Achieve Consistent Profitability</h4>
+                    <p>By eliminating guesswork and focusing on what works, you'll build a robust trading plan and see your equity curve steadily climb.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="social-proof-section" id="social-proof">
+        <div class="container">
+            <h2>Trusted by Daytraders Who Demand an Edge</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">12,847+</div>
+                    <div class="stat-label">Traders Tracking</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$7.3M+</div>
+                    <div class="stat-label">Profit Tracked</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2.1M+</div>
+                    <div class="stat-label">Trades Logged</div>
+                </div>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"TradeFlow showed me my win rate was 71% but my R:R was only 0.8. I switched from scalping to longer swings, and now my R:R is 2.3, with profit up 340% in 3 months. Game changer."</p>
+                    <div class="testimonial-author">
+                        <img src="https://api.dicebear.com/7.x/personas/svg?seed=Marcus" alt="Marcus Weber Avatar">
+                        <div class="author-info">
+                            <strong>Marcus Weber</strong>
+                            <span>Prop Trader, NYC</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"I used to think my biggest problem was entries. TradeFlow's exit analysis revealed I was cutting winners at 0.7R instead of letting them run to 1.5R. Fixing that alone added 15% to my monthly P&L."</p>
+                    <div class="testimonial-author">
+                        <img src="https://api.dicebear.com/7.x/personas/svg?seed=Sarah" alt="Sarah Chen Avatar">
+                        <div class="author-info">
+                            <strong>Sarah Chen</strong>
+                            <span>Independent Trader</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The emotional tracking feature is brilliant. I saw a clear correlation between my stress levels and overtrading. Now I take breaks, and my losing streaks are down 60%. Essential for discipline."</p>
+                    <div class="testimonial-author">
+                        <img src="https://api.dicebear.com/7.x/personas/svg?seed=David" alt="David Lee Avatar">
+                        <div class="author-info">
+                            <strong>David Lee</strong>
+                            <span>Full-Time Daytrader</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section" id="pricing">
+        <div class="container">
+            <h2>Simple, Transparent Pricing for Serious Traders</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic Trader</h3>
+                    <div class="price-display">
+                        <span class="price-amount">$29</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Unlimited Trade Logging
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Basic Performance Metrics
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Journaling & Notes
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            1 Broker Integration
+                        </li>
+                    </ul>
+                    <button class="primary-btn">Start 14-Day Free Trial</button>
+                </div>
+                <div class="pricing-card highlight">
+                    <h3>Pro Analyst</h3>
+                    <div class="price-display">
+                        <span class="price-amount">$59</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Everything in Basic
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Advanced Strategy Analytics
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Interactive Chart Visualization
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Multi-Broker Integration (Up to 3)
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Risk Management Tools
+                        </li>
+                    </ul>
+                    <button class="primary-btn">Start 14-Day Free Trial</button>
+                </div>
+                <div class="pricing-card">
+                    <h3>Elite Strategist</h3>
+                    <div class="price-display">
+                        <span class="price-amount">$99</span>
+                        <span class="price-period">/month</span>
+                    </div>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Everything in Pro
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Custom Report Builder
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Dedicated Support
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Unlimited Broker Integrations
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"/></svg>
+                            Early Access to New Features
+                        </li>
+                    </ul>
+                    <button class="primary-btn">Start 14-Day Free Trial</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta-section">
+        <div class="container">
+            <h2>Ready to Stop Guessing and Start Growing Your Trading Account?</h2>
+            <button class="primary-btn magnetic-btn">Get Started with TradeFlow Today</button>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="container footer-content">
+            <div class="footer-copyright caption">
+                © 2023 TradeFlow. All rights reserved.
+            </div>
             <div class="footer-links">
                 <a href="#">Privacy Policy</a>
                 <a href="#">Terms of Service</a>
                 <a href="#">Support</a>
-                <a href="#">Contact</a>
+                <a href="#">About Us</a>
             </div>
-            <p>&copy; 2024 Sovereign HUD. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="#" aria-label="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Scroll Progress Bar
-        const scrollProgress = document.getElementById('scroll-progress');
-        document.addEventListener('scroll', () => {
-            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const progress = (scrollTop / scrollHeight) * 100;
-            scrollProgress.style.width = progress + '%';
-        });
-
-        // Cursor-following gradient on hero
-        const hero = document.querySelector('.hero');
-        const heroGradientOverlay = document.querySelector('.hero-gradient-overlay');
-        if (hero && heroGradientOverlay) {
-            hero.addEventListener('mousemove', (e) => {
-                const rect = hero.getBoundingClientRect();
-                const x = (e.clientX - rect.left) / rect.width * 100;
-                const y = (e.clientY - rect.top) / rect.height * 100;
-                heroGradientOverlay.style.setProperty('--mouse-x', `${x}%`);
-                heroGradientOverlay.style.setProperty('--mouse-y', `${y}%`);
-            });
-        }
-
-        // Magnetic CTA Buttons
-        const magneticButtons = document.querySelectorAll('.magnetic-btn');
-        magneticButtons.forEach(button => {
-            button.addEventListener('mousemove', (e) => {
-                const rect = button.getBoundingClientRect();
-                const x = e.clientX - rect.left - rect.width / 2;
-                const y = e.clientY - rect.top - rect.height / 2;
-                button.style.transform = `translate(${x * 0.4}px, ${y * 0.4}px)`;
-            });
-
-            button.addEventListener('mouseleave', () => {
-                button.style.transform = `translate(0, 0)`;
-            });
-        });
-
-        // Scroll Reveal Animation
-        if (document.documentElement.classList.contains('js')) {
+        // Scroll Reveal
+        if (document.documentElement.classList.contains('js') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             const sections = document.querySelectorAll('section');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -1224,14 +1018,58 @@
             sections.forEach(section => {
                 observer.observe(section);
             });
+        }
 
-            // Handle prefers-reduced-motion
-            const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-            if (mediaQuery.matches) {
-                sections.forEach(section => {
-                    section.classList.add('visible'); // Make all sections visible immediately
+        // Cursor-following gradient on hero
+        const heroSection = document.getElementById('hero');
+        if (heroSection && document.documentElement.classList.contains('js') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            heroSection.addEventListener('mousemove', (e) => {
+                const rect = heroSection.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                // Apply gradient to the hero-section itself, which will overlay the background-image due to stacking context.
+                // The opacity of the gradient creates the desired effect with the hero-bg.png.
+                heroSection.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(0, 196, 180, 0.1) 0%, rgba(18, 18, 18, 0) 30%), url('hero-bg.png') center/cover no-repeat`;
+                heroSection.style.backgroundBlendMode = 'overlay'; // Blend with existing background
+                heroSection.style.transition = 'none'; // Disable transition for smooth follow
+            });
+
+            heroSection.addEventListener('mouseleave', () => {
+                heroSection.style.transition = 'background 0.5s ease-out'; // Re-enable transition
+                // Reset background to only the hero-bg.png with its overlay
+                heroSection.style.background = `url('hero-bg.png') center/cover no-repeat`;
+                heroSection.style.backgroundBlendMode = 'normal'; // Reset blend mode
+            });
+        }
+
+        // Magnetic CTA buttons
+        const magneticButtons = document.querySelectorAll('.magnetic-btn');
+        if (document.documentElement.classList.contains('js') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            magneticButtons.forEach(button => {
+                button.addEventListener('mousemove', (e) => {
+                    const rect = button.getBoundingClientRect();
+                    const x = e.clientX - (rect.left + rect.width / 2);
+                    const y = e.clientY - (rect.top + rect.height / 2);
+
+                    // Apply a fraction of the force
+                    button.style.transform = `translate(${x * 0.4}px, ${y * 0.4}px)`;
                 });
-            }
+
+                button.addEventListener('mouseleave', () => {
+                    button.style.transform = 'translate(0, 0)';
+                });
+            });
+        }
+
+        // Scroll Progress Bar
+        const progressBar = document.getElementById('scroll-progress-bar');
+        if (progressBar) {
+            window.addEventListener('scroll', () => {
+                const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrollPosition = window.scrollY;
+                const progress = (scrollPosition / totalHeight) * 100;
+                progressBar.style.width = `${progress}%`;
+            });
         }
     </script>
 </body>

@@ -1,8 +1,8 @@
 {
-  "prompt": "Premium Trading Journal fuer Daytrader. Dark theme, Electric Blue + Magenta. Inspiriert von Tradezella + Linear.app. Features: P&L per Strategy, Win-Rate per Setup, Entry/Exit Heatmap, Backtesting, Equity Curve. Zielgruppe: Futures/Crypto Trader, 10-30 Trades/Tag. Pricing: Free, Pro 39/mo, Elite 89/mo.",
+  "prompt": "Premium Trading Journal fuer Daytrader. Dark theme mit Electric Blue und Magenta. Inspiriert von Tradezella und Linear.app. Features: P&L Analytics per Strategy, Win-Rate per Setup, Backtesting, Equity Curve. Zielgruppe: Futures/Crypto Trader. Pricing: Free, Pro 39/mo, Elite 89/mo.",
   "brief": {
     "project_name": "premium-trading-journal",
-    "description": "A premium trading journal for daytraders, offering advanced analytics and backtesting capabilities in a dark-themed interface.",
+    "description": "A premium trading journal for daytraders, featuring a dark theme with electric blue and magenta accents.",
     "type": "saas",
     "style": "dark",
     "color_scheme": "dark",
@@ -13,23 +13,22 @@
       "footer"
     ],
     "features": [
-      "P&L per Strategy",
+      "P&L Analytics per Strategy",
       "Win-Rate per Setup",
-      "Entry/Exit Heatmap",
       "Backtesting",
       "Equity Curve",
       "responsive",
       "seo"
     ],
-    "target_audience": "Futures/Crypto Traders making 10-30 trades per day.",
+    "target_audience": "Futures and Crypto Daytraders",
     "reference_urls": [
-      "https://tradezella.com",
-      "https://linear.app"
+      "https://tradezella.com/",
+      "https://linear.app/"
     ],
     "framework": "nextjs",
-    "original_prompt": "Premium Trading Journal fuer Daytrader. Dark theme, Electric Blue + Magenta. Inspiriert von Tradezella + Linear.app. Features: P&L per Strategy, Win-Rate per Setup, Entry/Exit Heatmap, Backtesting, Equity Curve. Zielgruppe: Futures/Crypto Trader, 10-30 Trades/Tag. Pricing: Free, Pro 39/mo, Elite 89/mo.",
-    "hero_image": "hero-bg.png",
-    "product_mockup": "product-mockup.png"
+    "original_prompt": "Premium Trading Journal fuer Daytrader. Dark theme mit Electric Blue und Magenta. Inspiriert von Tradezella und Linear.app. Features: P&L Analytics per Strategy, Win-Rate per Setup, Backtesting, Equity Curve. Zielgruppe: Futures/Crypto Trader. Pricing: Free, Pro 39/mo, Elite 89/mo.",
+    "product_mockup": "product-mockup.png",
+    "hero_image": "hero-bg.png"
   },
   "project_dir": "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal",
   "qa": {
@@ -40,7 +39,7 @@
       "Missing navigation",
       "No CSS animations \u2014 site feels static"
     ],
-    "html_size": 51968,
+    "html_size": 52881,
     "screenshots": {
       "desktop": "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\screenshot-desktop.png",
       "scroll_shots": [
@@ -51,13 +50,15 @@
         "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-04.png",
         "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-05.png",
         "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-06.png",
-        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-07.png"
+        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-07.png",
+        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-08.png",
+        "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\scroll-09.png"
       ],
       "video": "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\videos\\32d7845caa1a580be342e6bf8597c228.webm",
       "mobile": "C:\\Visualstudios\\WebsiteFactory\\output\\premium-trading-journal\\screenshot-mobile.png"
     }
   },
   "url": "https://thecryptomethod.github.io/premium-trading-journal/",
-  "duration": 288.5,
-  "timestamp": "2026-03-31T01:47:22.997540"
+  "duration": 262.0,
+  "timestamp": "2026-03-31T02:05:32.862248"
 }
