@@ -1,248 +1,82 @@
-# Design System Documentation
+# Design System Strategy: Ethereal Terminal
 
-This document outlines the core design principles and specifications for the premium trading journal SaaS project. It serves as a single source of truth for UI/UX elements, ensuring consistency and efficiency in development.
+## 1. Overview & Creative North Star
+**Creative North Star: The Sovereign HUD (Heads-Up Display)**
 
----
+This design system is not a standard web dashboard; it is a high-performance instrument. For the professional daytrader, clarity is profit and latency is loss. We move beyond "template" aesthetics by adopting a **Sovereign HUD** philosophyâ€”a layout that feels like a singular, integrated piece of glass rather than a collection of boxes.
 
-## 1. Project Overview
-
-**Project Name:** Premium Trading Journal
-**Type:** SaaS
-**Style:** Dark, Modern, Professional
-**Description:** A sophisticated trading journal for daytraders, featuring advanced analytics, backtesting, and a sleek dark-themed interface.
+We break the grid through **Intentional Asymmetry**. Key performance indicators (KPIs) should not just sit in rows; they should "float" with varying tonal depths. By using overlapping glass surfaces and a high-contrast typography scale, we create a technical, editorial experience that feels both authoritative and ethereal. The interface should feel like a dark room where only the most vital data glows.
 
 ---
 
-## 2. Color Palette
+## 2. Colors & Atmospheric Depth
+The palette is rooted in a "Deep Space" black, utilizing the Electric Blue and Magenta accents not as mere decorations, but as functional status indicators (Bullish vs. Bearish / Profit vs. Loss).
 
-A carefully selected dark color scheme with a vibrant accent to highlight key actions and data.
+### The "No-Line" Rule
+**Borders are a design failure in this system.** Do not use 1px solid strokes to separate sections. Structure must be defined through:
+- **Tonal Shifts:** Placing a `surface-container-high` card against a `surface-dim` background.
+- **Negative Space:** Utilizing the Spacing Scale (specifically `spacing-8` and `spacing-10`) to create breathing room that defines boundaries.
+- **Shadow Depth:** Using ambient, tinted glows to lift a container rather than outlining it.
 
-*   **Background:** `#0A0A0F` (Deep Charcoal - Main page background)
-*   **Primary (UI Elements):** `#1A1A22` (Dark Grey - Card backgrounds, primary containers)
-*   **Secondary (Borders, Subtle Accents):** `#2C2C38` (Medium Dark Grey - Borders, dividers, secondary UI elements)
-*   **Accent (Interactive Elements):** `#00C896` (Vibrant Teal - CTAs, highlights, active states, key data points)
-*   **Text Primary:** `#E0E0E6` (Off-White - Main body text, headings)
-*   **Text Secondary:** `#A0A0A8` (Light Grey - Secondary text, labels, disabled states)
-*   **Success:** `#34D399` (Green - Positive feedback, success messages)
-*   **Error:** `#EF4444` (Red - Negative feedback, error messages)
-*   **Warning:** `#FBBF24` (Amber - Warning messages, alerts)
+### Surface Hierarchy & Nesting
+Treat the UI as a series of stacked, frosted obsidian sheets.
+*   **Base Layer:** `surface` (#0b0e14) â€” The infinite void.
+*   **Section Layer:** `surface-container-low` (#10131a) â€” Large structural areas (e.g., Sidebars).
+*   **Component Layer:** `surface-container-high` (#1c2028) â€” Individual trade cards or data modules.
+*   **Active/Interaction Layer:** `surface-bright` (#282c36) â€” Focused elements or hovered states.
 
----
-
-## 3. Typography
-
-Using a single, versatile font family for consistency and readability across all elements.
-
-*   **Font Family:** `Inter`, sans-serif
-    *   **Fallback:** `system-ui`, `-apple-system`, `BlinkMacSystemFont`, `"Segoe UI"`, `Roboto`, `"Helvetica Neue"`, `Arial`, `"Noto Sans"`, `sans-serif`, `"Apple Color Emoji"`, `"Segoe UI Emoji"`, `"Segoe UI Symbol"`, `"Noto Color Emoji"`
-*   **Font Weights Used:** Regular (400), Medium (500), SemiBold (600), Bold (700)
-
-### Font Sizes (Desktop Base)
-
-*   **H1 (Hero Titles):** `48px` (Bold)
-*   **H2 (Section Titles):** `36px` (SemiBold)
-*   **H3 (Card Titles, Sub-sections):** `28px` (Medium)
-*   **H4 (Minor Headings):** `22px` (Medium)
-*   **Body Large:** `18px` (Regular)
-*   **Body:** `16px` (Regular - Default text size)
-*   **Small:** `14px` (Regular - Captions, meta info)
-
-### Line Heights
-
-*   Headings: `1.2`
-*   Body Text: `1.5`
+### The Glass & Gradient Rule
+For high-level metrics (Win Rate, Profit Factor), use **Glassmorphism**. Combine `surface-container-highest` at 40% opacity with a `backdrop-blur` of 20px. 
+*   **Signature Glow:** Apply a subtle linear gradient from `primary` (#72dcff) to `primary-container` (#00d2ff) at 10% opacity as a background fill for hero metrics to give them a "powered-on" technical soul.
 
 ---
 
-## 4. Spacing Scale
+## 3. Typography: Technical Authority
+We use **Manrope** exclusively. Its geometric construction provides the "Modern Technical" feel required for rapid data ingestion.
 
-A consistent 8px-based spacing scale for all layout and component spacing.
-
-*   **xs:** `8px`
-*   **sm:** `16px`
-*   **md:** `24px`
-*   **lg:** `48px`
-*   **xl:** `80px`
-*   **xxl:** `120px` (For large section padding)
+*   **Display (The Pulse):** `display-lg` (3.5rem) should be used for the Daily P&L. It must be bold and commanding.
+*   **Headlines (The Context):** `headline-sm` (1.5rem) for section titles like "Trade Distribution." Use tighter letter-spacing (-0.02em) to enhance the premium, editorial feel.
+*   **Data Labels (The Precision):** `label-md` (0.75rem) using `on-surface-variant` (#a9abb3) in All-Caps for secondary metadata. This creates a "terminal" aesthetic.
+*   **The Hierarchy Rule:** Never pair two font sizes that are adjacent in the scale (e.g., don't put `title-md` next to `title-sm`). Jump levels to create a high-contrast, professional tension.
 
 ---
 
-## 5. Border Radius
+## 4. Elevation & Depth: Tonal Layering
+Traditional drop shadows are forbidden. We use **Ambient Radiance**.
 
-Subtle rounding for a modern and friendly feel, without being overly soft.
-
-*   **Default:** `8px` (For cards, buttons, input fields)
-*   **Small:** `4px` (For smaller elements, badges)
-*   **Full:** `9999px` (For pill-shaped elements, avatars)
-
----
-
-## 6. Shadow Styles
-
-Subtle, dark shadows to provide depth and hierarchy in the dark interface.
-
-*   **Small Shadow (Subtle Lift):**
-    *   `box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);`
-*   **Medium Shadow (Card Elevation):**
-    *   `box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);`
-*   **Large Shadow (Modal, Popover):**
-    *   `box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.4);`
+*   **Layering Principle:** Achieve depth by "nesting" tokens. A `surface-container-lowest` (#000000) data table sitting inside a `surface-container-low` (#10131a) dashboard creates a "recessed" look, ideal for secondary data.
+*   **Ambient Shadows:** For floating modals, use a large blur (40px+) with a 6% opacity shadow tinted with `primary` (#72dcff). It should feel like the component is emitting light onto the surface below, not casting a shadow.
+*   **Ghost Borders:** If a separator is required for accessibility, use `outline-variant` (#45484f) at **15% opacity**. It should be felt, not seen.
 
 ---
 
-## 7. Component Specifications
+## 5. Components & Interface Elements
 
-Detailed specifications for key sections of the landing page.
+### Buttons (The Interaction Triggers)
+*   **Primary:** Solid `primary_container` (#00d2ff). Use `rounded-sm` (0.125rem) for a sharp, precision-tool look. No rounded "pill" buttons unless they are secondary chips.
+*   **Secondary:** Ghost style. `outline` color with a `primary` glow on hover.
 
-### 7.1. Hero Section
+### Data Cards (The Core Module)
+*   **Forbid Dividers:** Do not use lines to separate "Entry Price" from "Exit Price." Use a 2-column layout with `spacing-4` (0.9rem) gaps. 
+*   **Dynamic Glow:** Cards containing "Winning Trades" should have a subtle 2px left-border glow using `primary` (#72dcff). "Losing Trades" use `secondary` (#ff51fa).
 
-*   **Background:** `Background` color (`#0A0A0F`) with a subtle gradient or pattern for depth.
-*   **Container:** Max-width `1280px`, centered, `xl` padding top/bottom.
-*   **Heading (H1):**
-    *   Font: `Inter`, `48px`, `Bold`.
-    *   Color: `Text Primary` (`#E0E0E6`).
-    *   Key phrase/word within heading to use `Accent` color (`#00C896`).
-*   **Subheading (Body Large):**
-    *   Font: `Inter`, `18px`, `Regular`.
-    *   Color: `Text Secondary` (`#A0A0A8`).
-    *   Spacing: `md` margin-top from H1.
-*   **Call to Action (CTA) Button:**
-    *   Background: `Accent` color (`#00C896`).
-    *   Text Color: `Background` color (`#0A0A0F`).
-    *   Padding: `16px` vertical, `32px` horizontal.
-    *   Border Radius: `8px`.
-    *   Font: `Inter`, `18px`, `SemiBold`.
-    *   Hover: Background darkens slightly (`#00A37A`), subtle `Medium Shadow`.
-    *   Spacing: `lg` margin-top from subheading.
-*   **Supporting Image/Mockup:**
-    *   High-quality screenshot or illustration of the app interface, dark-themed.
-    *   Positioned to complement text, potentially floating or slightly overlapping.
+### Trading Inputs
+*   **Input Fields:** `surface-container-highest` background with a `none` border. On focus, the background transitions to `surface-bright` and a `primary` 1px bottom-bar appears (not a full box).
+*   **Selection Chips:** Use `rounded-full` (9999px) to contrast with the sharp-edged data cards. This makes interactive filters feel distinct from static data.
 
-### 7.2. Features Section
-
-*   **Background:** `Primary (UI Elements)` color (`#1A1A22`).
-*   **Section Title (H2):**
-    *   Font: `Inter`, `36px`, `SemiBold`.
-    *   Color: `Text Primary` (`#E0E0E6`).
-    *   Centered.
-    *   Spacing: `xl` padding top/bottom for the section.
-*   **Feature Grid:**
-    *   Layout: Responsive grid (e.g., 3 columns desktop, 2 columns tablet, 1 column mobile).
-    *   Gap: `lg` between cards.
-*   **Feature Card:**
-    *   Background: `Primary (UI Elements)` color (`#1A1A22`).
-    *   Border: `1px` solid `Secondary (Borders)` color (`#2C2C38`).
-    *   Border Radius: `8px`.
-    *   Padding: `lg`.
-    *   Shadow: `Medium Shadow`.
-    *   **Icon:**
-        *   Size: `48px` x `48px`.
-        *   Color: `Accent` color (`#00C896`).
-        *   Spacing: `md` margin-bottom.
-    *   **Title (H3):**
-        *   Font: `Inter`, `28px`, `Medium`.
-        *   Color: `Text Primary` (`#E0E0E6`).
-        *   Spacing: `sm` margin-bottom.
-    *   **Description (Body):**
-        *   Font: `Inter`, `16px`, `Regular`.
-        *   Color: `Text Secondary` (`#A0A0A8`).
-
-### 7.3. Pricing Section
-
-*   **Background:** `Background` color (`#0A0A0F`).
-*   **Section Title (H2):**
-    *   Font: `Inter`, `36px`, `SemiBold`.
-    *   Color: `Text Primary` (`#E0E0E6`).
-    *   Centered.
-    *   Spacing: `xl` padding top/bottom for the section.
-*   **Pricing Grid:**
-    *   Layout: Responsive grid (e.g., 3 columns desktop, 1-2 columns tablet/mobile).
-    *   Gap: `lg` between cards.
-*   **Pricing Card:**
-    *   Background: `Primary (UI Elements)` color (`#1A1A22`).
-    *   Border: `1px` solid `Secondary (Borders)` color (`#2C2C38`).
-    *   Border Radius: `8px`.
-    *   Padding: `lg`.
-    *   Shadow: `Medium Shadow`.
-    *   **Plan Name (H3):**
-        *   Font: `Inter`, `28px`, `Medium`.
-        *   Color: `Text Primary` (`#E0E0E6`).
-        *   Centered.
-        *   Spacing: `md` margin-bottom.
-    *   **Price:**
-        *   Font: `Inter`, `48px`, `Bold`.
-        *   Color: `Accent` color (`#00C896`).
-        *   Centered.
-        *   Suffix (e.g., "/month"): `Text Secondary`, `18px`.
-        *   Spacing: `md` margin-bottom.
-    *   **Features List:**
-        *   Unordered list.
-        *   List Item Font: `Inter`, `16px`, `Regular`.
-        *   List Item Color: `Text Primary` (`#E0E0E6`).
-        *   Icon (checkmark): `Accent` color (`#00C896`).
-        *   Spacing: `sm` vertical spacing between items.
-        *   Spacing: `lg` margin-bottom for the list.
-    *   **CTA Button:**
-        *   Style: Same as Hero CTA, but potentially `100%` width within the card.
-        *   Text: "Choose Plan" or "Start Free Trial".
-    *   **"Most Popular" Badge (Optional):**
-        *   Position: Top-right corner of the card.
-        *   Background: `Accent` color (`#00C896`).
-        *   Text Color: `Background` color (`#0A0A0F`).
-        *   Font: `Inter`, `14px`, `SemiBold`.
-        *   Padding: `xs` vertical, `sm` horizontal.
-        *   Border Radius: `Full`.
-        *   Applied to one specific pricing card.
-
-### 7.4. Footer Section
-
-*   **Background:** `Background` color (`#0A0A0F`).
-*   **Padding:** `xl` top/bottom.
-*   **Layout:** Grid or flexbox for columns (e.g., logo, navigation, legal, social).
-*   **Logo:** Project logo (white/light version).
-*   **Navigation Links:**
-    *   Font: `Inter`, `16px`, `Regular`.
-    *   Color: `Text Secondary` (`#A0A0A8`).
-    *   Hover: `Accent` color (`#00C896`).
-    *   Spacing: `sm` vertical spacing.
-*   **Copyright Text:**
-    *   Font: `Inter`, `14px`, `Regular`.
-    *   Color: `Text Secondary` (`#A0A0A8`).
-*   **Social Media Icons:**
-    *   Icons: SVG or icon font.
-    *   Color: `Text Secondary` (`#A0A0A8`).
-    *   Hover: `Accent` color (`#00C896`).
-    *   Size: `24px` x `24px`.
-    *   Spacing: `sm` horizontal spacing.
+### Signature Component: The "Performance Ribbon"
+A horizontal, semi-transparent `glassmorphism` bar that sits at the top of the terminal, housing real-time equity curves. Use a `primary` to `secondary` gradient for the line graph to represent the "Ethereal" brand identity.
 
 ---
 
-## 8. Responsive Breakpoints
+## 6. Do's and Don'ts
 
-Standard breakpoints for adapting the layout across devices.
+### Do
+*   **Do** use `primary` (#72dcff) for bullish/positive data and `secondary` (#ff51fa) for bearish/negative data. This is the core "Ethereal Terminal" visual language.
+*   **Do** lean into asymmetry. A large metric on the left balanced by three small metrics on the right feels more "professional" than a 4-column grid.
+*   **Do** use `on-surface-variant` (#a9abb3) for labels to ensure the `on-surface` (#ecedf6) data values pop with maximum contrast.
 
-*   **Mobile:** `0px` - `767px`
-    *   Layouts typically stack vertically.
-    *   Font sizes may be reduced (e.g., H1: `36px`, Body: `15px`).
-    *   Padding and margins reduced (e.g., `lg` becomes `md`).
-*   **Tablet:** `768px` - `1023px`
-    *   Layouts may start to use multiple columns (e.g., 2-column grids).
-    *   Font sizes closer to desktop, but potentially slightly smaller.
-*   **Desktop:** `1024px` and up
-    *   Full desktop layouts.
-    *   Max content width `1280px` for main sections.
-
----
-
-## 9. Animation Guidelines
-
-Animations should be subtle, professional, and enhance the user experience without being distracting.
-
-*   **Duration:** Short to medium (`150ms` - `300ms`).
-*   **Easing:** `ease-in-out` for most transitions.
-*   **Types of Animations:**
-    *   **Hover Effects:** Buttons, links, cards should have subtle color changes, slight lifts (`Small Shadow`), or scale transformations.
-    *   **Focus States:** Clear visual indication for keyboard navigation.
-    *   **Transitions:** Smooth transitions for state changes (e.g., menu open/close, tab switching).
-    *   **Loading States:** Minimalistic loaders or skeleton screens.
-*   **Avoid:** Excessive bouncing, flashing, or overly complex animations. Performance is key.
+### Don't
+*   **Don't** use a standard 8px grid. Use the custom spacing scale (e.g., `spacing-3.5` at 0.75rem) to find the "tension" between data-density and whitespace.
+*   **Don't** ever use #000000 for text. It kills the "glow" effect. Use `on-surface` for all primary reading.
+*   **Don't** use 100% opaque borders. They create visual "noise" that distracts a trader during high-volatility sessions.
